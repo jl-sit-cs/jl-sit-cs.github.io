@@ -52,6 +52,23 @@
       color: var(--inat-peach-light);
       transform: scale(1.05);
     }
+
+    /* somewhere in your <head> <style> block */
+    .photo-frame {
+      display: inline-block;
+      background: rgba(255,255,255,0.8);
+      padding: 0.2rem;
+      border: 4px solid white;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      margin: 1.5rem auto;
+    }
+    .photo-frame img {
+      display: block;
+      max-width: 100%;
+      border-radius: 0.25rem;
+    }
+
   </style>
 </head>
 
@@ -352,34 +369,33 @@
             addressing the needs of our users, these prototypes can be viewed:
 
             <br><br>
-            <h3><b>Camera Taking</b></h3>
-            <div class="flex justify-center">
-                <img src="../media/scanner.jpg" alt="Camera Taking" class="max-w-full h-auto" height="150" width="300">
+            <h3 class="mt-8 text-xl font-semibold">Camera Taking</h3>
+             <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
+              <img src="../media/scanner.jpg" alt="Camera Taking">
             </div>
-
             <br>
-            <h3><b>Species Identification (High Confidence)</b></h3>
-            <div class="flex justify-center">
+            <h3 class="mt-8 text-xl font-semibold"><b>Species Identification (High Confidence)</b></h3>
+            <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
                 <img src="../media/high_confidence.jpg" alt="Species Identification High Confidence"
                     class="max-w-full h-auto" height="150" width="300">
             </div>
 
             <br>
-            <h3><b>Species Identification (Low Confidence)</b></h3>
-            <div class="flex justify-center">
+            <h3 class="mt-8 text-xl font-semibold"><b>Species Identification (Low Confidence)</b></h3>
+            <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
                 <img src="../media/low_confidence.jpg" alt="Species Identification Low Confidence"
                     class="max-w-full h-auto" height="150" width="300">
             </div>
 
             <br>
-            <h3><b>Community View</b></h3>
-            <div class="flex justify-center">
+            <h3 class="mt-8 text-xl font-semibold"><b>Community View</b></h3>
+            <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
                 <img src="../media/communityview.jpg" alt="Community View" class="max-w-full
                     h-auto" height="150" width="300">
             </div>
             <br>
-            <h3><b>Map View</b></h3>
-            <div class="flex justify-center">
+            <h3 class="mt-8 text-xl font-semibold"><b>Map View</b></h3>
+            <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
                 <img src="../media/map.jpg" alt="Map View" class="max-w-full h-auto" height="150" width="300">
             </div>
             <br>
@@ -492,6 +508,11 @@
   </div>
 </footer>
 
+<!-- ★ LIGHTBOX OVERLAY –– paste this here, right before your scripts / </body> -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded" />
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-2xl">×</button>
+  </div>
 
   <script>
   const canvas = document.getElementById('particles'),
@@ -559,5 +580,30 @@
   window.addEventListener('resize', resize);
   init();
 </script>
+
+<!-- LIGHTBOX SCRIPT -->
+  <script>
+    document.querySelectorAll('.photo-frame img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        const lb = document.getElementById('lightbox'),
+              lbImg = document.getElementById('lightbox-img');
+        lbImg.src = img.src;
+        lb.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    document.getElementById('lightbox-close').onclick = () => {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.body.style.overflow = '';
+    };
+    document.getElementById('lightbox').addEventListener('click', e => {
+      if (e.target.id === 'lightbox') {
+        e.currentTarget.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+  
 </body>
 </html>
