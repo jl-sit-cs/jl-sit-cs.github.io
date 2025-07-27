@@ -20,7 +20,7 @@ How might we encourage citizens and visitors to collect more sighting data to im
 - iNaturalist API (if applicable)
 
 ## Contributors
-1. Jiang Wei Min
+1. Jiang Weimin
 2. Hew Zhong Xuan
 3. Alvis Ngo Kok Wei
 4. Ng Jun Long
