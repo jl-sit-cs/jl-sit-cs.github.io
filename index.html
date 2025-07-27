@@ -2,318 +2,318 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Species Identification Project - Glasgow Botanic Gardens</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom colors based on iNaturalist scheme */
-        :root {
-            --inat-green-primary: #73AB00;
-            /* Limeade */
-            --inat-green-dark: #2E5B00;
-            /* Verdun Green */
-            --inat-peach-light: #F9C3AB;
-            /* Apricot Peach */
-            --inat-text-dark: #333333;
-            --inat-text-light: #f5f5f5;
-        }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Species Identification Project - Glasgow Botanic Gardens</title>
 
-        .bg-inat-green-primary {
-            background-color: var(--inat-green-primary);
-        }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        .text-inat-green-primary {
-            color: var(--inat-green-primary);
-        }
+  <!-- AOS CSS for scroll animations -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-        .border-inat-green-primary {
-            border-color: var(--inat-green-primary);
-        }
+  <style>
+    /* Custom colors based on iNaturalist scheme */
+    :root {
+      --inat-green-primary: #73AB00; /* Limeade */
+      --inat-green-dark:    #2E5B00; /* Verdun Green */
+      --inat-peach-light:   #F9C3AB; /* Apricot Peach */
+      --inat-text-dark:     #333333;
+      --inat-text-light:    #f5f5f5;
+    }
 
-        .bg-inat-green-dark {
-            background-color: var(--inat-green-dark);
-        }
+    /* universal link effect */
+    a {
+    display: inline-block;
+    transition: transform 0.2s, color 0.2s;
+    }
+    a:hover {
+    color: var(--inat-peach-light);
+    transform: scale(1.05);
+    }
 
-        .text-inat-green-dark {
-            color: var(--inat-green-dark);
-        }
+    .bg-inat-green-primary   { background-color: var(--inat-green-primary); }
+    .text-inat-green-dark    { color: var(--inat-green-dark); }
+    .text-inat-light         { color: var(--inat-text-light); }
+    .hover\:text-inat-green-primary:hover { color: var(--inat-green-primary); }
+    .bg-inat-green-dark      { background-color: var(--inat-green-dark); }
+    .bg-inat-peach-light     { background-color: var(--inat-peach-light); }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--inat-text-dark);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--inat-green-primary);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--inat-green-dark);
+    }
 
-        .bg-inat-peach-light {
-            background-color: var(--inat-peach-light);
-        }
-
-        .text-inat-peach-light {
-            color: var(--inat-peach-light);
-        }
-
-        .text-inat-dark {
-            color: var(--inat-text-dark);
-        }
-
-        .text-inat-light {
-            color: var(--inat-text-light);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--inat-text-dark);
-        }
-
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--inat-green-primary);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--inat-green-dark);
-        }
-
-
-        /* General section styling */
-        .timeline-section {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Header styling */
-        .timeline-section h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-            border-bottom: 2px solid #27ae60;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-
-        /* Timeline vertical line */
-        .timeline {
-            position: relative;
-            border-left: 3px solid #27ae60;
-            padding-left: 30px;
-        }
-
-        /* Each timeline item */
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-        }
-
-        /* The dot on the timeline */
-        .timeline-dot {
-            width: 14px;
-            height: 14px;
-            background: #27ae60;
-            border-radius: 50%;
-            position: absolute;
-            left: -8px;
-            top: 6px;
-        }
-
-        /* Content box */
-        .timeline-content h3 {
-            margin: 0;
-            font-size: 1.25rem;
-            color: #34495e;
-        }
-
-        .timeline-content .date {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 5px;
-        }
-
-        .timeline-content p {
-            margin: 0;
-            color: #555;
-        }
-
-        .left-indent {
-            margin-left: 20px;
-        }
-    </style>
+    /* General section styling */
+    .timeline-section { background: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto; }
+    .timeline-section h2 { font-size: 2rem; color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 10px; margin-bottom: 30px; }
+    .timeline { position: relative; border-left: 3px solid #27ae60; padding-left: 30px; }
+    .timeline-item { position: relative; margin-bottom: 30px; }
+    .timeline-dot { width: 14px; height: 14px; background: #27ae60; border-radius: 50%; position: absolute; left: -8px; top: 6px; }
+    .timeline-content h3 { margin: 0; font-size: 1.25rem; color: #34495e; }
+    .timeline-content .date { font-size: 0.9rem; color: #7f8c8d; margin-bottom: 5px; }
+    .timeline-content p { margin: 0; color: #555; }
+    .left-indent { margin-left: 20px; }
+  </style>
 </head>
 
 <body class="bg-gray-50">
-    <!-- Header/Hero Section -->
-    <header class="bg-inat-green-primary text-inat-light py-16 px-4 rounded-b-xl shadow-lg">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
-                Species Identification Project
-            </h1>
-            <p class="text-xl md:text-2xl font-light">
-                Empowering Citizen Science at Glasgow Botanic Gardens
-            </p>
-        </div>
-    </header>
 
-    <main class="max-w-4xl mx-auto py-12 px-4">
-        <section id="overview" class="mb-16 p-6 bg-white rounded-lg shadow-md">
-            <h2 class="text-3xl font-bold text-inat-green-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-                Project Overview
-            </h2>
-            <p class="mb-4">
-                Glasgow City Council (GCC) is committed to its Biodiversity Action Plan,
-                requiring accurate and regular data on plant and wildlife species across the city.
-                The Glasgow Botanic Gardens, a key site, hosts both cultivated and native species.
-                Currently, species identification and data entry are largely manual, leading to
-                inefficiencies.
-            </p>
-            <p>
-                This project aims to streamline the process of recording biological sightings,
-                reduce manual data entry, and expand citizen participation through the iNaturalist app,
-                ensuring continuous data collection year-round.
-            </p>
-        </section>
+  <!-- Header/Hero Section -->
+  <header class="bg-inat-green-primary text-inat-light py-16 px-4 rounded-b-xl shadow-lg" data-aos="fade-down">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+        Species Identification Project
+      </h1>
+      <p class="text-xl md:text-2xl font-light">
+        Empowering Citizen Science at Glasgow Botanic Gardens
+      </p>
+    </div>
+  </header>
 
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-md sticky top-0 z-10" data-aos="fade-down" data-aos-delay="100">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
 
-        <section id="timeline" class="mb-16 p-6 bg-white rounded-lg shadow-md">
-            <h2 class="text-3xl font-bold text-inat-green-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-                Timeline
-            </h2>
+        <!-- Brand -->
+        <a href="./index.html" class="text-2xl font-bold text-inat-green-dark">
+          Species ID
+        </a>
 
-            Using a timeline format, this section outlines the key milestones and activities of the project and allows
-            us to track the task progress effectively. Each item includes a title, date range, and a brief description
-            of the task or event:
-            <br> <br>
+        <!-- Desktop menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="./index.html" class="text-gray-700 hover:text-inat-green-primary transition">
+            Home
+          </a>
 
-            <div class="relative border-l-4 border-inat-green-primary pl-6 space-y-8">
-
-                <div class="relative">
-                    <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold left-indent">Requirement Gathering</h3>
-                        <p class="text-sm text-gray-500 mb-1">22/07/2025 - 22/07/2025</p>
-                        <p class="text-gray-700">
-                            The project team will meet with stakeholder (Chrissy) to gather requirements and understand
-                            the
-                            specific needs for species identification and data collection at the Glasgow Botanic
-                            Gardens.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold left-indent">Pitch Video 1</h3>
-                        <p class="text-sm text-gray-500 mb-1">22/07/2025 - 25/07/2025</p>
-                        <p class="text-gray-700">The team will craft an insightful pitch video based on reflections on
-                            two key elements: one from talking to users or stakeholders, and one from building a
-                            prototype. The video should also clearly present the information gathered through these
-                            activities. To enhance engagement and understanding, it should incorporate techniques such
-                            as storytelling and visual aids.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold left-indent">Pitch Video 2</h3>
-                        <p class="text-sm text-gray-500 mb-1">26/07/2025 - 01/08/2025</p>
-                        <p class="text-gray-700">
-                            The team will create a second pitch video that builds on the first, incorporating feedback
-                            and additional insights. This video should continue to use storytelling and visual aids to
-                            effectively communicate the project's progress and future plans. Additionally, it should
-                            also reflect on the two key elements: one from talking to users or stakeholders, and one
-                            from building a prototype.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold left-indent">Poster Report</h3>
-                        <p class="text-sm text-gray-500 mb-1">01/08/2025 - 05/08/2025</p>
-                        <p class="text-gray-700">The team will create a poster report summarizing the project findings,
-                            methodologies, and outcomes to share with anyone interested in biodiversity and species
-                            conservation.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-                    <div>
-                        <h3 class="text-xl font-semibold left-indent">Website Report Development</h3>
-                        <p class="text-sm text-gray-500 mb-1">01/08/2025 - 08/08/2025</p>
-                        <p class="text-gray-700">The team will develop a comprehensive website report detailing the
-                            project details, methodologies, and outcomes. This report will be accessible to the public
-                            and
-                            stakeholders, providing transparency and insight into the project's impact on species
-                            identification and conservation efforts. </p>
-                    </div>
-                </div>
-
+          <div class="relative group">
+            <button class="flex items-center text-gray-700 hover:text-inat-green-primary transition focus:outline-none">
+              Weekly Journal
+              <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
+                      clip-rule="evenodd"/>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-40 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+              <a href="./gh-pages/week1.html" class="block px-4 py-2 hover:bg-gray-100">Week 1</a>
+              <a href="./gh-pages/week2.html" class="block px-4 py-2 hover:bg-gray-100">Week 2</a>
+              <a href="./gh-pages/week3.html" class="block px-4 py-2 hover:bg-gray-100">Week 3</a>
             </div>
+          </div>
 
-        </section>
-    </main>
+          <a href="./about.html" class="text-gray-700 hover:text-inat-green-primary transition">
+            About Us
+          </a>
 
-    <footer class="bg-inat-green-dark text-inat-light py-8 px-4 mt-12 rounded-t-xl">
-
-        <div class="grid md:grid-cols-2 gap-8">
-            <div>
-                <h3 class="text-2xl font-semibold mb-3">Useful Links</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>
-                        <a href="https://glasgowbotanicgardens.com/" target="_blank"
-                            class="text-blue-600 hover:underline">
-                            Glasgow Botanic Gardens
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.inaturalist.org/projects/city-nature-challenge-2025-greater-glasgow"
-                            target="_blank" class="text-blue-600 hover:underline">
-                            iNaturalist City Nature Challenge 2025 - Greater Glasgow
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://glasgownaturalhistory.org.uk/bio_sites.html" target="_blank"
-                            class="text-blue-600 hover:underline">
-                            Glasgow Natural History Society - Bio Sites
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-2xl font-semibold  mb-3">Contact Person</h3>
-                <p class="mb-2">
-                    <strong>Chrissy Sanachan</strong><br>
-                    Friends of Glasgow Botanic Gardens
-                </p>
-                <p>
-                    Email: <a href="mailto:chrissy@glasgowbotanicgardens.com"
-                        class="text-blue-600 hover:underline">chrissy@glasgowbotanicgardens.com</a>
-                </p>
-            </div>
+          <a href="https://github.com/YourRepo" target="_blank" class="flex items-center text-gray-700 hover:text-inat-green-primary transition">
+            <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.81 1.305 3.495.998.108-.775.42-1.305.763-1.605-2.665-.3-5.467-1.335-5.467-5.93 0-1.31.47-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.48 11.48 0 013.003-.404c1.02.005 2.045.138 3.003.404 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.11.81 2.235 0 1.615-.015 2.915-.015 3.315 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
         </div>
 
-        <br>
-
-
-        <div class="max-w-4xl mx-auto text-center text-sm">
-            <p>&copy; 2025 Species Identification Project. All rights reserved.</p>
-            <p>Designed with <span class="text-red-400">&hearts;</span> and iNaturalist colors.</p>
+        <!-- Mobile hamburger -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
         </div>
-    </footer>
+
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="menu" class="hidden md:hidden">
+        <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+        <div class="border-t border-gray-200"></div>
+        <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center" onclick="toggleSubmenu()">
+          Weekly Journal
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
+                  clip-rule="evenodd"/>
+          </svg>
+        </button>
+        <div id="submenu" class="hidden">
+          <a href="gh-pages/week1.html" class="block px-8 py-2 text-gray-700 hover:bg-gray-100">Week 1</a>
+          <a href="week2.html" class="block px-8 py-2 text-gray-700 hover:bg-gray-100">Week 2</a>
+          <a href="week3.html" class="block px-8 py-2 text-gray-700 hover:bg-gray-100">Week 3</a>
+        </div>
+        <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About Us</a>
+        <a href="https://github.com/YourRepo" target="_blank" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('hidden');
+    });
+    // Mobile submenu toggle
+    function toggleSubmenu() {
+      document.getElementById('submenu').classList.toggle('hidden');
+    }
+  </script>
+
+  <main class="max-w-4xl mx-auto py-12 px-4">
+
+    <!-- Project Overview -->
+    <section id="overview" class="mb-16 p-6 bg-white rounded-lg shadow-md" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-inat-green-dark mb-6 border-b-2 border-inat-green-primary pb-2">
+        Project Overview
+      </h2>
+      <p class="mb-4">
+        Glasgow City Council (GCC) is committed to its Biodiversity Action Plan,
+        requiring accurate and regular data on plant and wildlife species across the city.
+        The Glasgow Botanic Gardens, a key site, hosts both cultivated and native species.
+        Currently, species identification and data entry are largely manual, leading to
+        inefficiencies.
+      </p>
+      <p>
+        This project aims to streamline the process of recording biological sightings,
+        reduce manual data entry, and expand citizen participation through the iNaturalist app,
+        ensuring continuous data collection year-round.
+      </p>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="mb-16 p-6 bg-white rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="text-3xl font-bold text-inat-green-dark mb-6 border-b-2 border-inat-green-primary pb-2">
+        Timeline
+      </h2>
+
+      <div class="relative border-l-4 border-inat-green-primary pl-6 space-y-8">
+        <div class="relative" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-semibold left-indent">Requirement Gathering</h3>
+          <p class="text-sm text-gray-500 mb-1">22/07/2025 - 22/07/2025</p>
+          <p class="text-gray-700">
+            The project team will meet with stakeholder (Chrissy) to gather requirements and understand
+            the specific needs for species identification and data collection at the Glasgow Botanic
+            Gardens.
+          </p>
+        </div>
+        <div class="relative" data-aos="fade-up" data-aos-delay="300">
+          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-semibold left-indent">Pitch Video 1</h3>
+          <p class="text-sm text-gray-500 mb-1">22/07/2025 - 25/07/2025</p>
+          <p class="text-gray-700">
+            The team will craft an insightful pitch video based on reflections on two key elements:
+            one from talking to users or stakeholders, and one from building a prototype.
+          </p>
+        </div>
+        <div class="relative" data-aos="fade-up" data-aos-delay="400">
+          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-semibold left-indent">Pitch Video 2</h3>
+          <p class="text-sm text-gray-500 mb-1">26/07/2025 - 01/08/2025</p>
+          <p class="text-gray-700">
+            The team will create a second pitch video that builds on the first, incorporating feedback
+            and additional insights.
+          </p>
+        </div>
+        <div class="relative" data-aos="fade-up" data-aos-delay="500">
+          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-semibold left-indent">Poster Report</h3>
+          <p class="text-sm text-gray-500 mb-1">01/08/2025 - 05/08/2025</p>
+          <p class="text-gray-700">
+            The team will create a poster report summarizing the project findings, methodologies, and outcomes.
+          </p>
+        </div>
+        <div class="relative" data-aos="fade-up" data-aos-delay="600">
+          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-semibold left-indent">Website Report Development</h3>
+          <p class="text-sm text-gray-500 mb-1">01/08/2025 - 08/08/2025</p>
+          <p class="text-gray-700">
+            The team will develop a comprehensive website report detailing the project details, methodologies,
+            and outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <footer class="bg-inat-green-dark text-inat-light border-t border-inat-green-primary">
+  <!-- Main footer content -->
+  <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row md:justify-between gap-6" data-aos="fade-up">
+    
+    <!-- Useful Links -->
+    <div class="flex-1">
+      <h4 class="text-xl font-semibold mb-2">Useful Links</h4>
+      <ul class="space-y-1 text-sm">
+        <li><a href="https://glasgowbotanicgardens.com/" target="_blank" class="thover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">• Glasgow Botanic Gardens</a></li>
+        <li><a href="https://www.inaturalist.org/projects/city-nature-challenge-2025-greater-glasgow" target="_blank" class="hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block"">• City Nature Challenge 2025</a></li>
+        <li><a href="https://glasgownaturalhistory.org.uk/bio_sites.html" target="_blank" class="hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block"">• Glasgow Natural History Society</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact / Quick Nav -->
+    <div class="flex-1 md:flex md:justify-end">
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Contact</h4>
+        <p class="text-sm mb-1"><strong>Chrissy Sanachan</strong></p>
+        <p class="text-sm mb-3">Friends of Glasgow Botanic Gardens</p>
+        <a href="mailto:chrissy@glasgowbotanicgardens.com" class="hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2 4h20v16H2z" fill="none"/>
+            <path d="M22 6l-10 7L2 6v12h20z"/>
+          </svg>
+          chrissy@glasgowbotanicgardens.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom legal -->
+  <div class="bg-inat-green-primary bg-opacity-20">
+    <div class="max-w-6xl mx-auto px-4 py-4 text-center text-xs opacity-80">
+      <p>&copy; 2025 Species Identification Project. All rights reserved.</p>
+      <p>Designed with <span class="text-red-400">♥</span> and iNaturalist colors.</p>
+    </div>
+  </div>
+</footer>
+
+  <!-- AOS JS -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-GYcT6Arl1LRdqvZ6M4fQqBZ5Xho/UnE2dj4xy46ZpPXwCe2lTLS6Fn+97eMR61cwXoHcek1YceXO5RHwKVYVGQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+  </script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 700,
+      easing: 'ease-out-cubic',
+    });
+  </script>
 </body>
-
 </html>

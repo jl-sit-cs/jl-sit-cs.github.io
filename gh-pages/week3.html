@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Species Identification Project – Week 2</title>
+  <title>Species Identification Project – Week 3</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -73,37 +73,65 @@
         <div class="relative group">
           <button class="text-gray-700 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block flex items-center">
             Weekly Journal
-            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z" clip-rule="evenodd"/></svg>
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
+                clip-rule="evenodd"/>
+            </svg>
           </button>
           <div class="absolute left-0 mt-2 w-40 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-            <a href="week1.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 1</a>
-            <a href="week2.html" class="block px-4 py-2 bg-gray-100 text-inat-green-dark hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 2</a>
-            <a href="week3.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 3</a>
+            <a href="week1.html"
+               class="block px-4 py-2 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">
+              Week 1
+            </a>
+            <a href="week2.html"
+               class="block px-4 py-2 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">
+              Week 2
+            </a>
+            <a href="week3.html"
+               class="block px-4 py-2 bg-gray-100 text-inat-green-dark hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">
+              Week 3
+            </a>
           </div>
         </div>
         <a href="about.html" class="text-gray-700 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">About Us</a>
-        <a href="https://github.com/YourRepo" target="_blank" class="flex items-center text-gray-700 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">
-          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0…"/></svg>
+        <a href="https://github.com/YourRepo" target="_blank"
+           class="flex items-center text-gray-700 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">
+          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0…"/>
+          </svg>
           GitHub
         </a>
       </div>
       <button id="menu-btn" class="md:hidden focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
       </button>
     </div>
     <div id="menu" class="hidden md:hidden bg-white">
-      <a href="../index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Home</a>
-      <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 flex justify-between items-center" onclick="toggleSubmenu()">
+      <a href="../index.html"
+         class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Home</a>
+      <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 flex justify-between items-center"
+              onclick="toggleSubmenu()">
         Weekly Journal
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.23 7.21…"/></svg>
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.23 7.21…"/>
+        </svg>
       </button>
       <div id="submenu" class="hidden">
-        <a href="week1.html" class="block px-8 py-2 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 1</a>
-        <a href="week2.html" class="block px-8 py-2 bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 2</a>
-        <a href="week3.html" class="block px-8 py-2 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 3</a>
+        <a href="week1.html"
+           class="block px-8 py-2 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 1</a>
+        <a href="week2.html"
+           class="block px-8 py-2 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 2</a>
+        <a href="week3.html"
+           class="block px-8 py-2 bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">Week 3</a>
       </div>
-      <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">About Us</a>
-      <a href="https://github.com/YourRepo" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">GitHub</a>
+      <a href="about.html"
+         class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">About Us</a>
+      <a href="https://github.com/YourRepo"
+         class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-inat-peach-light transition-transform transform hover:scale-105 inline-block">GitHub</a>
     </div>
   </nav>
 
@@ -117,12 +145,12 @@
   </script>
 
   <main class="max-w-4xl mx-auto py-12 px-4">
-    <!-- Week 2 Main Content -->
-    <section id="week2" class="mb-16 p-6 bg-white rounded-lg shadow-md" data-aos="fade-up">
+    <!-- Week 3 Main Content -->
+    <section id="week3" class="mb-16 p-6 bg-white rounded-lg shadow-md" data-aos="fade-up">
       <h2 class="text-3xl font-bold text-inat-green-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-        Weekly Journal – Week 2
+        Weekly Journal – Week 3
       </h2>
-      <!-- YOUR WEEK 2 CONTENT HERE -->
+      <!-- YOUR WEEK 3 CONTENT HERE -->
     </section>
   </main>
 
@@ -162,12 +190,6 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer">
   </script>
-  <script>
-    AOS.init({
-      once: true,
-      duration: 700,
-      easing: 'ease-out-cubic',
-    });
-  </script>
+  <script>AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });</script>
 </body>
 </html>
