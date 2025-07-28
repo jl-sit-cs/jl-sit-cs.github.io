@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>Species Identification Project - Week 1</title>
 
   <!-- Tailwind CSS -->
@@ -428,37 +431,54 @@
       addressing the needs of our users, these prototypes can be viewed:
 
 
-      <h3 class="mt-8 text-xl font-semibold">Demonstration</h3>
-      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-        <img src="../media/scanner.jpg" alt="Camera Taking">
+      <h2 class="mt-8 text-xl font-semibold">Demonstration</h2>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="../media/scanner.jpg" alt="Camera Taking">
+            <div class="carousel-caption">
+              <h3>Camera Taking</h3>
+            </div>
+          </div>
+          <div class="item">
+            <img src="../media/high_confidence.jpg" alt="Species Identification (High Confidence)">
+            <div class="carousel-caption">
+              <h3>Species Identification (High Confidence)</h3>
+            </div>
+          </div>
+          <div class="item">
+            <img src="../media/low_confidence.jpg" alt="Species Identification (Low Confidence)">
+            <div class="carousel-caption">
+              <h3>Species Identification (Low Confidence)</h3>
+            </div>
+          </div>
+          <div class="item">
+            <img src="../media/communityview.jpg" alt="Community View">
+            <div class="carousel-caption">
+              <h3>Community View</h3>
+            </div>
+          </div>
+          <div class="item">
+            <img src="../media/map.jpg" alt="Map View">
+            <div class="carousel-caption">
+              <h3>Map View</h3>
+            </div>
+          </div>
+        </div>
       </div>
-      <h3 class="mt-8 text-xl font-semibold"><b>Species Identification (High Confidence)</b></h3>
-      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-        <img src="../media/high_confidence.jpg" alt="Species Identification High Confidence" class="max-w-full h-auto"
-          height="150" width="300">
+      <a class="left carousel-control" href="#carouselExampleControls" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carouselExampleControls" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
       </div>
 
-      <h3 class="mt-8 text-xl font-semibold"><b>Species Identification (Low Confidence)</b></h3>
-      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-        <img src="../media/low_confidence.jpg" alt="Species Identification Low Confidence" class="max-w-full h-auto"
-          height="150" width="300">
-      </div>
 
-      <br>
-      <h3 class="mt-8 text-xl font-semibold"><b>Community View</b></h3>
-      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-        <img src="../media/communityview.jpg" alt="Community View" class="max-w-full
-                    h-auto" height="150" width="300">
-      </div>
-      <br>
-      <h3 class="mt-8 text-xl font-semibold"><b>Map View</b></h3>
-      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-        <img src="../media/map.jpg" alt="Map View" class="max-w-full h-auto" height="150" width="300">
-      </div>
-      <br>
 
       This iterative process helped us refine our ideas and ensure that the final solution would effectively
-      communicate the needs of our stakeholders and quick changes of the design can be made based on the feedback on the
+      communicate the needs of our stakeholders and quick changes of the design can be made based on the feedback on
+      the
       teams. Additionally, any changes made to the prototype can be easily communicated to the team.
     </section>
 
@@ -716,15 +736,8 @@
     });
   </script>
 
+
+
 </body>
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </html>
