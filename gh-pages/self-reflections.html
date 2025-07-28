@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About & Reflections - OIP Glasgow Species Identification Project</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font Awesome for LinkedIn icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      background-image: url('../media/glasgow%20botanics%20cropped_1479274578.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    /* Enhanced background overlay for better readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(46, 91, 0, 0.1);
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    .team-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .linkedin-btn {
+      transition: all 0.3s ease;
+    }
+
+    .linkedin-btn:hover {
+      background-color: #0077B5;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="flex items-center text-xl font-bold text-gray-800 hover:text-green-600 transition">
+          <img src="../media/icon.png" alt="OIP Project Icon" class="w-8 h-8 mr-2">
+          OIP Species Project
+        </a>
+        
+        <!-- Breadcrumb -->
+        <div class="hidden md:flex items-center space-x-2 text-sm text-gray-600">
+          <a href="../index.html" class="hover:text-green-600">Home</a>
+          <span>/</span>
+          <span class="text-green-600 font-medium">About & Reflections</span>
+        </div>
+        
+        <a href="../index.html" class="text-gray-600 hover:text-green-600 transition">
+          ← Back to Home
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">About Our Team & Reflections</h1>
+      <p class="text-xl opacity-90 max-w-3xl mx-auto">
+        Meet our team and explore individual perspectives on our journey, learnings, and growth throughout the project
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto py-12 px-4 space-y-12">
+    
+    <!-- About Section -->
+    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">About Our Project</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-purple-700">Our Mission</h3>
+          <p class="text-gray-700 mb-4">
+            We are dedicated to enhancing species recording by reducing manual data entry and leveraging citizen science tools like iNaturalist. 
+            Our system encourages collaborative recording throughout the year while preserving expert review where needed.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-blue-700">Problem Statement</h3>
+          <p class="text-gray-700">
+            How might we encourage citizens and visitors to collect more sighting data to improve their understanding and educate about their characteristics while maintaining efficient scientific records?
+          </p>
+        </div>
+      </div>
+
+      <!-- Technologies Used -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-green-700 text-center">Technologies Used</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+              <i class="fab fa-html5 text-xl text-purple-600"></i>
+            </div>
+            <span class="text-sm text-gray-600">HTML/CSS</span>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+              <i class="fab fa-js-square text-xl text-blue-600"></i>
+            </div>
+            <span class="text-sm text-gray-600">JavaScript</span>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+              <i class="fas fa-leaf text-xl text-green-600"></i>
+            </div>
+            <span class="text-sm text-gray-600">iNaturalist API</span>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-orange-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+              <i class="fab fa-bootstrap text-xl text-orange-600"></i>
+            </div>
+            <span class="text-sm text-gray-600">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Members with LinkedIn -->
+    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Meet Our Team</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Team Member 1 -->
+        <div class="team-card bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 text-center">
+          <img src="../media/wm.jpg" alt="Jiang Weimin" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <h3 class="text-lg font-bold text-gray-800 mb-3">Jiang Weimin</h3>
+          <a href="https://www.linkedin.com/in/jiang-weimin1" target="_blank" class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
+            <i class="fab fa-linkedin mr-2"></i>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-6 text-center">
+          <img src="../media/zhongxuan.jpg" alt="Hew Zhong Xuan" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <h3 class="text-lg font-bold text-gray-800 mb-3">Hew Zhong Xuan</h3>
+          <a href="https://www.linkedin.com/in/hew-zhongxuan/" target="_blank" class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
+            <i class="fab fa-linkedin mr-2"></i>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 text-center">
+          <img src="../media/alvis.jpg" alt="Alvis Ngo Kok Wei" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <h3 class="text-lg font-bold text-gray-800 mb-3">Alvis Ngo Kok Wei</h3>
+          <a href="https://www.linkedin.com/in/alvis-ngo/" target="_blank" class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
+            <i class="fab fa-linkedin mr-2"></i>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card bg-gradient-to-br from-orange-50 to-red-50 rounded-lg p-6 text-center">
+          <img src="../media/junlong.jpg" alt="Ng Jun Long" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <h3 class="text-lg font-bold text-gray-800 mb-3">Ng Jun Long</h3>
+          <a href="https://www.linkedin.com/in/ng-jun-long/" target="_blank" class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
+            <i class="fab fa-linkedin mr-2"></i>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="team-card bg-gradient-to-br from-teal-50 to-green-50 rounded-lg p-6 text-center">
+          <img src="../media/ben.jpg" alt="Ong Ming Feng Benedict" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <h3 class="text-lg font-bold text-gray-800 mb-3">Ong Ming Feng Benedict</h3>
+          <a href="https://www.linkedin.com/in/benedict-ong-mf/" target="_blank" class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
+            <i class="fab fa-linkedin mr-2"></i>
+            LinkedIn
+          </a>
+        </div>
+
+        <!-- Team Member 6 -->
+        <div class="team-card bg-gradient-to-br from-pink-50 to-purple-50 rounded-lg p-6 text-center">
+          <img src="../media/kwan.jpg" alt="Tan Kwan Yee" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <h3 class="text-lg font-bold text-gray-800 mb-3">Tan Kwan Yee</h3>
+          <a href="https://www.linkedin.com/in/tankwanyee/" target="_blank" class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
+            <i class="fab fa-linkedin mr-2"></i>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Team Member Reflections -->
+    <section class="grid md:grid-cols-2 gap-8">
+      
+      <!-- Jiang Weimin -->
+      <div class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up">
+        <div class="flex items-center mb-6">
+          <img src="../media/wm.jpg" alt="Jiang Weimin" class="w-16 h-16 rounded-full mr-4 object-cover">
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">Jiang Weimin</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
+            <p class="text-gray-700 text-sm">
+              Leading the stakeholder engagement process and ensuring our solution truly addressed the real needs of Glasgow Botanic Gardens. The comprehensive research phase laid a solid foundation for our entire project.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Key Learnings</h4>
+            <p class="text-gray-700 text-sm">
+              The importance of early and continuous stakeholder involvement cannot be overstated. Regular check-ins with Chrissy helped us stay aligned with actual needs rather than assumed requirements.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-purple-600 mb-2">Areas for Improvement</h4>
+            <p class="text-gray-700 text-sm">
+              I would have liked to engage with more diverse stakeholders, including actual citizen scientists and other botanical gardens, to get broader perspectives on our solution.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hew Zhong Xuan -->
+      <div class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center mb-6">
+          <img src="../media/zhongxuan.jpg" alt="Hew Zhong Xuan" class="w-16 h-16 rounded-full mr-4 object-cover">
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">Hew Zhong Xuan</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
+            <p class="text-gray-700 text-sm">
+              Creating user-centered prototypes that effectively communicated our vision to stakeholders. The iterative design process helped us refine concepts based on real feedback.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Key Learnings</h4>
+            <p class="text-gray-700 text-sm">
+              Designing for citizen science requires balancing simplicity with scientific rigor. Users need tools that are easy to use but still maintain data quality standards.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-purple-600 mb-2">Areas for Improvement</h4>
+            <p class="text-gray-700 text-sm">
+              More extensive user testing with actual citizen scientists would have provided valuable insights into usability challenges we might have missed.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alvis Ngo Kok Wei -->
+      <div class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center mb-6">
+          <img src="../media/alvis.jpg" alt="Alvis Ngo Kok Wei" class="w-16 h-16 rounded-full mr-4 object-cover">
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">Alvis Ngo Kok Wei</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
+            <p class="text-gray-700 text-sm">
+              Successfully researching and proposing the iNaturalist API integration strategy. Understanding the technical feasibility was crucial for creating a realistic implementation plan.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Key Learnings</h4>
+            <p class="text-gray-700 text-sm">
+              The importance of understanding existing platforms and APIs before designing new solutions. Leveraging established tools like iNaturalist can significantly accelerate development.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-purple-600 mb-2">Areas for Improvement</h4>
+            <p class="text-gray-700 text-sm">
+              Earlier technical feasibility assessment would have helped us make more informed design decisions from the beginning of the project.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ng Jun Long -->
+      <div class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center mb-6">
+          <img src="../media/junlong.jpg" alt="Ng Jun Long" class="w-16 h-16 rounded-full mr-4 object-cover">
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">Ng Jun Long</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
+            <p class="text-gray-700 text-sm">
+              Mapping out the current and proposed workflows in detail, which helped identify specific pain points and opportunities for automation and efficiency improvements.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Key Learnings</h4>
+            <p class="text-gray-700 text-sm">
+              The value of process mapping in understanding complex systems. Visual representations of workflows made it easier to communicate problems and solutions to stakeholders.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-purple-600 mb-2">Areas for Improvement</h4>
+            <p class="text-gray-700 text-sm">
+              More detailed analysis of data quality metrics and validation processes would have strengthened our solution's scientific credibility.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ong Ming Feng Benedict -->
+      <div class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="400">
+        <div class="flex items-center mb-6">
+          <img src="../media/ben.jpg" alt="Ong Ming Feng Benedict" class="w-16 h-16 rounded-full mr-4 object-cover">
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">Ong Ming Feng Benedict</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
+            <p class="text-gray-700 text-sm">
+              Creating comprehensive documentation that effectively communicated our process and findings. The project website serves as a complete record of our journey.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Key Learnings</h4>
+            <p class="text-gray-700 text-sm">
+              Clear documentation is essential for project success and knowledge transfer. Regular documentation throughout the process is more effective than trying to document everything at the end.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-purple-600 mb-2">Areas for Improvement</h4>
+            <p class="text-gray-700 text-sm">
+              More visual documentation of our design process, including sketches and iteration photos, would have provided richer insights into our creative process.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tan Kwan Yee -->
+      <div class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="500">
+        <div class="flex items-center mb-6">
+          <img src="../media/kwan.jpg" alt="Tan Kwan Yee" class="w-16 h-16 rounded-full mr-4 object-cover">
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">Tan Kwan Yee</h3>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
+            <p class="text-gray-700 text-sm">
+              Conducting thorough user research that informed our design decisions. Understanding the needs of both experts and citizen scientists was crucial for our solution's success.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-blue-600 mb-2">Key Learnings</h4>
+            <p class="text-gray-700 text-sm">
+              The importance of empathy in design. Understanding users' motivations, frustrations, and goals is essential for creating solutions that people will actually use and value.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-purple-600 mb-2">Areas for Improvement</h4>
+            <p class="text-gray-700 text-sm">
+              Conducting more extensive field testing with actual users in real-world conditions would have provided deeper insights into practical usability challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collective Reflections -->
+    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="600">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Collective Team Reflections</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3 text-green-700">Team Strengths</h3>
+          <ul class="text-gray-600 text-sm space-y-1">
+            <li>• Diverse skill sets and perspectives</li>
+            <li>• Strong collaboration and communication</li>
+            <li>• Commitment to user-centered design</li>
+            <li>• Effective project management</li>
+          </ul>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3 text-blue-700">Key Learnings</h3>
+          <ul class="text-gray-600 text-sm space-y-1">
+            <li>• Importance of stakeholder engagement</li>
+            <li>• Value of iterative design process</li>
+            <li>• Need for technical feasibility assessment</li>
+            <li>• Power of visual communication</li>
+          </ul>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3 text-purple-700">Future Improvements</h3>
+          <ul class="text-gray-600 text-sm space-y-1">
+            <li>• More extensive user testing</li>
+            <li>• Broader stakeholder engagement</li>
+            <li>• Earlier technical validation</li>
+            <li>• Enhanced documentation practices</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact & Growth -->
+    <section class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8" data-aos="fade-up" data-aos-delay="700">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Personal & Professional Growth</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-blue-700">Skills Developed</h3>
+          <div class="space-y-3">
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+              <span class="text-gray-700">Stakeholder engagement and communication</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+              <span class="text-gray-700">User-centered design methodology</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+              <span class="text-gray-700">Technical research and feasibility analysis</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+              <span class="text-gray-700">Project documentation and presentation</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-purple-700">Impact on Future Work</h3>
+          <p class="text-gray-700 mb-4">
+            This project has significantly enhanced our understanding of:
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li>• The importance of environmental technology solutions</li>
+            <li>• Citizen science as a powerful engagement tool</li>
+            <li>• Collaborative design processes</li>
+            <li>• The value of interdisciplinary teamwork</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="text-gray-400">&copy; 2025 OIP Glasgow Species Identification Project. All rights reserved.</p>
+      <div class="mt-4 space-x-4">
+        <a href="../index.html" class="text-green-400 hover:text-green-300 transition">Home</a>
+        <a href="./self-reflections.html" class="text-green-400 hover:text-green-300 transition">About & Reflections</a>
+        <a href="./design-journey.html" class="text-green-400 hover:text-green-300 transition">Design Journey</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+</body>
+</html>

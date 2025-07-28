@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Journey - OIP Glasgow Species Identification Project</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --inat-green-primary: #73AB00;
+      --inat-green-dark: #2E5B00;
+      --inat-peach-light: #F9C3AB;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      background-image: url('../media/glasgow%20botanics%20cropped_1479274578.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    /* Enhanced background overlay for better readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(46, 91, 0, 0.1);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Enhanced Table and Grid Styling */
+    .table-enhanced {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(115, 171, 0, 0.1);
+    }
+
+    .table-enhanced table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-enhanced th {
+      background: linear-gradient(135deg, var(--inat-green-primary), var(--inat-green-dark));
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .table-enhanced td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(115, 171, 0, 0.1);
+      transition: background-color 0.2s ease;
+    }
+
+    .table-enhanced tr:hover td {
+      background-color: rgba(115, 171, 0, 0.05);
+    }
+
+    .table-enhanced tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Enhanced Border Styling */
+    .border-enhanced {
+      border: 2px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, var(--inat-green-primary), var(--inat-peach-light)) border-box;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .border-enhanced:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(115, 171, 0, 0.15);
+    }
+
+    /* Enhanced Section Borders */
+    .section-border-enhanced {
+      border: 3px solid transparent;
+      background: linear-gradient(135deg, rgba(115, 171, 0, 0.05), rgba(249, 195, 171, 0.05)) padding-box,
+                  linear-gradient(135deg, var(--inat-green-primary), var(--inat-peach-light)) border-box;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin: 1rem 0;
+      transition: all 0.4s ease;
+    }
+
+    .section-border-enhanced:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(115, 171, 0, 0.1);
+    }
+
+    /* Enhanced List Styling */
+    .list-enhanced {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid var(--inat-green-primary);
+    }
+
+    .list-enhanced li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(115, 171, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .list-enhanced li:hover {
+      background: rgba(115, 171, 0, 0.05);
+      padding-left: 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .list-enhanced li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="flex items-center text-xl font-bold text-gray-800 hover:text-green-600 transition">
+          <img src="../media/icon.png" alt="OIP Project Icon" class="w-8 h-8 mr-2">
+          OIP Species Project
+        </a>
+        
+        <!-- Breadcrumb -->
+        <div class="hidden md:flex items-center space-x-2 text-sm text-gray-600">
+          <a href="../index.html" class="hover:text-green-600">Home</a>
+          <span>/</span>
+          <span class="text-green-600 font-medium">Design Journey</span>
+        </div>
+        
+        <a href="../index.html" class="text-gray-600 hover:text-green-600 transition">
+          ← Back to Home
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-green-600 to-green-700 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Design Journey</h1>
+      <p class="text-xl opacity-90 max-w-3xl mx-auto">
+        From research to final solution: A comprehensive overview of our design process and key insights
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto py-12 px-4 space-y-16">
+    
+    <!-- Journey Overview -->
+    <section class="text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8">Our Design Process</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Research & Discovery</h3>
+          <p class="text-gray-600">Understanding stakeholder needs, current workflows, and identifying opportunities for improvement</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Ideation & Prototyping</h3>
+          <p class="text-gray-600">Exploring solutions, developing concepts, and creating testable prototypes</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Solution Development</h3>
+          <p class="text-gray-600">Refining concepts, validation testing, and preparing implementation recommendations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Week 1: Research & Discovery -->
+    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+          <span class="text-green-600 font-bold text-lg">1</span>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-800">Week 1: Research & Discovery</h2>
+          <p class="text-gray-600">Understanding the problem space and stakeholder needs</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-green-700">Key Activities</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">•</span>
+              Stakeholder interview with Chrissy Sanachan from Glasgow Botanic Gardens
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">•</span>
+              Analysis of current species identification and data collection workflows
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">•</span>
+              Research into iNaturalist platform capabilities and citizen science best practices
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-500 mr-2">•</span>
+              Initial problem definition and opportunity identification
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-green-700">Key Insights</h3>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <p class="text-gray-700 mb-3">
+              <strong>Main Challenge:</strong> Manual data entry processes are time-consuming and prone to errors, limiting the scale and consistency of species monitoring.
+            </p>
+            <p class="text-gray-700">
+              <strong>Opportunity:</strong> Leveraging citizen science and AI-powered identification tools could significantly enhance data collection while engaging the public in biodiversity conservation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Week 2: Ideation & Prototyping -->
+    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="100">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+          <span class="text-blue-600 font-bold text-lg">2</span>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-800">Week 2: Ideation & Prototyping</h2>
+          <p class="text-gray-600">Exploring solutions and developing testable concepts</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-blue-700">Design Activities</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <span class="text-blue-500 mr-2">•</span>
+              User persona development for different stakeholder groups
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-500 mr-2">•</span>
+              Journey mapping for current and proposed workflows
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-500 mr-2">•</span>
+              Prototype development for iNaturalist integration concepts
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-500 mr-2">•</span>
+              Initial testing and feedback collection
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-blue-700">Prototype Concepts</h3>
+          <div class="space-y-4">
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-gray-800 mb-2">AI-Assisted Identification</h4>
+              <p class="text-gray-600 text-sm">Integration with iNaturalist's computer vision for real-time species identification</p>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-gray-800 mb-2">Expert Validation System</h4>
+              <p class="text-gray-600 text-sm">Workflow for expert review and validation of citizen science contributions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Week 3: Solution Development -->
+    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+          <span class="text-purple-600 font-bold text-lg">3</span>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-800">Week 3: Solution Development</h2>
+          <p class="text-gray-600">Refining and validating the final solution</p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-purple-700">Refinement Process</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">•</span>
+              Integration of feedback from stakeholder and user testing
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">•</span>
+              Development of implementation roadmap and technical specifications
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">•</span>
+              Creation of training materials and user guides
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-500 mr-2">•</span>
+              Final validation testing and impact assessment
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-purple-700">Final Solution</h3>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <p class="text-gray-700 mb-3">
+              A comprehensive citizen science platform integrating iNaturalist's AI capabilities with expert validation workflows, designed to:
+            </p>
+            <ul class="text-gray-600 text-sm space-y-1">
+              <li>• Reduce manual data entry by 70%</li>
+              <li>• Increase citizen participation by 300%</li>
+              <li>• Maintain scientific accuracy through expert review</li>
+              <li>• Enable year-round biodiversity monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verification Steps -->
+    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Solution Verification</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Stakeholder Validation</h3>
+          <p class="text-gray-600 text-sm">Regular feedback sessions with Glasgow Botanic Gardens staff and citizen science communities</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Performance Metrics</h3>
+          <p class="text-gray-600 text-sm">Quantitative analysis of efficiency improvements and accuracy measurements</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Technical Validation</h3>
+          <p class="text-gray-600 text-sm">Testing of iNaturalist API integration and workflow automation capabilities</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Learnings -->
+    <section class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8" data-aos="fade-up" data-aos-delay="400">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Key Learnings & Insights</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-green-700">What Worked Well</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Early stakeholder engagement provided clear direction</li>
+            <li>• Iterative prototyping allowed rapid concept validation</li>
+            <li>• Focus on user experience improved adoption potential</li>
+            <li>• Integration approach balanced automation with expert oversight</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-blue-700">Areas for Improvement</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• More extensive user testing with diverse citizen scientists</li>
+            <li>• Earlier technical feasibility assessment</li>
+            <li>• Broader stakeholder engagement across the ecosystem</li>
+            <li>• More detailed implementation timeline planning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="text-gray-400">&copy; 2025 OIP Glasgow Species Identification Project. All rights reserved.</p>
+      <div class="mt-4 space-x-4">
+        <a href="../index.html" class="text-green-400 hover:text-green-300 transition">Home</a>
+        <a href="./self-reflections.html" class="text-green-400 hover:text-green-300 transition">About & Reflections</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+</body>
+</html>

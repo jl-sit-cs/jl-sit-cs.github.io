@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Species Identification Project - Glasgow Botanic Gardens</title>
+  <title>OIP Glasgow Species Identification Project - Documentation</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,45 +17,225 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  
+  <!-- Enhanced Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* Custom colors based on iNaturalist scheme */
+    /* Enhanced Custom Styles for Species Identification Project */
     :root {
-      --inat-green-primary: #73AB00; /* Limeade */
-      --inat-green-dark:    #2E5B00; /* Verdun Green */
-      --inat-peach-light:   #F9C3AB; /* Apricot Peach */
-      --inat-text-dark:     #333333;
-      --inat-text-light:    #f5f5f5;
-    }
-    /* in your <style> */
-    .section-card h2,
-    .section-card p {
-    color: rgba(255,255,255,0.95) !important;
+      --inat-green-primary: #73AB00;
+      --inat-green-dark: #2E5B00;
+      --inat-peach-light: #F9C3AB;
+      --inat-text-dark: #333333;
+      --inat-text-light: #f5f5f5;
+      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
 
-    /* universal link effect */
-    a {
-    display: inline-block;
-    transition: transform 0.2s, color 0.2s;
-    }
-    a:hover {
-    color: var(--inat-peach-light);
-    transform: scale(1.05);
-    }
-
-    .bg-inat-green-primary   { background-color: var(--inat-green-primary); }
-    .text-inat-green-dark    { color: var(--inat-green-dark); }
-    .text-inat-light         { color: var(--inat-text-light); }
-    .hover\:text-inat-green-primary:hover { color: var(--inat-green-primary); }
-    .bg-inat-green-dark      { background-color: var(--inat-green-dark); }
-    .bg-inat-peach-light     { background-color: var(--inat-peach-light); }
-    
     body {
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
       color: var(--inat-text-dark);
+      scroll-behavior: smooth;
+      background-image: url('./media/glasgow%20botanics%20cropped_1479274578.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
-    /* Custom scrollbar */
+
+    /* Enhanced background overlay for better readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Enhanced text readability */
+    .text-enhanced {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Polished section boxes */
+    .section-box {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
+                  0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    .section-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(115, 171, 0, 0.4);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 
+                  0 0 0 1px rgba(115, 171, 0, 0.2) inset,
+                  0 0 30px rgba(115, 171, 0, 0.1);
+    }
+
+    /* White text for all content */
+    .section-box h2,
+    .section-box h3,
+    .section-box h4,
+    .section-box p,
+    .section-box li,
+    .section-box span,
+    .section-box div {
+      color: white !important;
+    }
+
+    /* Enhanced section headers */
+    .section-header {
+      color: white !important;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      border-bottom: 2px solid rgba(115, 171, 0, 0.6);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: rgba(249, 195, 171, 0.8);
+    }
+
+    /* Gamified progress indicators */
+    .progress-ring {
+      transform: rotate(-90deg);
+      transition: all 0.3s ease;
+    }
+
+    .progress-ring:hover {
+      transform: rotate(-90deg) scale(1.1);
+    }
+
+    /* Interactive hover effects */
+    .interactive-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .interactive-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .interactive-card:hover::before {
+      left: 100%;
+    }
+
+    .interactive-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animated badges */
+    .achievement-badge {
+      animation: pulse 2s infinite;
+      transition: all 0.3s ease;
+    }
+
+    .achievement-badge:hover {
+      animation: bounce 0.6s ease;
+      transform: scale(1.2);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 60%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      80% { transform: translateY(-5px); }
+    }
+
+    /* Floating elements */
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Interactive timeline */
+    .timeline-item {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .timeline-item:hover {
+      background: rgba(115, 171, 0, 0.1);
+      transform: translateX(10px);
+      border-left: 4px solid var(--inat-green-primary);
+    }
+
+    /* Ensure background shows through other elements */
+    .bg-gray-50,
+    .bg-white,
+    body > * {
+      background: transparent !important;
+    }
+
+    /* Override any canvas or section backgrounds that might be blocking */
+    canvas,
+    section,
+    main,
+    header,
+    nav {
+      background: transparent !important;
+    }
+
+    /* Enhanced scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -64,11 +244,158 @@
       border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb {
-      background: var(--inat-green-primary);
+      background: linear-gradient(180deg, var(--inat-green-primary), var(--inat-green-dark));
       border-radius: 10px;
+      transition: all 0.3s ease;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--inat-green-dark);
+      background: linear-gradient(180deg, var(--inat-green-dark), #1a3d00);
+    }
+
+    /* Enhanced Navigation */
+    .nav-enhanced {
+      background: linear-gradient(135deg, var(--inat-green-dark) 0%, #1a3d00 100%);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .nav-enhanced.scrolled {
+      background: rgba(46, 91, 0, 0.95);
+      backdrop-filter: blur(20px);
+    }
+
+    .nav-link-enhanced {
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .nav-link-enhanced::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--inat-peach-light);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link-enhanced:hover::before {
+      width: 80%;
+    }
+
+    .nav-link-enhanced:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: var(--inat-peach-light) !important;
+    }
+
+    /* Enhanced Cards */
+    .card-enhanced {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-light);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(115, 171, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--inat-green-primary), var(--inat-peach-light));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .card-enhanced:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-heavy);
+    }
+
+    .card-enhanced:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Enhanced Section Cards */
+    .section-card {
+      background: linear-gradient(135deg, var(--inat-green-primary) 0%, var(--inat-green-dark) 100%);
+      border-radius: 1rem;
+      box-shadow: var(--shadow-medium);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .section-card h2,
+    .section-card p {
+      color: rgba(255,255,255,0.95) !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: var(--shadow-heavy);
+    }
+
+    /* Enhanced universal link effect */
+    a {
+      display: inline-block;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    a:hover {
+      color: var(--inat-peach-light);
+      transform: translateY(-1px);
+    }
+
+    /* Enhanced utility classes */
+    .bg-inat-green-primary { background-color: var(--inat-green-primary); }
+    .text-inat-green-dark { color: var(--inat-green-dark); }
+    .text-inat-light { color: var(--inat-text-light); }
+    .hover\:text-inat-green-primary:hover { color: var(--inat-green-primary); }
+    .bg-inat-green-dark { background-color: var(--inat-green-dark); }
+    .bg-inat-peach-light { background-color: var(--inat-peach-light); }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--inat-green-primary), var(--inat-green-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Enhanced image styles */
+    .image-enhanced {
+      border-radius: 1rem;
+      box-shadow: var(--shadow-medium);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .image-enhanced:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-heavy);
     }
 
     /* General section styling */
@@ -84,22 +411,72 @@
   </style>
 </head>
 
-<body class="min-h-screen bg-gradient-to-b from-[#1E3A00] via-[#2E5B00] to-[#73AB00] text-inat-light">
+<body class="min-h-screen text-inat-light">
 <canvas id="particles"
-        class="fixed inset-0 w-full h-full pointer-events-none -z-10"></canvas>
+        class="fixed inset-0 w-full h-full pointer-events-none -z-10"
+        style="background: transparent !important;"></canvas>
 
-  <!-- Gamified Header -->
-<header class="relative overflow-hidden bg-gradient-to-r from-[#2E5B00] via-[#73AB00] to-[#2E5B00] text-inat-light py-16 px-4 rounded-b-3xl shadow-2xl transform hover:scale-105 transition duration-500">
-  <div class="max-w-4xl mx-auto text-center">
-    <h1 class="text-5xl font-extrabold drop-shadow-lg animate-pulse">
-      Species Identification Project
-    </h1>
-    <p class="mt-2 text-xl font-light drop-shadow-sm">
-      Empowering Citizen Science at Glasgow Botanic Gardens
-    </p>
+  <!-- Enhanced Interactive Header -->
+<header class="bg-gradient-to-r from-[#2E5B00] to-[#73AB00] text-white py-12 px-4 relative overflow-hidden">
+  <div class="absolute inset-0 bg-black/30"></div>
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="text-center mb-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-enhanced floating animate__animated animate__fadeInDown">
+        🌿 OIP Glasgow Species Identification Project 🔬
+      </h1>
+      <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto text-enhanced animate__animated animate__fadeInUp animate__delay-1s">
+        Enhancing biodiversity data collection through citizen science and AI-powered species identification at Glasgow Botanic Gardens
+      </p>
+    </div>
+    
+    <!-- Interactive Project Stats with Progress -->
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="interactive-card bg-white/20 backdrop-blur-sm rounded-lg p-6 text-center achievement-badge">
+        <div class="relative mb-4">
+          <svg class="progress-ring w-16 h-16 mx-auto" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="16" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            <circle cx="18" cy="18" r="16" fill="none" stroke="#73AB00" stroke-width="2" 
+                    stroke-dasharray="100, 100" stroke-linecap="round"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-2xl">⏱️</span>
+          </div>
+        </div>
+        <div class="text-2xl font-bold text-enhanced">3 Weeks</div>
+        <div class="text-sm opacity-90 text-enhanced">Project Duration</div>
+      </div>
+      
+      <div class="interactive-card bg-white/20 backdrop-blur-sm rounded-lg p-6 text-center achievement-badge">
+        <div class="relative mb-4">
+          <svg class="progress-ring w-16 h-16 mx-auto" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="16" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            <circle cx="18" cy="18" r="16" fill="none" stroke="#F9C3AB" stroke-width="2" 
+                    stroke-dasharray="100, 100" stroke-linecap="round"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-2xl">👥</span>
+          </div>
+        </div>
+        <div class="text-2xl font-bold text-enhanced">6 Members</div>
+        <div class="text-sm opacity-90 text-enhanced">Team Size</div>
+      </div>
+      
+      <div class="interactive-card bg-white/20 backdrop-blur-sm rounded-lg p-6 text-center achievement-badge">
+        <div class="relative mb-4">
+          <svg class="progress-ring w-16 h-16 mx-auto" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="16" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            <circle cx="18" cy="18" r="16" fill="none" stroke="#2E5B00" stroke-width="2" 
+                    stroke-dasharray="100, 100" stroke-linecap="round"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-2xl">✅</span>
+          </div>
+        </div>
+        <div class="text-2xl font-bold text-enhanced">Complete</div>
+        <div class="text-sm opacity-90 text-enhanced">Project Status</div>
+      </div>
+    </div>
   </div>
-  <!-- Neon bounce bar -->
-  <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-2 bg-white opacity-50 rounded-full animate-bounce"></div>
 </header>
 
   <!-- NAVBAR -->
@@ -111,15 +488,15 @@
     <div class="flex justify-between items-center h-16">
 
       <!-- Brand -->
-      <a href="./index.html" class="flex items-center text-2xl font-bold text-inat-light hover:text-inat-peach-light transition">
-        <img src="./media/icon.png" alt="Glasgow Green Guide Icon" class="w-8 h-8 mr-2">
-        Glasgow Green Guide
+      <a href="./index.html" class="flex items-center text-xl font-bold text-inat-light hover:text-inat-peach-light transition">
+        <img src="./media/icon.png" alt="OIP Project Icon" class="w-8 h-8 mr-2">
+        OIP Species Project
       </a>
 
       <!-- Desktop menu -->
-      <div class="hidden md:flex space-x-8 items-center">
+      <div class="hidden md:flex space-x-6 items-center">
         <a href="./index.html"
-           class="text-inat-light font-semibold hover:text-inat-peach-light transition">
+           class="text-inat-light font-medium hover:text-inat-peach-light transition">
           Home
         </a>
 
@@ -132,28 +509,34 @@
                     clip-rule="evenodd"/>
             </svg>
           </button>
-          <div class="absolute left-0 mt-2 w-40 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+          <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50">
             <a href="./gh-pages/week1.html" class="block px-4 py-2 text-black hover:bg-gray-100">
-              Week 1
+              Week 1 - Research & Discovery
             </a>
             <a href="./gh-pages/week2.html" class="block px-4 py-2 text-black hover:bg-gray-100">
-              Week 2
+              Week 2 - Ideation & Prototyping
             </a>
             <a href="./gh-pages/week3.html" class="block px-4 py-2 text-black hover:bg-gray-100">
-              Week 3
+              Week 3 - Solution Development
             </a>
           </div>
         </div>
 
-        <a href="./gh-pages/about.html"
-           class="text-inat-light font-semibold hover:text-inat-peach-light transition">
-          About Us
+        <a href="./gh-pages/design-journey.html"
+           class="text-inat-light font-medium hover:text-inat-peach-light transition">
+          Design Journey
         </a>
 
+        <a href="./gh-pages/self-reflections.html"
+           class="text-inat-light font-medium hover:text-inat-peach-light transition">
+          About & Reflections
+        </a>
+
+
         <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
-           class="flex items-center text-inat-light hover:text-inat-peach-light transition">
-          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 …"/>
+           class="flex items-center bg-white/20 hover:bg-white/30 text-inat-light px-3 py-1 rounded-md transition">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
           </svg>
           GitHub
         </a>
@@ -194,8 +577,8 @@
           Week 3
         </a>
       </div>
-      <a href="./gh-pages/about.html" class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
-        About Us
+      <a href="./gh-pages/self-reflections.html" class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
+        About & Reflections
       </a>
       <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
          class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
@@ -217,145 +600,469 @@
     }
   </script>
 
-  <main class="max-w-4xl mx-auto py-12 px-4 space-y-12">
-    <!-- Project Overview -->
-    <section id="overview" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
-                 shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
-                 border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-inat-green-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-        Project Overview
+  <main class="max-w-6xl mx-auto py-12 px-4 space-y-12">
+    
+    <!-- Enhanced Problem Statement -->
+    <section id="problem" class="section-box" data-aos="fade-up">
+      <h2 class="section-header text-3xl font-bold mb-6">
+        🎯 Problem Statement & Challenge
       </h2>
-      <p class="mb-4">
-        Glasgow City Council (GCC) is committed to its Biodiversity Action Plan,
-        requiring accurate and regular data on plant and wildlife species across the city.
-        The Glasgow Botanic Gardens, a key site, hosts both cultivated and native species.
-        Currently, species identification and data entry are largely manual, leading to
-        inefficiencies.
-      </p>
-      <p>
-        This project aims to streamline the process of recording biological sightings,
-        reduce manual data entry, and expand citizen participation through the iNaturalist app,
-        ensuring continuous data collection year-round.
-      </p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <span class="text-2xl mr-3">⚠️</span>
+            Current Challenges
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-red-400 mr-3 text-xl">🔴</span>
+              Manual species recording and data entry processes
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-400 mr-3 text-xl">⏰</span>
+              Time-consuming and error-prone workflows
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-400 mr-3 text-xl">👥</span>
+              Limited citizen participation in data collection
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-400 mr-3 text-xl">📊</span>
+              Inconsistent year-round monitoring
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <span class="text-2xl mr-3">💡</span>
+            Project Goal
+          </h3>
+          <div class="bg-green-800/30 backdrop-blur-sm p-4 rounded-lg mb-4 border border-green-400/30">
+            <p class="font-semibold text-lg">
+              "How might we encourage citizens and visitors to collect more sighting data to improve their understanding and educate about species characteristics while maintaining efficient scientific records?"
+            </p>
+          </div>
+          <p class="mt-4">
+            <span class="text-green-300 font-semibold">🎯 Goal:</span> Streamline species identification and data collection at Glasgow Botanic Gardens through citizen science and AI-powered tools.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Timeline -->
-    <section id="timeline" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
-                 shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
-                 border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-             data-aos="fade-up" data-aos-delay="100">
-      <h2 class="text-3xl font-bold text-inat-green-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-        Timeline
+    <!-- Enhanced Project Overview -->
+    <section id="overview" class="section-box" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="section-header text-3xl font-bold mb-6">
+        🌿 Project Overview & Vision
       </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <span class="text-2xl mr-3">🎯</span>
+            Our Mission
+          </h3>
+          <p class="mb-4">
+            This project aims to enhance species recording by reducing manual data entry and leveraging citizen science tools like iNaturalist. The system encourages collaborative recording throughout the year while preserving expert review where needed.
+          </p>
+          <div class="bg-green-800/30 backdrop-blur-sm p-4 rounded-lg border border-green-400/30">
+            <h4 class="font-semibold mb-2 flex items-center">
+              <span class="text-lg mr-2">🌱</span>
+              Key Focus Areas
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <span class="text-green-400 mr-2">•</span>
+                Streamline data collection workflows
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-2">•</span>
+                Integrate citizen science participation
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-400 mr-2">•</span>
+                Maintain scientific accuracy and validation
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <span class="text-2xl mr-3">📈</span>
+            Expected Impact
+          </h3>
+          <p class="mb-4">
+            Enable continuous year-round data collection while maintaining expert validation and improving biodiversity monitoring accuracy at Glasgow Botanic Gardens.
+          </p>
+          <div class="bg-blue-800/30 backdrop-blur-sm p-4 rounded-lg border border-blue-400/30">
+            <h4 class="font-semibold mb-2 flex items-center">
+              <span class="text-lg mr-2">🚀</span>
+              Project Benefits
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">•</span>
+                Reduced manual workload for staff
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">•</span>
+                Increased community engagement
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-400 mr-2">•</span>
+                Enhanced data quality and coverage
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="relative border-l-4 border-inat-green-primary pl-6 space-y-8">
-        <div class="relative" data-aos="fade-up" data-aos-delay="200">
-          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-          <h3 class="text-xl font-semibold left-indent">Requirement Gathering</h3>
-          <p class="text-sm text-gray-500 mb-1">22/07/2025 - 22/07/2025</p>
-          <p class="text-gray-700">
-            The project team will meet with stakeholder (Chrissy) to gather requirements and understand
-            the specific needs for species identification and data collection at the Glasgow Botanic
-            Gardens.
+    <!-- Enhanced Our Approach -->
+    <section id="approach" class="section-box" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="section-header text-3xl font-bold mb-6">
+        🔬 Our Methodology & Approach
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <span class="text-2xl mr-3">👥</span>
+            User-Centered Design
+          </h3>
+          <p class="mb-4">
+            Our team approached this challenge through a comprehensive three-week design process, combining user research, stakeholder engagement, and iterative prototyping to develop a citizen science solution.
           </p>
+          <div class="bg-purple-800/30 backdrop-blur-sm p-4 rounded-lg border border-purple-400/30">
+            <h4 class="font-semibold mb-2 flex items-center">
+              <span class="text-lg mr-2">🔍</span>
+              Research Methods
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">•</span>
+                Stakeholder interviews and analysis
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">•</span>
+                Workflow observation and mapping
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-400 mr-2">•</span>
+                User journey documentation
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="relative" data-aos="fade-up" data-aos-delay="300">
-          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-          <h3 class="text-xl font-semibold left-indent">Pitch Video 1</h3>
-          <p class="text-sm text-gray-500 mb-1">22/07/2025 - 25/07/2025</p>
-          <p class="text-gray-700">
-            The team will craft an insightful pitch video based on reflections on two key elements:
-            one from talking to users or stakeholders, and one from building a prototype.
+        <div>
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <span class="text-2xl mr-3">🔄</span>
+            Iterative Development
+          </h3>
+          <p class="mb-4">
+            Through rapid prototyping and continuous feedback loops, we refined our solutions to ensure they meet both user needs and technical requirements.
           </p>
+          <div class="bg-orange-800/30 backdrop-blur-sm p-4 rounded-lg border border-orange-400/30">
+            <h4 class="font-semibold mb-2 flex items-center">
+              <span class="text-lg mr-2">⚡</span>
+              Design Process
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">•</span>
+                Rapid prototyping and testing
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">•</span>
+                Continuous stakeholder feedback
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-400 mr-2">•</span>
+                Iterative solution refinement
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="relative" data-aos="fade-up" data-aos-delay="400">
-          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-          <h3 class="text-xl font-semibold left-indent">Pitch Video 2</h3>
-          <p class="text-sm text-gray-500 mb-1">26/07/2025 - 01/08/2025</p>
-          <p class="text-gray-700">
-            The team will create a second pitch video that builds on the first, incorporating feedback
-            and additional insights.
-          </p>
+      </div>
+    </section>
+
+    <!-- Enhanced Project Timeline -->
+    <section id="timeline" class="section-box" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="section-header text-3xl font-bold mb-6">
+        📅 Project Timeline & Milestones
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <span class="text-2xl mr-3">📋</span>
+            Detailed Project Milestones
+          </h3>
+          <div class="space-y-4">
+            <div class="bg-green-800/30 backdrop-blur-sm p-4 rounded-lg border border-green-400/30" data-aos="fade-up" data-aos-delay="200">
+              <div class="flex items-center mb-2">
+                <div class="w-4 h-4 bg-green-400 rounded-full mr-3 floating"></div>
+                <h4 class="text-lg font-semibold">Requirement Gathering</h4>
+              </div>
+              <p class="text-sm text-green-400 font-medium mb-2">July 22, 2025</p>
+              <p class="text-sm">
+                Initial stakeholder meeting with Chrissy Sanachan to understand specific needs for species identification and data collection at Glasgow Botanic Gardens.
+              </p>
+            </div>
+            
+            <div class="bg-blue-800/30 backdrop-blur-sm p-4 rounded-lg border border-blue-400/30" data-aos="fade-up" data-aos-delay="300">
+              <div class="flex items-center mb-2">
+                <div class="w-4 h-4 bg-blue-400 rounded-full mr-3 floating" style="animation-delay: 0.3s;"></div>
+                <h4 class="text-lg font-semibold">First Pitch Video</h4>
+              </div>
+              <p class="text-sm text-blue-400 font-medium mb-2">July 22-25, 2025</p>
+              <p class="text-sm">
+                Development of initial pitch video incorporating stakeholder insights and early prototype findings.
+              </p>
+            </div>
+            
+            <div class="bg-purple-800/30 backdrop-blur-sm p-4 rounded-lg border border-purple-400/30" data-aos="fade-up" data-aos-delay="400">
+              <div class="flex items-center mb-2">
+                <div class="w-4 h-4 bg-purple-400 rounded-full mr-3 floating" style="animation-delay: 0.6s;"></div>
+                <h4 class="text-lg font-semibold">Second Pitch Video</h4>
+              </div>
+              <p class="text-sm text-purple-400 font-medium mb-2">July 26 - August 1, 2025</p>
+              <p class="text-sm">
+                Refined pitch video incorporating feedback and additional research insights from the development process.
+              </p>
+            </div>
+            
+            <div class="bg-orange-800/30 backdrop-blur-sm p-4 rounded-lg border border-orange-400/30" data-aos="fade-up" data-aos-delay="500">
+              <div class="flex items-center mb-2">
+                <div class="w-4 h-4 bg-orange-400 rounded-full mr-3 floating" style="animation-delay: 0.9s;"></div>
+                <h4 class="text-lg font-semibold">Poster Report</h4>
+              </div>
+              <p class="text-sm text-orange-400 font-medium mb-2">August 1-5, 2025</p>
+              <p class="text-sm">
+                Creation of comprehensive poster summarizing project findings, methodologies, and final outcomes.
+              </p>
+            </div>
+            
+            <div class="bg-red-800/30 backdrop-blur-sm p-4 rounded-lg border border-red-400/30" data-aos="fade-up" data-aos-delay="600">
+              <div class="flex items-center mb-2">
+                <div class="w-4 h-4 bg-red-400 rounded-full mr-3 floating" style="animation-delay: 1.2s;"></div>
+                <h4 class="text-lg font-semibold">Website Documentation</h4>
+              </div>
+              <p class="text-sm text-red-400 font-medium mb-2">August 1-8, 2025</p>
+              <p class="text-sm">
+                Development of comprehensive website documentation detailing the complete project journey, methodologies, and outcomes.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="relative" data-aos="fade-up" data-aos-delay="500">
-          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-          <h3 class="text-xl font-semibold left-indent">Poster Report</h3>
-          <p class="text-sm text-gray-500 mb-1">01/08/2025 - 05/08/2025</p>
-          <p class="text-gray-700">
-            The team will create a poster report summarizing the project findings, methodologies, and outcomes.
-          </p>
-        </div>
-        <div class="relative" data-aos="fade-up" data-aos-delay="600">
-          <div class="absolute w-4 h-4 bg-inat-green-primary rounded-full -left-2 top-1"></div>
-          <h3 class="text-xl font-semibold left-indent">Website Report Development</h3>
-          <p class="text-sm text-gray-500 mb-1">01/08/2025 - 08/08/2025</p>
-          <p class="text-gray-700">
-            The team will develop a comprehensive website report detailing the project details, methodologies,
-            and outcomes.
-          </p>
+        <div>
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <span class="text-2xl mr-3">🎯</span>
+            Key Deliverables
+          </h3>
+          <div class="space-y-4">
+            <div class="bg-teal-800/30 backdrop-blur-sm p-4 rounded-lg border border-teal-400/30">
+              <h4 class="font-semibold mb-2 flex items-center">
+                <span class="text-lg mr-2">📋</span>
+                Research Outputs
+              </h4>
+              <ul class="space-y-1 text-sm">
+                <li class="flex items-start">
+                  <span class="text-teal-400 mr-2">•</span>
+                  Stakeholder analysis report
+                </li>
+                <li class="flex items-start">
+                  <span class="text-teal-400 mr-2">•</span>
+                  Current workflow documentation
+                </li>
+                <li class="flex items-start">
+                  <span class="text-teal-400 mr-2">•</span>
+                  User requirements specification
+                </li>
+              </ul>
+            </div>
+            <div class="bg-indigo-800/30 backdrop-blur-sm p-4 rounded-lg border border-indigo-400/30">
+              <h4 class="font-semibold mb-2 flex items-center">
+                <span class="text-lg mr-2">🎨</span>
+                Design Deliverables
+              </h4>
+              <ul class="space-y-1 text-sm">
+                <li class="flex items-start">
+                  <span class="text-indigo-400 mr-2">•</span>
+                  Interactive prototypes
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-400 mr-2">•</span>
+                  User journey maps
+                </li>
+                <li class="flex items-start">
+                  <span class="text-indigo-400 mr-2">•</span>
+                  Implementation roadmap
+                </li>
+              </ul>
+            </div>
+            <div class="bg-pink-800/30 backdrop-blur-sm p-4 rounded-lg border border-pink-400/30">
+              <h4 class="font-semibold mb-2 flex items-center">
+                <span class="text-lg mr-2">🚀</span>
+                Final Outcomes
+              </h4>
+              <ul class="space-y-1 text-sm">
+                <li class="flex items-start">
+                  <span class="text-pink-400 mr-2">•</span>
+                  Validated solution concept
+                </li>
+                <li class="flex items-start">
+                  <span class="text-pink-400 mr-2">•</span>
+                  Stakeholder approval
+                </li>
+                <li class="flex items-start">
+                  <span class="text-pink-400 mr-2">•</span>
+                  Implementation guidelines
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-    <footer>
-  <!-- Top part: neon-gradient panels -->
-  <div class="bg-gradient-to-r from-[#2e5b00] via-[#73AB00] to-[#2e5b00] text-inat-light py-12">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
-      <!-- Panel 1 -->
-      <div class="bg-[#1E3A00] rounded-2xl p-6 transform hover:scale-105 transition">
-        <h4 class="text-2xl font-bold mb-4">Useful Links</h4>
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8">
+      
+      <!-- Project Resources -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-green-400">Project Resources</h4>
         <ul class="space-y-2 text-sm">
           <li>
-            <a href="https://glasgowbotanicgardens.com/" target="_blank"
-               class="flex items-center hover:text-inat-peach-light transition">
-              <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
-              Glasgow Botanic Gardens
+            <a href="./media/04SpeciesIdentification.pdf" target="_blank" 
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Project Poster
             </a>
           </li>
           <li>
-            <a href="https://www.inaturalist.org/projects/city-nature-challenge-2025-greater-glasgow"
-               target="_blank" class="flex items-center hover:text-inat-peach-light transition">
-              <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
-              City Nature Challenge 2025
+            <a href="./media/group09_week1_pitch.mp4" target="_blank"
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+              Pitch Video
             </a>
           </li>
           <li>
-            <a href="https://glasgownaturalhistory.org.uk/bio_sites.html"
-               target="_blank" class="flex items-center hover:text-inat-peach-light transition">
-              <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
-              Glasgow Natural History Society
+            <a href="./gh-pages/design-journey.html"
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+              </svg>
+              Design Journey
+            </a>
+          </li>
+          <li>
+            <a href="./gh-pages/self-reflections.html"
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+              Self Reflections
             </a>
           </li>
         </ul>
       </div>
-      <!-- Panel 2 -->
-      <div class="bg-[#1E3A00] rounded-2xl p-6 transform hover:scale-105 transition">
-        <h4 class="text-2xl font-bold mb-4">Contact</h4>
-        <p class="font-semibold mb-1">Chrissy Sanachan</p>
-        <p class="mb-4">Friends of Glasgow Botanic Gardens</p>
-        <a href="mailto:chrissy@glasgowbotanicgardens.com"
-           class="inline-flex items-center hover:text-inat-peach-light transition">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M2 4h20v16H2z" fill="none"/>
-            <path d="M22 6l-10 7L2 6v12h20z"/>
-          </svg>
-          chrissy@glasgowbotanicgardens.com
-        </a>
+
+      <!-- External Resources -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-green-400">External Resources</h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="https://www.inaturalist.org/" target="_blank" 
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+              </svg>
+              iNaturalist Platform
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+              </svg>
+              GitHub Repository
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Weekly Documentation -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-green-400">Weekly Documentation</h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="./gh-pages/week1.html"
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+              Week 1: Discovery
+            </a>
+          </li>
+          <li>
+            <a href="./gh-pages/week2.html"
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+              Week 2: Ideation
+            </a>
+          </li>
+          <li>
+            <a href="./gh-pages/week3.html"
+               class="hover:text-green-400 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              Week 3: Implementation
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Team Information -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-green-400">Team Information</h4>
+        <div class="space-y-3 text-sm">
+          <div>
+            <p class="font-medium text-white">Group 9</p>
+            <p class="text-gray-400">Species Identification Project</p>
+          </div>
+          <div>
+            <p class="font-medium text-white">Glasgow Botanic Gardens</p>
+            <p class="text-gray-400">Citizen Science Initiative</p>
+          </div>
+          <div class="mt-4">
+            <a href="./gh-pages/self-reflections.html"
+               class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm transition">
+              Meet the Team
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bottom bar: subtle neon pulse -->
-  <div class="bg-inat-green-primary bg-opacity-40 py-4">
-    <div class="max-w-4xl mx-auto text-center text-xs text-inat-light animate-pulse">
-      <p>&copy; 2025 Species Identification Project. All rights reserved.</p>
-      <p>Designed with <span class="text-red-400">&hearts;</span> and iNaturalist colors.</p>
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+      <p class="text-gray-400">
+        &copy; 2025 Species Identification Project - Group 9. All rights reserved.
+      </p>
+      <p class="text-sm text-gray-500 mt-1">
+        Built with passion for biodiversity and citizen science.
+      </p>
     </div>
+  </div>
+</footer>
   </div>
 </footer>
 
