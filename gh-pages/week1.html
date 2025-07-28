@@ -2,52 +2,81 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Species Identification Project - Week 1</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- AOS CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     :root {
       --inat-green-primary: #73AB00;
-      --inat-green-dark:    #2E5B00;
-      --inat-peach-light:   #F9C3AB;
-      --inat-text-dark:     #333333;
-      --inat-text-light:    #f5f5f5;
+      --inat-green-dark: #2E5B00;
+      --inat-peach-light: #F9C3AB;
+      --inat-text-dark: #333333;
+      --inat-text-light: #f5f5f5;
     }
+
     body {
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
       color: var(--inat-text-dark);
     }
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb { background: var(--inat-green-primary); border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--inat-green-dark); }
 
-    .bg-inat-green-primary { background-color: var(--inat-green-primary); }
-    .bg-inat-green-dark    { background-color: var(--inat-green-dark); }
-    .bg-inat-peach-light   { background-color: var(--inat-peach-light); }
-    .text-inat-green-dark  { color: var(--inat-green-dark); }
-    .text-inat-light       { color: var(--inat-text-light); }
-    .border-inat-green-primary { border-color: var(--inat-green-primary); }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--inat-green-primary);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--inat-green-dark);
+    }
+
+    .bg-inat-green-primary {
+      background-color: var(--inat-green-primary);
+    }
+
+    .bg-inat-green-dark {
+      background-color: var(--inat-green-dark);
+    }
+
+    .bg-inat-peach-light {
+      background-color: var(--inat-peach-light);
+    }
+
+    .text-inat-green-dark {
+      color: var(--inat-green-dark);
+    }
+
+    .text-inat-light {
+      color: var(--inat-text-light);
+    }
+
+    .border-inat-green-primary {
+      border-color: var(--inat-green-primary);
+    }
 
     /* universal link effect */
     a {
       display: inline-block;
       transition: transform 0.2s, color 0.2s;
     }
+
     a:hover {
       color: var(--inat-peach-light);
       transform: scale(1.05);
@@ -56,146 +85,138 @@
     /* somewhere in your <head> <style> block */
     .photo-frame {
       display: inline-block;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255, 255, 255, 0.8);
       padding: 0.2rem;
       border: 4px solid white;
       border-radius: 0.5rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       margin: 1.5rem auto;
     }
+
     .photo-frame img {
       display: block;
       max-width: 100%;
       border-radius: 0.25rem;
     }
-
   </style>
 </head>
 
 <body class="min-h-screen bg-gradient-to-b from-[#1E3A00] via-[#2E5B00] to-[#73AB00] text-inat-light">
-<canvas id="particles"
-        class="fixed inset-0 w-full h-full pointer-events-none -z-10"></canvas>
+  <canvas id="particles" class="fixed inset-0 w-full h-full pointer-events-none -z-10"></canvas>
   <!-- Gamified Header -->
-<header class="relative overflow-hidden bg-gradient-to-r from-[#2E5B00] via-[#73AB00] to-[#2E5B00] text-inat-light py-16 px-4 rounded-b-3xl shadow-2xl transform hover:scale-105 transition duration-500">
-  <div class="max-w-4xl mx-auto text-center">
-    <h1 class="text-5xl font-extrabold drop-shadow-lg animate-pulse">
-      Species Identification Project
-    </h1>
-    <p class="mt-2 text-xl font-light drop-shadow-sm">
-      Empowering Citizen Science at Glasgow Botanic Gardens
-    </p>
-  </div>
-  <!-- Neon bounce bar -->
-  <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-2 bg-white opacity-50 rounded-full animate-bounce"></div>
-</header>
+  <header
+    class="relative overflow-hidden bg-gradient-to-r from-[#2E5B00] via-[#73AB00] to-[#2E5B00] text-inat-light py-16 px-4 rounded-b-3xl shadow-2xl transform hover:scale-105 transition duration-500">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-5xl font-extrabold drop-shadow-lg animate-pulse">
+        Species Identification Project
+      </h1>
+      <p class="mt-2 text-xl font-light drop-shadow-sm">
+        Empowering Citizen Science at Glasgow Botanic Gardens
+      </p>
+    </div>
+    <!-- Neon bounce bar -->
+    <div
+      class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-2 bg-white opacity-50 rounded-full animate-bounce">
+    </div>
+  </header>
 
 
   <!-- Navbar -->
-<nav
-  class="sticky top-0 z-10 bg-[#1E3A00]/80 backdrop-blur-sm shadow-2xl"
-  data-aos="fade-down" data-aos-delay="100"
->
-  <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-    <!-- Brand -->
-    <a href="../index.html" class="flex items-center text-2xl font-bold text-inat-light hover:text-inat-peach-light transition">
+  <nav class="sticky top-0 z-10 bg-[#1E3A00]/80 backdrop-blur-sm shadow-2xl" data-aos="fade-down" data-aos-delay="100">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+      <!-- Brand -->
+      <a href="../index.html"
+        class="flex items-center text-2xl font-bold text-inat-light hover:text-inat-peach-light transition">
         <img src="../media/icon.png" alt="Glasgow Green Guide Icon" class="w-8 h-8 mr-2">
         Glasgow Green Guide
-    </a>
-
-    <!-- Desktop menu -->
-    <div class="hidden md:flex space-x-8 items-center">
-      <a href="../index.html"
-         class="text-inat-light font-semibold hover:text-inat-peach-light transition">
-        Home
       </a>
 
-      <div class="relative group">
-        <button class="flex items-center text-inat-light hover:text-inat-peach-light transition focus:outline-none">
-          Weekly Journal
-          <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
-                  clip-rule="evenodd"/>
-          </svg>
-        </button>
-        <div class="absolute left-0 mt-2 w-40 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-          <a href="week1.html"
-             class="block px-4 py-2 text-black hover:bg-gray-100 transition">
-            Week 1
-          </a>
-          <a href="week2.html"
-             class="block px-4 py-2 text-black hover:bg-gray-100 transition">
-            Week 2
-          </a>
-          <a href="week3.html"
-             class="block px-4 py-2 text-black hover:bg-gray-100 transition">
-            Week 3
-          </a>
+      <!-- Desktop menu -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="../index.html" class="text-inat-light font-semibold hover:text-inat-peach-light transition">
+          Home
+        </a>
+
+        <div class="relative group">
+          <button class="flex items-center text-inat-light hover:text-inat-peach-light transition focus:outline-none">
+            Weekly Journal
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-40 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+            <a href="week1.html" class="block px-4 py-2 text-black hover:bg-gray-100 transition">
+              Week 1
+            </a>
+            <a href="week2.html" class="block px-4 py-2 text-black hover:bg-gray-100 transition">
+              Week 2
+            </a>
+            <a href="week3.html" class="block px-4 py-2 text-black hover:bg-gray-100 transition">
+              Week 3
+            </a>
+          </div>
         </div>
-      </div>
 
-      <a href="about.html"
-         class="text-inat-light font-semibold hover:text-inat-peach-light transition">
-        About Us
-      </a>
+        <a href="about.html" class="text-inat-light font-semibold hover:text-inat-peach-light transition">
+          About Us
+        </a>
 
-      <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
-           class="flex items-center text-inat-light hover:text-inat-peach-light transition">
+        <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
+          class="flex items-center text-inat-light hover:text-inat-peach-light transition">
           <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 …"/>
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 …" />
           </svg>
           GitHub
         </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Mobile hamburger -->
-    <div class="md:hidden">
-      <button id="menu-btn" class="focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
+    <!-- Mobile menu -->
+    <div id="menu" class="hidden md:hidden bg-[#1E3A00]/90">
+      <a href="../index.html"
+        class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
+        Home
+      </a>
+      <button onclick="toggleSubmenu()"
+        class="w-full text-left px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition flex justify-between items-center">
+        Weekly Journal
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M5.23…" />
         </svg>
       </button>
-    </div>
-  </div>
-
-  <!-- Mobile menu -->
-  <div id="menu" class="hidden md:hidden bg-[#1E3A00]/90">
-    <a href="../index.html"
-       class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
-      Home
-    </a>
-    <button onclick="toggleSubmenu()"
-            class="w-full text-left px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition flex justify-between items-center">
-      Weekly Journal
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M5.23…"/>
-      </svg>
-    </button>
-    <div id="submenu" class="hidden">
-      <a href="week1.html"
-         class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
-        Week 1
+      <div id="submenu" class="hidden">
+        <a href="week1.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
+          Week 1
+        </a>
+        <a href="week2.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
+          Week 2
+        </a>
+        <a href="week3.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
+          Week 3
+        </a>
+      </div>
+      <a href="about.html"
+        class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
+        About Us
       </a>
-      <a href="week2.html"
-         class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
-        Week 2
-      </a>
-      <a href="week3.html"
-         class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
-        Week 3
+      <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
+        class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
+        GitHub
       </a>
     </div>
-    <a href="about.html"
-       class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
-      About Us
-    </a>
-    <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
-       class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
-      GitHub
-    </a>
-  </div>
-</nav>
+  </nav>
 
   <script>
     document.getElementById('menu-btn').addEventListener('click', () => {
@@ -206,40 +227,38 @@
     }
   </script>
 
-    <main class="max-w-4xl mx-auto py-12 px-4 space-y-12">
-         <h1 class="text-4xl font-extrabold text-inat-light mb-8">
-            Week 1: Understanding the Problem Space
-        </h1>
-        <section id="initial-idea" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+  <main class="max-w-4xl mx-auto py-12 px-4 space-y-12">
+    <h1 class="text-4xl font-extrabold text-inat-light mb-8">
+      Week 1: Understanding the Problem Space
+    </h1>
+    <section id="initial-idea" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
                  shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
                  border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
-                Initial Idea
-            </h2>
-            Our initial idea was to create a tool that used Artificial Intelligence (AI) to assist with
-            species identification and data collection in the Glasgow Botanic Gardens. Additionally, we aimed to
-            improve the system utilizing a user-friendly interface and seamless integration with existing platforms
-            after reading the project brief.
-            However, we quickly realized that the main way of building a tool is not creating the tool itself just from
-            the brief
-            but rather in-depth understanding of the user needs, the context of use, and the specific challenges faced
-            by the citizen scientists.
-        </section>
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
+        Initial Idea
+      </h2>
+      Our initial idea was to create a tool that used Artificial Intelligence (AI) to assist with
+      species identification and data collection in the Glasgow Botanic Gardens. Additionally, we aimed to
+      improve the system utilizing a user-friendly interface and seamless integration with existing platforms
+      after reading the project brief.
+      However, we quickly realized that the main way of building a tool is not creating the tool itself just from
+      the brief
+      but rather in-depth understanding of the user needs, the context of use, and the specific challenges faced
+      by the citizen scientists.
+    </section>
 
-        <section id="design-thinking" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+    <section id="design-thinking" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
                  shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
                  border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
-                Our Design Thinking Process
-            </h2>
-            To be able to tackle the issues that the stakeholders are facing, we used the Double Diamond Process
-            framework to guide our design process. Through this framework, the team were able to get more
-            clarity on the problem space and user needs.
-            <!-- <p class="mb-6">
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
+        Our Design Thinking Process
+      </h2>
+      To be able to tackle the issues that the stakeholders are facing, we used the Double Diamond Process
+      framework to guide our design process. Through this framework, the team were able to get more
+      clarity on the problem space and user needs.
+      <!-- <p class="mb-6">
                 Our approach to solving this challenge followed a human-centered design thinking methodology,
                 ensuring the solution is both effective and user-friendly.
             </p>
@@ -287,332 +306,399 @@
                     </p>
                 </div>
             </div> -->
-        </section>
+    </section>
 
-        <section id="client-requirement" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+    <section id="gathering-ideas" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl">
+
+      <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
+        Gathering Ideas
+      </h2>
+
+      To effectively prompt the customer into giving the right answer for our question asked, we used "how might we"
+      framework to craft open ended questions. By doing so, it uncovers underlying issues and clarifies ambiguous points
+      from project plan such
+      as having multiple stakeholders to deal with.
+    </section>
+
+    <section id="client-requirement" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
                  shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
                  border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
-                Client Requirements
-            </h2>
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
+        Client Requirements
+      </h2>
 
-            After meeting with our client, Chrissy Sanachan from the Friends of Glasgow Botanic Gardens, we have quickly
-            noted
-            down
-            the necessary requirements for the project and identify key insights from the pain points and derived goals.
-            From
-            these discussions, the project aims needs to meet the following concerns:
-            <br>
-            <ul class="list-disc list-inside space-y-2">
-                <li>Preferably little to no budget</li>
-                <li>Helps streamline process for Dr Richard.</li>
-                <li>MSpecies recording for Botanical Gardens.</li>
-                <li>Integrate with existing platforms like iNaturalist as a way of verification.</li>
-                <li>Provide educational resources for users.</li>
-                <li>Realized focus was too much on the tool, not the people.</li>
-                <li>Support verifiers via community + expert input.</li>
-            </ul>
-        </section>
+      After meeting with our client, Chrissy Sanachan from the Friends of Glasgow Botanic Gardens, we have quickly
+      noted
+      down
+      the necessary requirements for the project and identify key insights from the pain points and derived goals.
+      From
+      these discussions, the project aims needs to meet the following concerns:
+      <br>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Preferably little to no budget</li>
+        <li>Helps streamline process for Dr Richard.</li>
+        <li>MSpecies recording for Botanical Gardens.</li>
+        <li>Integrate with existing platforms like iNaturalist as a way of verification.</li>
+        <li>Provide educational resources for users.</li>
+        <li>Realized focus was too much on the tool, not the people.</li>
+        <li>Support verifiers via community + expert input.</li>
+      </ul>
+    </section>
 
 
-        <section id="problem-statement" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+    <section id="problem-statement" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
                  shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
                  border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
-                Problem Statement
-            </h2>
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
+        Revised Problem Statement from Client
+      </h2>
 
-            How might we encourage citizens and visitors to collect more sighting data to improve their understanding
-            and educate about their characteristics while maintaining efficient scientific records.
-        </section>
+      How might we encourage citizens and visitors to collect more sighting data to improve their understanding
+      and educate about their characteristics while maintaining efficient scientific records.
+    </section>
 
 
-        <section id="mental-model" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+    <section id="mental-model" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
                  shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
                  border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
-                Mental Model
-            </h2>
-            Firstly diving into the topic, we had different mental models individually and with little experience in this specific topic, there were many blind spots in our model.
-            <br>
-            <br>
-            Noting the differences in our mental model, we adopted the 10 for 10 framework in order to develop a shared mental model for our team to work together in a single direction.
-            <br>
-            <br>
-            This allowed us to prioritise what we aim to deliver in this project and if the ideas are all agreed upon and to tackle as much of the problem as possible.
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-inat-green-primary pb-2">
+        Mental Model
+      </h2>
+      Firstly diving into the topic, we had different mental models individually and with little experience in this
+      specific topic, there were many blind spots in our model.
+      <br>
+      <br>
+      Noting the differences in our mental model, we adopted the 10 for 10 framework in order to develop a shared mental
+      model for our team to work together in a single direction.
+      <br>
+      <br>
+      This allowed us to prioritise what we aim to deliver in this project and if the ideas are all agreed upon and to
+      tackle as much of the problem as possible.
 
-        </section>
+    </section>
 
 
-        <section id="team-research" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+    <section id="team-research" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
                  shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
                  border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-                Team Research
-            </h2>
-            <strong>Research Steps:</strong>
-            <br>
-            <ul class="list-disc list-inside space-y-2">
-                <li>Explore iNaturalist app to understand why it is most popular.</li>
-                <li>Look into how they conduct their verification of species.</li>
-                <li>Figuring out how to integrate iNaturalist to our platform for extracting data seamlessly.</li>
-                <li>Identifying educational resources for users.</li>
-            </ul>
-            <br>
-            <strong>Research Findings:</strong>
-            <br>
-            <ul class="list-disc list-inside space-y-2">
-               <li>iNaturalist covers all species identification and contains close to 200 million observations.</li>
-               <li>They utilise computer vision and experts for species verification.</li>
-               <li>Application Programming Interface is open sourced for data to be downloaded easily, allowing Glasgow City Centre to use our application to gather data easily</li>
-               <li>iNaturalist has a strong community of users who contribute to species identification, we can also choose to back it up with sources online for their education purposes</li>
-            </ul>
-        </section>
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
+        Team Research
+      </h2>
+      <strong>Research Steps:</strong>
+      <br>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Explore iNaturalist app to understand why it is most popular.</li>
+        <li>Look into how they conduct their verification of species.</li>
+        <li>Figuring out how to integrate iNaturalist to our platform for extracting data seamlessly.</li>
+        <li>Identifying educational resources for users.</li>
+        <li>Look into different applications with similar features as INaturalist for references.</li>
+      </ul>
+      <br>
+      <strong>Research Findings:</strong>
+      <br>
+      <ul class="list-disc list-inside space-y-2">
+        <li>iNaturalist covers all species identification and contains close to 200 million observations.</li>
+        <li>They utilise computer vision and experts for species verification.</li>
+        <li>Application Programming Interface is open sourced for data to be downloaded easily, allowing Glasgow City
+          Centre to use our application to gather data easily</li>
+        <li>iNaturalist has a strong community of users who contribute to species identification, we can also choose to
+          back it up with sources online for their education purposes</li>
+        <li> Most application relies on Artifical Intelligence to do one time verification without having explictly
+          caring about results</li>
+      </ul>
+    </section>
 
-        <section id="paper-prototype" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+    <section id="paper-prototype" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
                  shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
                  border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-                Paper Prototype (Lo-Fi)
-            </h2>
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
+        Paper Prototype (Lo-Fi)
+      </h2>
 
-            As part of our design thinking process, we created a paper prototype to visualize the user interface and
-            interaction flow of our proposed solution. This low-fidelity prototype allowed us to quickly iterate on
-            our design concepts and gather feedback from stakeholders, these has been carefully selected through
-            multiple prototypes and iterations
-            to ensure that we are able to create a solution that is both user-friendly and effective in
-            addressing the needs of our users, these prototypes can be viewed:
+      As part of our design thinking process, we created a paper prototype to visualize the user interface and
+      interaction flow of our proposed solution. This low-fidelity prototype allowed us to quickly iterate on
+      our design concepts and gather feedback from stakeholders, these has been carefully selected through
+      multiple prototypes and iterations
+      to ensure that we are able to create a solution that is both user-friendly and effective in
+      addressing the needs of our users, these prototypes can be viewed:
 
-            <br><br>
-            <h3 class="mt-8 text-xl font-semibold">Camera Taking</h3>
-             <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-              <img src="../media/scanner.jpg" alt="Camera Taking">
-            </div>
-            <br>
-            <h3 class="mt-8 text-xl font-semibold"><b>Species Identification (High Confidence)</b></h3>
-            <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-                <img src="../media/high_confidence.jpg" alt="Species Identification High Confidence"
-                    class="max-w-full h-auto" height="150" width="300">
-            </div>
 
-            <br>
-            <h3 class="mt-8 text-xl font-semibold"><b>Species Identification (Low Confidence)</b></h3>
-            <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-                <img src="../media/low_confidence.jpg" alt="Species Identification Low Confidence"
-                    class="max-w-full h-auto" height="150" width="300">
-            </div>
+      <h3 class="mt-8 text-xl font-semibold">Demonstration</h3>
+      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
+        <img src="../media/scanner.jpg" alt="Camera Taking">
+      </div>
+      <h3 class="mt-8 text-xl font-semibold"><b>Species Identification (High Confidence)</b></h3>
+      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
+        <img src="../media/high_confidence.jpg" alt="Species Identification High Confidence" class="max-w-full h-auto"
+          height="150" width="300">
+      </div>
 
-            <br>
-            <h3 class="mt-8 text-xl font-semibold"><b>Community View</b></h3>
-            <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-                <img src="../media/communityview.jpg" alt="Community View" class="max-w-full
+      <h3 class="mt-8 text-xl font-semibold"><b>Species Identification (Low Confidence)</b></h3>
+      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
+        <img src="../media/low_confidence.jpg" alt="Species Identification Low Confidence" class="max-w-full h-auto"
+          height="150" width="300">
+      </div>
+
+      <br>
+      <h3 class="mt-8 text-xl font-semibold"><b>Community View</b></h3>
+      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
+        <img src="../media/communityview.jpg" alt="Community View" class="max-w-full
                     h-auto" height="150" width="300">
-            </div>
-            <br>
-            <h3 class="mt-8 text-xl font-semibold"><b>Map View</b></h3>
-            <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
-                <img src="../media/map.jpg" alt="Map View" class="max-w-full h-auto" height="150" width="300">
-            </div>
-            <br>
-
-            This iterative process helped us refine our ideas and ensure that the final solution would effectively
-            address the needs of our users and allows us to quickly prototype and test new features.
-        </section>
-
-        <section id="paper-prototype" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
-                 shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
-                 border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-                Pitch Video 1
-            </h2>
-
-            With individual contribution from each team member, we created a pitch video to present
-            our project idea and reflect on the design thinking process we followed. Through this,
-            we can effectively communicate our vision and the steps taken to address the problem statement.
-
-            <br>
-            <br>
-            Elements such as the problem statement, design thinking process, and paper prototype are all included in the
-            video and this can be viewed by playing the video below:
-
-            <video autoplay controls>
-                <source src="../media/group09_week1_pitch.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </section>
-
-        <section id="summary" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
-                 shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
-                 border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-                Summary
-            </h2>
-        </section>
-
-        <section id="references" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
-                 shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
-                 border border-transparent hover:border-inat-peach-light
-                 transition duration-300"
-         data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
-                References
-            </h2>
-        </section>
-
-
-    </main>
-
-     <footer>
-  <!-- Top part: neon-gradient panels -->
-  <div class="bg-gradient-to-r from-[#2e5b00] via-[#73AB00] to-[#2e5b00] text-inat-light py-12">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
-      <!-- Panel 1 -->
-      <div class="bg-[#1E3A00] rounded-2xl p-6 transform hover:scale-105 transition">
-        <h4 class="text-2xl font-bold mb-4">Useful Links</h4>
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a href="https://glasgowbotanicgardens.com/" target="_blank"
-               class="flex items-center hover:text-inat-peach-light transition">
-              <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
-              Glasgow Botanic Gardens
-            </a>
-          </li>
-          <li>
-            <a href="https://www.inaturalist.org/projects/city-nature-challenge-2025-greater-glasgow"
-               target="_blank" class="flex items-center hover:text-inat-peach-light transition">
-              <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
-              City Nature Challenge 2025
-            </a>
-          </li>
-          <li>
-            <a href="https://glasgownaturalhistory.org.uk/bio_sites.html"
-               target="_blank" class="flex items-center hover:text-inat-peach-light transition">
-              <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
-              Glasgow Natural History Society
-            </a>
-          </li>
-        </ul>
       </div>
-      <!-- Panel 2 -->
-      <div class="bg-[#1E3A00] rounded-2xl p-6 transform hover:scale-105 transition">
-        <h4 class="text-2xl font-bold mb-4">Contact</h4>
-        <p class="font-semibold mb-1">Chrissy Sanachan</p>
-        <p class="mb-4">Friends of Glasgow Botanic Gardens</p>
-        <a href="mailto:chrissy@glasgowbotanicgardens.com"
-           class="inline-flex items-center hover:text-inat-peach-light transition">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M2 4h20v16H2z" fill="none"/>
-            <path d="M22 6l-10 7L2 6v12h20z"/>
-          </svg>
-          chrissy@glasgowbotanicgardens.com
+      <br>
+      <h3 class="mt-8 text-xl font-semibold"><b>Map View</b></h3>
+      <div class="photo-frame w-48 mx-auto bg-white/80 p-2 border border-white rounded-md shadow-md">
+        <img src="../media/map.jpg" alt="Map View" class="max-w-full h-auto" height="150" width="300">
+      </div>
+      <br>
+
+      This iterative process helped us refine our ideas and ensure that the final solution would effectively
+      communicate the needs of our stakeholders and quick changes of the design can be made based on the feedback on the
+      teams. Additionally, any changes made to the prototype can be easily communicated to the team.
+    </section>
+
+    <section id="paper-prototype" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+                 shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
+                 border border-transparent hover:border-inat-peach-light
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
+        Pitch Video 1
+      </h2>
+
+      With individual contribution from each team member, we created a pitch video to present
+      our project idea and reflect on the design thinking process we followed. Through this,
+      we can effectively communicate our vision and the steps taken to address the problem statement.
+
+      <br>
+      <br>
+      Elements such as the problem statement, design thinking process, and paper prototype are all included in the
+      video and this can be viewed by playing the video below:
+
+      <video autoplay controls>
+        <source src="../media/group09_week1_pitch.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section id="summary" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+                 shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
+                 border border-transparent hover:border-inat-peach-light
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
+        Summary
+      </h2>
+      In the first week, the team aligned on the project goal and clearly defined the problem statement. This process
+      included engaging with our stakeholder, Chrissy, to better understand the problem space. The team actively
+      explored new ideas and concepts to address the identified challenges, ensuring that our mental model was
+      consistent with the project’s direction. A paper prototype was also developed to visualize our ideas and gather
+      early feedback. This helped us establish a shared understanding and set the foundation for an effective and
+      efficient development process.
+    </section>
+
+    <section id="references" class="section-card text-white p-8 bg-white/25 backdrop-blur-md rounded-2xl
+                 shadow-2xl transform hover:scale-105 hover:shadow-emerald-500/50
+                 border border-transparent hover:border-inat-peach-light
+                 transition duration-300" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-inat-white-dark mb-6 border-b-2 border-inat-green-primary pb-2">
+        References
+      </h2>
+      <li>
+        <a href="https://www.inaturalist.org/" target="_blank"
+          class="text-inat-light hover:text-inat-peach-light transition">
+          iNaturalist
         </a>
+      </li>
+
+      <li>
+        <a href="https://www.designcouncil.org.uk/our-resources/the-double-diamond/" target="_blank"
+          class="text-inat-light hover:text-inat-peach-light transition">
+          The Double Diamond
+        </a>
+      </li>
+
+
+      <li>
+        <a href="https://www.inaturalist.org/blog/91400-a-larger-experiment-to-learn-about-the-accuracy-of-inaturalist-observations"
+          target="_blank" class="text-inat-light hover:text-inat-peach-light transition">
+          iNaturalist Accuracy
+        </a>
+
+      </li>
+
+      <li>
+        <a href="https://forum.inaturalist.org/t/inat-ai-for-dummies/54950" target="_blank"
+          class="text-inat-light hover:text-inat-peach-light transition">
+          iNaturalist AI for Dummies
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.inaturalist.org/posts/64032-invoking-the-artificial-intelligence" target="_blank"
+          class="text-inat-light hover:text-inat-peach-light transition">
+          iNaturalist Invoking the Artificial Intelligence
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.interaction-design.org/literature/topics/paper-prototyping?srsltid=AfmBOopw3UaDf-2jCeZypOYJKePwxKFOeGouG9Qu-r8iZpq2NczxqE75"
+          target="_blank" class="text-inat-light hover:text-inat-peach-light transition">
+          Paper Prototyping
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.inaturalist.org/pages/what+is+it" target="_blank"
+          class="text-inat-light hover:text-inat-peach-light transition">
+          What is iNaturalist
+        </a>
+      </li>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <!-- Top part: neon-gradient panels -->
+    <div class="bg-gradient-to-r from-[#2e5b00] via-[#73AB00] to-[#2e5b00] text-inat-light py-12">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+        <!-- Panel 1 -->
+        <div class="bg-[#1E3A00] rounded-2xl p-6 transform hover:scale-105 transition">
+          <h4 class="text-2xl font-bold mb-4">Useful Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="https://glasgowbotanicgardens.com/" target="_blank"
+                class="flex items-center hover:text-inat-peach-light transition">
+                <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
+                Glasgow Botanic Gardens
+              </a>
+            </li>
+            <li>
+              <a href="https://www.inaturalist.org/projects/city-nature-challenge-2025-greater-glasgow" target="_blank"
+                class="flex items-center hover:text-inat-peach-light transition">
+                <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
+                City Nature Challenge 2025
+              </a>
+            </li>
+            <li>
+              <a href="https://glasgownaturalhistory.org.uk/bio_sites.html" target="_blank"
+                class="flex items-center hover:text-inat-peach-light transition">
+                <span class="inline-block w-3 h-3 bg-[#F9C3AB] rounded-full mr-3"></span>
+                Glasgow Natural History Society
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Panel 2 -->
+        <div class="bg-[#1E3A00] rounded-2xl p-6 transform hover:scale-105 transition">
+          <h4 class="text-2xl font-bold mb-4">Contact</h4>
+          <p class="font-semibold mb-1">Chrissy Sanachan</p>
+          <p class="mb-4">Friends of Glasgow Botanic Gardens</p>
+          <a href="mailto:chrissy@glasgowbotanicgardens.com"
+            class="inline-flex items-center hover:text-inat-peach-light transition">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M2 4h20v16H2z" fill="none" />
+              <path d="M22 6l-10 7L2 6v12h20z" />
+            </svg>
+            chrissy@glasgowbotanicgardens.com
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bottom bar: subtle neon pulse -->
-  <div class="bg-inat-green-primary bg-opacity-40 py-4">
-    <div class="max-w-4xl mx-auto text-center text-xs text-inat-light animate-pulse">
-      <p>&copy; 2025 Species Identification Project. All rights reserved.</p>
-      <p>Designed with <span class="text-red-400">&hearts;</span> and iNaturalist colors.</p>
+    <!-- Bottom bar: subtle neon pulse -->
+    <div class="bg-inat-green-primary bg-opacity-40 py-4">
+      <div class="max-w-4xl mx-auto text-center text-xs text-inat-light animate-pulse">
+        <p>&copy; 2025 Species Identification Project. All rights reserved.</p>
+        <p>Designed with <span class="text-red-400">&hearts;</span> and iNaturalist colors.</p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- ★ LIGHTBOX OVERLAY –– paste this here, right before your scripts / </body> -->
+  <!-- ★ LIGHTBOX OVERLAY –– paste this here, right before your scripts / </body> -->
   <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
     <img id="lightbox-img" src="" class="max-w-full max-h-full rounded" />
     <button id="lightbox-close" class="absolute top-4 right-4 text-white text-2xl">×</button>
   </div>
 
   <script>
-  const canvas = document.getElementById('particles'),
-        ctx    = canvas.getContext('2d'),
-        leaves = [];
-  let W, H;
+    const canvas = document.getElementById('particles'),
+      ctx = canvas.getContext('2d'),
+      leaves = [];
+    let W, H;
 
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
 
-  function createLeaf() {
-    return {
-      x:  Math.random() * W,
-      y:  Math.random() * H,
-      r:  Math.random() * 8 + 4,
-      dx: (Math.random() - 0.5) * 1.0,    // faster
-      dy: (Math.random() - 0.5) * 1.0,    // faster
-      angle: Math.random() * Math.PI * 2,
-      da:    (Math.random() - 0.5) * 0.05, // faster spin
-      alpha: Math.random() * 0.5 + 0.2
-    };
-  }
+    function createLeaf() {
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 8 + 4,
+        dx: (Math.random() - 0.5) * 1.0,    // faster
+        dy: (Math.random() - 0.5) * 1.0,    // faster
+        angle: Math.random() * Math.PI * 2,
+        da: (Math.random() - 0.5) * 0.05, // faster spin
+        alpha: Math.random() * 0.5 + 0.2
+      };
+    }
 
-  function init() {
-    resize();
-    for (let i = 0; i < 80; i++) leaves.push(createLeaf());
-    animate();
-    // spawn one new leaf every 200ms
-    setInterval(() => {
-      leaves.push(createLeaf());
-      if (leaves.length > 200) leaves.shift();
-    }, 200);
-  }
+    function init() {
+      resize();
+      for (let i = 0; i < 80; i++) leaves.push(createLeaf());
+      animate();
+      // spawn one new leaf every 200ms
+      setInterval(() => {
+        leaves.push(createLeaf());
+        if (leaves.length > 200) leaves.shift();
+      }, 200);
+    }
 
-  function drawLeaf(p) {
-    ctx.save();
-    ctx.translate(p.x, p.y);
-    ctx.rotate(p.angle);
-    ctx.beginPath();
-    ctx.moveTo(-p.r, 0);
-    ctx.quadraticCurveTo(0, -p.r * 1.5, p.r, 0);
-    ctx.quadraticCurveTo(0, p.r * 1.5, -p.r, 0);
-    ctx.fillStyle = `rgba(245,245,245,${p.alpha})`;
-    ctx.fill();
-    ctx.restore();
-  }
+    function drawLeaf(p) {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.angle);
+      ctx.beginPath();
+      ctx.moveTo(-p.r, 0);
+      ctx.quadraticCurveTo(0, -p.r * 1.5, p.r, 0);
+      ctx.quadraticCurveTo(0, p.r * 1.5, -p.r, 0);
+      ctx.fillStyle = `rgba(245,245,245,${p.alpha})`;
+      ctx.fill();
+      ctx.restore();
+    }
 
-  function animate() {
-    ctx.clearRect(0, 0, W, H);
-    leaves.forEach(p => {
-      p.x += p.dx;
-      p.y += p.dy;
-      p.angle += p.da;
-      if (p.x < -p.r) p.x = W + p.r;
-      if (p.x >  W + p.r) p.x = -p.r;
-      if (p.y < -p.r) p.y = H + p.r;
-      if (p.y >  H + p.r) p.y = -p.r;
-      drawLeaf(p);
-    });
-    requestAnimationFrame(animate);
-  }
+    function animate() {
+      ctx.clearRect(0, 0, W, H);
+      leaves.forEach(p => {
+        p.x += p.dx;
+        p.y += p.dy;
+        p.angle += p.da;
+        if (p.x < -p.r) p.x = W + p.r;
+        if (p.x > W + p.r) p.x = -p.r;
+        if (p.y < -p.r) p.y = H + p.r;
+        if (p.y > H + p.r) p.y = -p.r;
+        drawLeaf(p);
+      });
+      requestAnimationFrame(animate);
+    }
 
-  window.addEventListener('resize', resize);
-  init();
-</script>
+    window.addEventListener('resize', resize);
+    init();
+  </script>
 
-<!-- LIGHTBOX SCRIPT -->
+  <!-- LIGHTBOX SCRIPT -->
   <script>
     document.querySelectorAll('.photo-frame img').forEach(img => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
         const lb = document.getElementById('lightbox'),
-              lbImg = document.getElementById('lightbox-img');
+          lbImg = document.getElementById('lightbox-img');
         lbImg.src = img.src;
         lb.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
@@ -629,6 +715,16 @@
       }
     });
   </script>
-  
+
 </body>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </html>
