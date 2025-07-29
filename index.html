@@ -72,13 +72,13 @@
 
     /* Polished section boxes */
     .section-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+      background: linear-gradient(135deg, #2E5B00 0%, #73AB00 100%) !important;
       backdrop-filter: none !important;
-      border: 1px solid rgba(115, 171, 0, 0.2);
+      border: 1px solid rgba(115, 171, 0, 0.5);
       border-radius: 1.5rem;
       padding: 2rem;
       margin: 1.5rem 0;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
@@ -103,7 +103,7 @@
         0 0 25px rgba(115, 171, 0, 0.15);
     }
 
-    /* Dark text for all content on white background */
+    /* Black text for all content on green background */
     .section-box h2,
     .section-box h3,
     .section-box h4,
@@ -111,14 +111,14 @@
     .section-box li,
     .section-box span,
     .section-box div {
-      color: #1f2937 !important;
+      color: black !important;
     }
 
     /* Enhanced section headers */
     .section-header {
-      color: #1f2937 !important;
-      text-shadow: none;
-      border-bottom: 2px solid rgba(115, 171, 0, 0.6);
+      color: black !important;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.3);
       padding-bottom: 1rem;
     }
 
@@ -449,9 +449,14 @@
     canvas,
     section,
     main,
-    header,
-    nav {
+    header {
       background: transparent !important;
+    }
+    
+    /* Ensure navigation stays solid and visible */
+    nav {
+      background: #1E3A00 !important;
+      backdrop-filter: none !important;
     }
 
     /* Enhanced scrollbar */
@@ -703,7 +708,7 @@
   <canvas id="particles" class="fixed inset-0 w-full h-full pointer-events-none -z-10"
     style="background: transparent !important;"></canvas>
 
-  <nav class="sticky top-0 z-10 bg-[#1E3A00]/80 backdrop-blur-sm shadow-2xl" data-aos="fade-down" data-aos-delay="100">
+  <nav class="sticky top-0 z-50 shadow-2xl" style="background: #1E3A00 !important; backdrop-filter: none !important;" data-aos="fade-down" data-aos-delay="100">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex justify-between items-center h-16">
 
@@ -730,14 +735,14 @@
               </svg>
             </button>
             <div
-              class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50">
-              <a href="./gh-pages/week1.html" class="block px-4 py-2 text-white hover:bg-gray-100">
+              class="absolute left-0 mt-2 w-48 bg-gradient-to-b from-[#2E5B00] to-[#73AB00] rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50 border border-green-400/30">
+              <a href="./gh-pages/week1.html" class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
                 Week 1 - Research & Discovery
               </a>
-              <a href="./gh-pages/week2.html" class="block px-4 py-2 text-white hover:bg-gray-100">
+              <a href="./gh-pages/week2.html" class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
                 Week 2 - Ideation & Prototyping
               </a>
-              <a href="./gh-pages/week3.html" class="block px-4 py-2 text-white hover:bg-gray-100">
+              <a href="./gh-pages/week3.html" class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
                 Week 3 - Solution Development
               </a>
             </div>
@@ -776,7 +781,7 @@
       </div>
 
       <!-- Mobile menu -->
-      <div id="menu" class="hidden md:hidden bg-[#1E3A00]/90">
+      <div id="menu" class="hidden md:hidden" style="background: #1E3A00 !important;">
         <a href="./index.html"
           class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
           Home
@@ -788,7 +793,7 @@
             <path fill-rule="evenodd" d="M5.23 7.21…" />
           </svg>
         </button>
-        <div id="submenu" class="hidden">
+        <div id="submenu" class="hidden" style="z-index: 9999; position: relative;">
           <a href="./gh-pages/week1.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100">
             Week 1
           </a>
