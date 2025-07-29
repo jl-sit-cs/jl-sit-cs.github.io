@@ -120,6 +120,198 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
       border-bottom: 2px solid rgba(115, 171, 0, 0.6);
       padding-bottom: 1rem;
+    }
+
+    /* Timeline Styles */
+    .timeline-container {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #73AB00, #2E5B00);
+      transform: translateX(-50%);
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(115, 171, 0, 0.3);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin: 2rem 0;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .timeline-item:nth-child(odd) {
+      animation-delay: 0.1s;
+    }
+
+    .timeline-item:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+
+    .timeline-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .timeline-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .timeline-item:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .timeline-content {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 0 2rem;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      border-color: rgba(115, 171, 0, 0.4);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(115, 171, 0, 0.2);
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background: #73AB00;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 15px rgba(115, 171, 0, 0.5);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: 50%;
+      margin-right: 2rem;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      left: -12px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-right: 50%;
+      margin-left: 2rem;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+      right: -12px;
+    }
+
+    .timeline-date {
+      display: inline-block;
+      background: linear-gradient(135deg, #73AB00, #2E5B00);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 15px rgba(115, 171, 0, 0.3);
+    }
+
+    .timeline-title {
+      color: white !important;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .timeline-description {
+      color: rgba(255, 255, 255, 0.9) !important;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Deliverables Cards */
+    .deliverable-card {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deliverable-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--card-color, #73AB00), transparent);
+    }
+
+    .deliverable-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(115, 171, 0, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(115, 171, 0, 0.2);
+    }
+
+    .deliverable-card.research {
+      --card-color: #14B8A6;
+    }
+
+    .deliverable-card.design {
+      --card-color: #6366F1;
+    }
+
+    .deliverable-card.outcomes {
+      --card-color: #EC4899;
+    }
+
+    /* Mobile Timeline Adjustments */
+    @media (max-width: 768px) {
+      .timeline-line {
+        left: 2rem;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 4rem;
+        margin-right: 1rem;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content::before,
+      .timeline-item:nth-child(even) .timeline-content::before {
+        left: -12px;
+        right: auto;
+      }
+    }
       margin-bottom: 1.5rem;
       position: relative;
     }
@@ -883,149 +1075,146 @@
     </div>
   </section> -->
 
-  <!-- Enhanced Project Timeline -->
-  <section id="timeline" class="section-box" data-aos="fade-up" data-aos-delay="300">
-    <h2 class="section-header text-3xl font-bold mb-6">
-      📅 Project Timeline & Milestones
+  <!-- Project Timeline Section -->
+  <section id="timeline" class="section-box" data-aos="fade-up" data-aos-delay="200">
+    <h2 class="section-header text-3xl font-bold mb-8">
+      📅 Project Timeline
     </h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div>
-        <h3 class="text-xl font-semibold mb-4 flex items-center">
-          <span class="text-2xl mr-3">📋</span>
-          Detailed Project Milestones
-        </h3>
-        <div class="space-y-4">
-          <div class="bg-green-800/30 backdrop-blur-sm p-4 rounded-lg border border-green-400/30" data-aos="fade-up"
-            data-aos-delay="200">
-            <div class="flex items-center mb-2">
-              <div class="w-4 h-4 bg-green-400 rounded-full mr-3 floating"></div>
-              <h4 class="text-lg font-semibold">Requirement Gathering</h4>
-            </div>
-            <p class="text-sm text-green-400 font-medium mb-2">22 July 2025</p>
-            <p class="text-sm">
-              Initial stakeholder meeting with Chrissy Sanachan to understand specific needs for species
-              identification and data collection at Glasgow Botanic Gardens.
-            </p>
-          </div>
-
-          <div class="bg-blue-800/30 backdrop-blur-sm p-4 rounded-lg border border-blue-400/30" data-aos="fade-up"
-            data-aos-delay="300">
-            <div class="flex items-center mb-2">
-              <div class="w-4 h-4 bg-blue-400 rounded-full mr-3 floating" style="animation-delay: 0.3s;"></div>
-              <h4 class="text-lg font-semibold">First Pitch Video</h4>
-            </div>
-            <p class="text-sm text-blue-400 font-medium mb-2">22 July-25 July 2025</p>
-            <p class="text-sm">
-              Development of initial pitch video incorporating stakeholder insights and early prototype findings.
-            </p>
-          </div>
-
-          <div class="bg-purple-800/30 backdrop-blur-sm p-4 rounded-lg border border-purple-400/30" data-aos="fade-up"
-            data-aos-delay="400">
-            <div class="flex items-center mb-2">
-              <div class="w-4 h-4 bg-purple-400 rounded-full mr-3 floating" style="animation-delay: 0.6s;"></div>
-              <h4 class="text-lg font-semibold">Second Pitch Video</h4>
-            </div>
-            <p class="text-sm text-purple-400 font-medium mb-2">26 July - 1 August 2025</p>
-            <p class="text-sm">
-              Refined pitch video incorporating feedback and additional research insights from the development
-              process.
-            </p>
-          </div>
-
-          <div class="bg-orange-800/30 backdrop-blur-sm p-4 rounded-lg border border-orange-400/30" data-aos="fade-up"
-            data-aos-delay="500">
-            <div class="flex items-center mb-2">
-              <div class="w-4 h-4 bg-orange-400 rounded-full mr-3 floating" style="animation-delay: 0.9s;"></div>
-              <h4 class="text-lg font-semibold">Poster Report</h4>
-            </div>
-            <p class="text-sm text-orange-400 font-medium mb-2">1 August - 5 August 2025</p>
-            <p class="text-sm">
-              Creation of comprehensive poster summarizing project findings, methodologies, and final outcomes.
-            </p>
-          </div>
-
-          <div class="bg-red-800/30 backdrop-blur-sm p-4 rounded-lg border border-red-400/30" data-aos="fade-up"
-            data-aos-delay="600">
-            <div class="flex items-center mb-2">
-              <div class="w-4 h-4 bg-red-400 rounded-full mr-3 floating" style="animation-delay: 1.2s;"></div>
-              <h4 class="text-lg font-semibold">Website Documentation</h4>
-            </div>
-            <p class="text-sm text-red-400 font-medium mb-2">1 August - 8 August 2025</p>
-            <p class="text-sm">
-              Development of comprehensive website documentation detailing the complete project journey,
-              methodologies, and outcomes.
-            </p>
-          </div>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">22 July 2025</div>
+          <h4 class="timeline-title">🎯 Requirement Gathering</h4>
+          <p class="timeline-description">
+            Initial stakeholder meeting with Chrissy Sanachan to understand specific needs for species
+            identification and data collection at Glasgow Botanic Gardens.
+          </p>
         </div>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-4 flex items-center">
-          <span class="text-2xl mr-3">🎯</span>
-          Key Deliverables
-        </h3>
-        <div class="space-y-4">
-          <div class="bg-teal-800/30 backdrop-blur-sm p-4 rounded-lg border border-teal-400/30">
-            <h4 class="font-semibold mb-2 flex items-center">
-              <span class="text-lg mr-2">📋</span>
-              Research Outputs
-            </h4>
-            <ul class="space-y-1 text-sm">
-              <li class="flex items-start">
-                <span class="text-teal-400 mr-2">•</span>
-                Stakeholder analysis report
-              </li>
-              <li class="flex items-start">
-                <span class="text-teal-400 mr-2">•</span>
-                Current workflow documentation
-              </li>
-              <li class="flex items-start">
-                <span class="text-teal-400 mr-2">•</span>
-                User requirements specification
-              </li>
-            </ul>
-          </div>
-          <div class="bg-indigo-800/30 backdrop-blur-sm p-4 rounded-lg border border-indigo-400/30">
-            <h4 class="font-semibold mb-2 flex items-center">
-              <span class="text-lg mr-2">🎨</span>
-              Design Deliverables
-            </h4>
-            <ul class="space-y-1 text-sm">
-              <li class="flex items-start">
-                <span class="text-indigo-400 mr-2">•</span>
-                Interactive prototypes
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-400 mr-2">•</span>
-                User journey maps
-              </li>
-              <li class="flex items-start">
-                <span class="text-indigo-400 mr-2">•</span>
-                Implementation roadmap
-              </li>
-            </ul>
-          </div>
-          <div class="bg-pink-800/30 backdrop-blur-sm p-4 rounded-lg border border-pink-400/30">
-            <h4 class="font-semibold mb-2 flex items-center">
-              <span class="text-lg mr-2">🚀</span>
-              Final Outcomes
-            </h4>
-            <ul class="space-y-1 text-sm">
-              <li class="flex items-start">
-                <span class="text-pink-400 mr-2">•</span>
-                Validated solution concept
-              </li>
-              <li class="flex items-start">
-                <span class="text-pink-400 mr-2">•</span>
-                Stakeholder approval
-              </li>
-              <li class="flex items-start">
-                <span class="text-pink-400 mr-2">•</span>
-                Implementation guidelines
-              </li>
-            </ul>
-          </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">22 July - 25 July 2025</div>
+          <h4 class="timeline-title">🎬 First Pitch Video</h4>
+          <p class="timeline-description">
+            Development of initial pitch video incorporating stakeholder insights and early prototype findings.
+          </p>
         </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">26 July - 1 August 2025</div>
+          <h4 class="timeline-title">🎥 Second Pitch Video</h4>
+          <p class="timeline-description">
+            Refined pitch video incorporating feedback and additional research insights from the development process.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">1 August - 5 August 2025</div>
+          <h4 class="timeline-title">📊 Poster Report</h4>
+          <p class="timeline-description">
+            Creation of comprehensive poster summarizing project findings, methodologies, and final outcomes.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">1 August - 8 August 2025</div>
+          <h4 class="timeline-title">🌐 Website Documentation</h4>
+          <p class="timeline-description">
+            Development of comprehensive website documentation detailing the complete project journey, methodologies, and outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Deliverables Section -->
+  <section id="deliverables" class="section-box" data-aos="fade-up" data-aos-delay="300">
+    <h2 class="section-header text-3xl font-bold mb-8">
+      🎯 Key Deliverables
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="deliverable-card research" data-aos="fade-up" data-aos-delay="100">
+        <h4 class="text-xl font-bold mb-4 flex items-center text-white">
+          <span class="text-2xl mr-3">📋</span>
+          Research Outputs
+        </h4>
+        <ul class="space-y-3 text-white">
+          <li class="flex items-start">
+            <span class="text-teal-400 mr-3 text-lg">•</span>
+            <span>Stakeholder analysis report</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-400 mr-3 text-lg">•</span>
+            <span>Current workflow documentation</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-400 mr-3 text-lg">•</span>
+            <span>User requirements specification</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-teal-400 mr-3 text-lg">•</span>
+            <span>Competitive analysis</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="deliverable-card design" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="text-xl font-bold mb-4 flex items-center text-white">
+          <span class="text-2xl mr-3">🎨</span>
+          Design Deliverables
+        </h4>
+        <ul class="space-y-3 text-white">
+          <li class="flex items-start">
+            <span class="text-indigo-400 mr-3 text-lg">•</span>
+            <span>Interactive prototypes</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-indigo-400 mr-3 text-lg">•</span>
+            <span>User journey maps</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-indigo-400 mr-3 text-lg">•</span>
+            <span>Implementation roadmap</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-indigo-400 mr-3 text-lg">•</span>
+            <span>Design system guidelines</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="deliverable-card outcomes" data-aos="fade-up" data-aos-delay="300">
+        <h4 class="text-xl font-bold mb-4 flex items-center text-white">
+          <span class="text-2xl mr-3">🚀</span>
+          Final Outcomes
+        </h4>
+        <ul class="space-y-3 text-white">
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-3 text-lg">•</span>
+            <span>Validated solution concept</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-3 text-lg">•</span>
+            <span>Stakeholder approval</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-3 text-lg">•</span>
+            <span>Implementation guidelines</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-pink-400 mr-3 text-lg">•</span>
+            <span>Future recommendations</span>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
