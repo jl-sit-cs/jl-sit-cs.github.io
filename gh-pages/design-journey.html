@@ -142,27 +142,132 @@
 
 <body class="bg-gray-50">
   <!-- Navigation -->
-  <nav class="bg-white shadow-lg sticky top-0 z-50">
+  <nav class="sticky top-0 z-50 shadow-2xl" style="background: #43a876 !important; backdrop-filter: none !important;"
+    data-aos="fade-down" data-aos-delay="100">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="flex items-center text-xl font-bold text-gray-800 hover:text-green-600 transition">
+
+        <!-- Brand -->
+        <a href="../index.html"
+          class="flex items-center text-xl font-bold text-white hover:text-orange-200 transition">
           <img src="../media/icon.png" alt="OIP Project Icon" class="w-8 h-8 mr-2">
           OIP Species Project
         </a>
-        
-        <!-- Breadcrumb -->
-        <div class="hidden md:flex items-center space-x-2 text-sm text-gray-600">
-          <a href="../index.html" class="hover:text-green-600">Home</a>
-          <span>/</span>
-          <span class="text-green-600 font-medium">Design Journey</span>
+
+        <!-- Desktop menu -->
+        <div class="hidden md:flex space-x-6 items-center">
+          <a href="../index.html" class="text-white font-medium hover:text-orange-200 transition">
+            Home
+          </a>
+
+          <div class="relative group">
+            <button class="flex items-center text-white hover:text-orange-200 transition focus:outline-none">
+              Weekly Journal
+              <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-gradient-to-b from-[#43a876] to-[#43a876] rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50 border border-green-400/30">
+              <a href="./week1.html"
+                class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
+                Week 1 - Research & Prototyping
+              </a>
+              <a href="./week2.html"
+                class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
+                Week 2 - Feedback & Iteration
+              </a>
+              <a href="./week3.html"
+                class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
+                Week 3 - Poster & Website
+              </a>
+            </div>
+          </div>
+
+          <a href="./design-journey.html"
+            class="text-orange-200 font-medium hover:text-orange-200 transition border-b-2 border-orange-200">
+            Design Journey
+          </a>
+
+          <a href="./self-reflections.html"
+            class="text-white font-medium hover:text-orange-200 transition">
+            About & Reflections
+          </a>
+
+
+          <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
+            class="flex items-center bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded-md transition">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+            </svg>
+            GitHub
+          </a>
         </div>
-        
-        <a href="../index.html" class="text-gray-600 hover:text-green-600 transition">
-          ← Back to Home
+
+        <!-- Mobile hamburger -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="menu" class="hidden md:hidden" style="background: #1E3A00 !important;">
+        <a href="../index.html"
+          class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+          Home
+        </a>
+        <button onclick="toggleSubmenu()"
+          class="w-full text-left px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition flex justify-between items-center">
+          Weekly Journal
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.23 7.21…" />
+          </svg>
+        </button>
+        <div id="submenu" class="hidden" style="z-index: 9999; position: relative;">
+          <a href="./week1.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100">
+            Week 1
+          </a>
+          <a href="./week2.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100">
+            Week 2
+          </a>
+          <a href="./week3.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100">
+            Week 3
+          </a>
+        </div>
+        <a href="./design-journey.html"
+          class="block px-4 py-2 text-orange-200 hover:text-orange-200 hover:bg-[#2E5B00]/80 transition border-l-4 border-orange-200">
+          Design Journey
+        </a>
+        <a href="./self-reflections.html"
+          class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+          About & Reflections
+        </a>
+        <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
+          class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+          GitHub
         </a>
       </div>
     </div>
   </nav>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('hidden');
+    });
+    // Mobile submenu toggle
+    function toggleSubmenu() {
+      document.getElementById('submenu').classList.toggle('hidden');
+    }
+  </script>
 
   <!-- Header -->
   <header class="bg-gradient-to-r from-green-600 to-green-700 text-white py-12">
