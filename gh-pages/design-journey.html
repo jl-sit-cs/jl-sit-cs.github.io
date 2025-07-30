@@ -62,8 +62,9 @@
 
     /* Polished section boxes */
     .section-box {
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(15px);
+      background: #000000 !important;
+      background-color: #000000 !important;
+      backdrop-filter: blur(20px);
       border: 2px solid rgba(255, 255, 255, 0.2);
       border-radius: 1.5rem;
       padding: 2rem;
@@ -73,6 +74,7 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      z-index: 10;
     }
 
     .section-box::before {
@@ -121,10 +123,22 @@
 
     /* Override any canvas or section backgrounds that might be blocking */
     canvas,
-    section,
     main,
     header {
       background: transparent !important;
+    }
+
+    /* Ensure section-box backgrounds are solid */
+    section.section-box {
+      background: #000000 !important;
+      background-color: #000000 !important;
+    }
+
+    /* Force numbered circles to have black text */
+    .section-box .bg-green-100 span,
+    .section-box .bg-blue-100 span,
+    .section-box .bg-purple-100 span {
+      color: #000000 !important;
     }
 
     /* Enhanced scrollbar */
@@ -507,7 +521,7 @@
     <section class="section-box" data-aos="fade-up">
       <div class="flex items-center mb-6">
         <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-          <span class="text-green-600 font-bold text-lg">1</span>
+          <span class="text-black font-bold text-lg">1</span>
         </div>
         <div>
           <h2 class="section-header text-2xl font-bold">Week 1: Research & Discovery</h2>
@@ -556,7 +570,7 @@
     <section class="section-box" data-aos="fade-up" data-aos-delay="100">
       <div class="flex items-center mb-6">
         <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-          <span class="text-blue-600 font-bold text-lg">2</span>
+          <span class="text-black font-bold text-lg">2</span>
         </div>
         <div>
           <h2 class="section-header text-2xl font-bold">Week 2: Ideation & Prototyping</h2>
@@ -607,7 +621,7 @@
     <section class="section-box" data-aos="fade-up" data-aos-delay="200">
       <div class="flex items-center mb-6">
         <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-          <span class="text-purple-600 font-bold text-lg">3</span>
+          <span class="text-black font-bold text-lg">3</span>
         </div>
         <div>
           <h2 class="section-header text-2xl font-bold">Week 3: Solution Development</h2>
