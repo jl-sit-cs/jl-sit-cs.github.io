@@ -4,18 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <title>Species Identification Project - Week 1</title>
+  <title>Species Identification Project - Week 2</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS CSS -->
+  <!-- AOS CSS for scroll animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Enhanced Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel=" preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
@@ -24,7 +32,9 @@
       --inat-peach-light: #F9C3AB;
       --inat-text-dark: #333333;
       --inat-text-light: #f5f5f5;
-      --inat-green-light: #98eba4;
+      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
 
     body {
@@ -63,17 +73,19 @@
 
     /* Polished section boxes */
     .section-box {
-      background: linear-gradient(135deg, #2E5B00 0%, #73AB00 100%) !important;
-      backdrop-filter: none !important;
-      border: 1px solid rgba(115, 171, 0, 0.5);
+      background: #000000 !important;
+      background-color: #000000 !important;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
       border-radius: 1.5rem;
       padding: 2rem;
       margin: 1.5rem 0;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      opacity: 1 !important;
+      z-index: 10;
     }
 
     .section-box::before {
@@ -88,10 +100,10 @@
 
     .section-box:hover {
       transform: translateY(-5px);
-      border-color: rgba(115, 171, 0, 0.35);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12),
-        0 0 0 1px rgba(255, 255, 255, 0.9) inset,
-        0 0 25px rgba(115, 171, 0, 0.15);
+      border-color: rgba(115, 171, 0, 0.4);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(115, 171, 0, 0.2) inset,
+        0 0 30px rgba(115, 171, 0, 0.1);
     }
 
     /* White text for all content on green background */
@@ -197,145 +209,243 @@
       max-width: 100%;
       border-radius: 0.25rem;
     }
+
+    /* Enhanced scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--inat-green-primary), var(--inat-green-dark));
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--inat-green-dark), #1a3d00);
+    }
+
+    /* Enhanced Navigation */
+    .nav-enhanced {
+      background: linear-gradient(135deg, var(--inat-green-dark) 0%, #1a3d00 100%);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .nav-enhanced.scrolled {
+      background: rgba(46, 91, 0, 0.95);
+      backdrop-filter: blur(20px);
+    }
+
+    .nav-link-enhanced {
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .nav-link-enhanced::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--inat-peach-light);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link-enhanced:hover::before {
+      width: 80%;
+    }
+
+    .nav-link-enhanced:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: var(--inat-peach-light) !important;
+    }
+
+    /* Ensure navigation stays solid and visible */
+    nav {
+      background: #1E3A00 !important;
+      backdrop-filter: none !important;
+    }
+
+    /* force header itself to be see‑through so the page background‑image shows */
+    canvas,
+    main,
+    header {
+      background: transparent !important;
+    }
+
+    /* Force desktop menu to be visible */
+    .hidden.md\:flex {
+      display: flex !important;
+    }
+
+    @media (min-width: 768px) {
+      .hidden.md\:flex {
+        display: flex !important;
+      }
+    }
   </style>
 </head>
 
 <body class="min-h-screen text-inat-light">
-  <canvas id="particles" class="fixed inset-0 w-full h-full pointer-events-none -z-10"></canvas>
-  <!-- Gamified Header -->
-  <header
-    class="relative overflow-hidden bg-gradient-to-r from-[#2E5B00] via-[#73AB00] to-[#2E5B00] text-inat-light py-16 px-4 rounded-b-3xl shadow-2xl transform hover:scale-105 transition duration-500">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-5xl font-extrabold drop-shadow-lg animate-pulse">
-        Species Identification Project
-      </h1>
-      <p class="mt-2 text-xl font-light drop-shadow-sm">
-        Empowering Citizen Science at Glasgow Botanic Gardens
-      </p>
-    </div>
-    <!-- Neon bounce bar -->
-    <div
-      class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-2 bg-white opacity-50 rounded-full animate-bounce">
-    </div>
-  </header>
+  <canvas id="particles" class="fixed inset-0 w-full h-full pointer-events-none -z-10"
+    style="background: transparent !important;"></canvas>
 
+  <!-- Navigation -->
+  <nav class="h-16 sticky top-0 z-50 shadow-2xl" style="background: #0e0e0e !important; backdrop-filter: none !important;"
+    data-aos="fade-down" data-aos-delay="100">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
 
-  <!-- Navbar -->
-  <nav class="sticky top-0 z-10 bg-[#1E3A00]/80 backdrop-blur-sm shadow-2xl" data-aos="fade-down" data-aos-delay="100">
-    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-      <!-- Brand -->
-      <div style="grid-column-gap: 450px;" class="flex items-center space-x-4">
+        <!-- Brand -->
         <a href="../index.html"
-          class="flex items-center text-2xl font-bold text-inat-light hover:text-inat-peach-light transition">
-          <img src="../media/icon.png" alt="Glasgow Green Guide Icon" class="w-8 h-8 mr-2">
-          Glasgow Green Guide
-        </a>
-        <a href="./week3.html"
-          class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-md text-sm font-medium transition-colors">
-          → Week 3
-        </a>
-      </div>
-
-      <!-- Desktop menu -->
-      <div class="hidden md:flex space-x-8 items-center">
-        <a href="../index.html" class="text-inat-light font-semibold hover:text-inat-peach-light transition">
-          Home
+          class="flex items-center text-xl font-bold text-white hover:text-orange-200 transition">
+          <img src="../media/icon.png" alt="OIP Project Icon" class="w-8 h-8 mr-2">
+          OIP Species Project
         </a>
 
-        <div class="relative group">
-          <button class="flex items-center text-inat-light hover:text-inat-peach-light transition focus:outline-none">
-            Weekly Journal
-            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
-                clip-rule="evenodd" />
-            </svg>
-          </button>
-          <div
-            class="absolute left-0 mt-2 w-48 bg-gradient-to-b from-[#2E5B00] to-[#73AB00] rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50 border border-green-400/30">
-            <a href="./week1.html" class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
-              Week 1 - Research & Discovery
-            </a>
-            <a href="./week2.html" class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
-              Week 2 - Ideation & Prototyping
-            </a>
-            <a href="./week3.html" class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
-              Week 3 - Solution Development
-            </a>
+        <!-- Desktop menu -->
+        <div class="hidden md:flex space-x-6 items-center">
+          <a href="../index.html" class="text-white font-medium hover:text-orange-200 transition">
+            Home
+          </a>
+
+          <div class="relative group">
+            <button class="flex items-center text-orange-200 hover:text-orange-200 transition focus:outline-none border-b-2 border-orange-200">
+              Weekly Journal
+              <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50 border border-gray-600/30">
+              <a href="./week1.html"
+                class="block px-4 py-2 text-white hover:bg-gray-800 transition-colors">
+                Week 1 - Research & Prototyping
+              </a>
+              <a href="./week2.html"
+                class="block px-4 py-2 text-white hover:bg-gray-800 transition-colors">
+                Week 2 - Feedback & Iteration
+              </a>
+              <a href="./week3.html"
+                class="block px-4 py-2 text-white hover:bg-gray-800 transition-colors">
+                Week 3 - Poster & Website
+              </a>
+            </div>
           </div>
+
+          <a href="./design-journey.html"
+            class="text-white font-medium hover:text-orange-200 transition">
+            Design Journey
+          </a>
+
+          <a href="./self-reflections.html"
+            class="text-white font-medium hover:text-orange-200 transition">
+            About & Reflections
+          </a>
+
+
+          <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
+            class="flex items-center bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded-md transition">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+            </svg>
+            GitHub
+          </a>
         </div>
 
-        <a href="about.html" class="text-inat-light font-semibold hover:text-inat-peach-light transition">
-          About Us
-        </a>
+        <!-- Mobile hamburger -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
 
-        <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
-          class="flex items-center text-inat-light hover:text-inat-peach-light transition">
-          <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 …" />
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="menu" class="hidden md:hidden" style="background: #000000 !important;">
+        <a href="../index.html"
+          class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+          Home
+        </a>
+        <button onclick="toggleSubmenu()"
+          class="w-full text-left px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition flex justify-between items-center">
+          Weekly Journal
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.23 7.21…" />
           </svg>
+        </button>
+        <div id="submenu" class="hidden" style="z-index: 9999; position: relative;">
+          <a href="./week1.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
+            Week 1
+          </a>
+          <a href="./week2.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
+            Week 2
+          </a>
+          <a href="./week3.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
+            Week 3
+          </a>
+        </div>
+        <a href="./design-journey.html"
+          class="block px-4 py-2 text-orange-200 hover:text-orange-200 hover:bg-[#2E5B00]/80 transition border-l-4 border-orange-200">
+          Design Journey
+        </a>
+        <a href="./self-reflections.html"
+          class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+          About & Reflections
+        </a>
+        <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
+          class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
           GitHub
         </a>
       </div>
-
-      <!-- Mobile hamburger -->
-      <div class="md:hidden">
-        <button id="menu-btn" class="focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="menu" class="hidden md:hidden bg-[#1E3A00]/90">
-      <a href="../index.html"
-        class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
-        Home
-      </a>
-      <button onclick="toggleSubmenu()"
-        class="w-full text-left px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition flex justify-between items-center">
-        Weekly Journal
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M5.23…" />
-        </svg>
-      </button>
-      <div id="submenu" class="hidden">
-        <a href="week1.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
-          Week 1
-        </a>
-        <a href="week2.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
-          Week 2
-        </a>
-        <a href="week3.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100 transition">
-          Week 3
-        </a>
-      </div>
-      <a href="about.html"
-        class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
-        About Us
-      </a>
-      <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
-        class="block px-4 py-2 text-inat-light hover:text-inat-peach-light hover:bg-[#2E5B00]/80 transition">
-        GitHub
-      </a>
     </div>
   </nav>
 
   <script>
+    // Mobile menu toggle
     document.getElementById('menu-btn').addEventListener('click', () => {
       document.getElementById('menu').classList.toggle('hidden');
     });
+    // Mobile submenu toggle
     function toggleSubmenu() {
       document.getElementById('submenu').classList.toggle('hidden');
     }
   </script>
 
+  <!-- Enhanced Interactive Header -->
+  <header class="bg-transparent text-white py-12 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-enhanced">
+          📚 Week 2: Understanding the Problem Space 🔍
+        </h1>
+        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto text-enhanced animate__animated animate__fadeInUp animate__delay-1s">
+          Research, discovery, and initial prototyping: Building our understanding of stakeholder needs and design challenges
+        </p>
+      </div>
+    </div>
+  </header>
+
   <main class="max-w-6xl mx-auto py-12 px-6 space-y-12">
-    <h1 class="text-4xl font-extrabold text-inat-light mb-8">
-      Week 2:
-    </h1>
     <section id="initial-idea" class="section-box" data-aos="fade-up">
       <h2 class="section-header text-3xl font-bold mb-6">
         Initial Idea
@@ -363,37 +473,36 @@
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="p-6 bg-inat-white-light rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-inat-green-dark mb-3">1. Discover</h3>
-          <p class="text-inat-dark">
-            We began by understanding the needs of all stakeholders: citizen scientists,
-            local authorities (GCC), and biodiversity experts. We researched existing
+        <div class="p-6 bg-gray-800/50 rounded-lg shadow-inner border border-gray-600/30">
+          <h3 class="text-2xl font-semibold text-white mb-3">1. Discover</h3>
+          <p class="text-white">
+            We began by understanding the needs of all stakeholders: Friends of Glasgow Botanic Gardens. We researched
+            existing
             data collection methods, the iNaturalist app, and other identification services
             to identify pain points and opportunities.
           </p>
         </div>
-        <div class="p-6 bg-inat-white-light rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-inat-green-dark mb-3">2. Define</h3>
-          <p class="text-inat-dark">
-            Based on our research, we defined the core problem: how to streamline species
-            data collection and authentication while expanding citizen participation
-            year-round, reducing manual effort.
+        <div class="p-6 bg-gray-800/50 rounded-lg shadow-inner border border-gray-600/30">
+          <h3 class="text-2xl font-semibold text-white mb-3">2. Define</h3>
+          <p class="text-white">
+            Based on our research, we defined the core problem: Reducing the manual effort required for species
+            identification and data collection while expanding citizen participation year-round.
           </p>
         </div>
-        <div class="p-6 bg-inat-white-light rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-inat-green-dark mb-3">3. Develop</h3>
-          <p class="text-inat-dark">
+        <div class="p-6 bg-gray-800/50 rounded-lg shadow-inner border border-gray-600/30">
+          <h3 class="text-2xl font-semibold text-white mb-3">3. Develop</h3>
+          <p class="text-white">
             We brainstormed various solutions, focusing on leveraging existing tools like
-            iNaturalist and integrating new functionalities. Ideas included automated data
-            sync, expert review workflows, and user-friendly submission interfaces.
+            iNaturalist and integrating new functionalities. Elements like prototyping and user feedback were crucial
+            to refining our ideas.
           </p>
         </div>
-        <div class="p-6 bg-inat-white-light rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-inat-green-dark mb-3">4. Deliver</h3>
-          <p class="text-inat-dark">
-            We developed a conceptual model for an integrated system, outlining the user
-            journey from observation to authenticated record. This involved mapping out
-            data flows and potential user interface elements.
+        <div class="p-6 bg-gray-800/50 rounded-lg shadow-inner border border-gray-600/30">
+          <h3 class="text-2xl font-semibold text-white mb-3">4. Deliver</h3>
+          <p class="text-white">
+            We created a prototype of the proposed solution, which included a user-friendly interface for species
+            identification and data collection. This prototype was tested with stakeholders to gather feedback and
+            ensure it met their needs.
           </p>
         </div>
       </div>
@@ -505,46 +614,69 @@
 
 
       <h2 class="mt-8 text-xl font-semibold">Demonstration</h2>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="../media/scanner.jpg" alt="Camera Taking">
-            <div class="carousel-caption">
-              <h3>Camera Taking</h3>
+      <div class="relative w-full max-w-4xl mx-auto">
+        <!-- Carousel container -->
+        <div id="prototypeCarousel" class="relative overflow-hidden rounded-lg bg-gray-900/50 backdrop-blur-sm">
+          <!-- Carousel wrapper -->
+          <div id="carouselWrapper" class="flex transition-transform duration-300 ease-in-out">
+            <!-- Slide 1 -->
+            <div class="w-full flex-shrink-0">
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/scanner.jpg" alt="Camera Taking" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Camera Taking</h3>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="w-full flex-shrink-0">
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/high_confidence.jpg" alt="Species Identification (High Confidence)" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Species Identification (High Confidence)</h3>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="w-full flex-shrink-0">
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/low_confidence.jpg" alt="Species Identification (Low Confidence)" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Species Identification (Low Confidence)</h3>
+              </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="w-full flex-shrink-0">
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/communityview.jpg" alt="Community View" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Community View</h3>
+              </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="w-full flex-shrink-0">
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/map.jpg" alt="Map View" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Map View</h3>
+              </div>
             </div>
           </div>
-          <div class="item">
-            <img src="../media/high_confidence.jpg" alt="Species Identification (High Confidence)">
-            <div class="carousel-caption">
-              <h3>Species Identification (High Confidence)</h3>
-            </div>
-          </div>
-          <div class="item">
-            <img src="../media/low_confidence.jpg" alt="Species Identification (Low Confidence)">
-            <div class="carousel-caption">
-              <h3>Species Identification (Low Confidence)</h3>
-            </div>
-          </div>
-          <div class="item">
-            <img src="../media/communityview.jpg" alt="Community View">
-            <div class="carousel-caption">
-              <h3>Community View</h3>
-            </div>
-          </div>
-          <div class="item">
-            <img src="../media/map.jpg" alt="Map View">
-            <div class="carousel-caption">
-              <h3>Map View</h3>
-            </div>
-          </div>
+          
+          <!-- Navigation buttons -->
+          <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
         </div>
-      </div>
-      <a class="left carousel-control" href="#carouselExampleControls" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#carouselExampleControls" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
+        
+        <!-- Dots indicator -->
+        <div class="flex justify-center mt-4 space-x-2">
+          <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200" data-slide="0"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200" data-slide="1"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200" data-slide="2"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200" data-slide="3"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200" data-slide="4"></button>
+        </div>
       </div>
 
 
@@ -942,6 +1074,135 @@
         e.currentTarget.classList.add('hidden');
         document.body.style.overflow = '';
       }
+    });
+  </script>
+
+  <!-- CAROUSEL SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('prototypeCarousel');
+      const wrapper = document.getElementById('carouselWrapper');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dots = document.querySelectorAll('.carousel-dot');
+      
+      let currentSlide = 0;
+      const totalSlides = 5;
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+      let isTransitioning = false;
+
+      // Update carousel position
+      function updateCarousel() {
+        const translateX = -currentSlide * 100;
+        wrapper.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.remove('bg-white/50');
+            dot.classList.add('bg-white');
+          } else {
+            dot.classList.remove('bg-white');
+            dot.classList.add('bg-white/50');
+          }
+        });
+      }
+
+      // Next slide
+      function nextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+        setTimeout(() => { isTransitioning = false; }, 300);
+      }
+
+      // Previous slide
+      function prevSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+        setTimeout(() => { isTransitioning = false; }, 300);
+      }
+
+      // Go to specific slide
+      function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+      }
+
+      // Button event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Dot event listeners
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+      });
+
+      // Touch/Mouse events for swiping
+      function handleStart(e) {
+        isDragging = true;
+        startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+        wrapper.style.transition = 'none';
+      }
+
+      function handleMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        
+        currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const diffX = currentX - startX;
+        const translateX = -currentSlide * 100 + (diffX / carousel.offsetWidth) * 100;
+        wrapper.style.transform = `translateX(${translateX}%)`;
+      }
+
+      function handleEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        wrapper.style.transition = 'transform 0.3s ease-in-out';
+        
+        const diffX = currentX - startX;
+        const threshold = carousel.offsetWidth * 0.2; // 20% of carousel width
+        
+        if (Math.abs(diffX) > threshold) {
+          if (diffX > 0) {
+            prevSlide();
+          } else {
+            nextSlide();
+          }
+        } else {
+          updateCarousel(); // Snap back to current slide
+        }
+      }
+
+      // Mouse events
+      carousel.addEventListener('mousedown', handleStart);
+      document.addEventListener('mousemove', handleMove);
+      document.addEventListener('mouseup', handleEnd);
+
+      // Touch events
+      carousel.addEventListener('touchstart', handleStart, { passive: false });
+      carousel.addEventListener('touchmove', handleMove, { passive: false });
+      carousel.addEventListener('touchend', handleEnd);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      });
+
+      // Auto-play (optional - uncomment to enable)
+      // setInterval(nextSlide, 5000);
+
+      // Initialize
+      updateCarousel();
     });
   </script>
 

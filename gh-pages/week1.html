@@ -331,17 +331,17 @@
               </svg>
             </button>
             <div
-              class="absolute left-0 mt-2 w-48 bg-gradient-to-b from-[#43a876] to-[#43a876] rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50 border border-green-400/30">
+              class="absolute left-0 mt-2 w-48 bg-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50 border border-gray-600/30">
               <a href="./week1.html"
-                class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
+                class="block px-4 py-2 text-white hover:bg-gray-800 transition-colors">
                 Week 1 - Research & Prototyping
               </a>
               <a href="./week2.html"
-                class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
+                class="block px-4 py-2 text-white hover:bg-gray-800 transition-colors">
                 Week 2 - Feedback & Iteration
               </a>
               <a href="./week3.html"
-                class="block px-4 py-2 text-white hover:bg-green-600/50 transition-colors">
+                class="block px-4 py-2 text-white hover:bg-gray-800 transition-colors">
                 Week 3 - Poster & Website
               </a>
             </div>
@@ -380,7 +380,7 @@
       </div>
 
       <!-- Mobile menu -->
-      <div id="menu" class="hidden md:hidden" style="background: #1E3A00 !important;">
+      <div id="menu" class="hidden md:hidden" style="background: #000000 !important;">
         <a href="../index.html"
           class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
           Home
@@ -393,13 +393,13 @@
           </svg>
         </button>
         <div id="submenu" class="hidden" style="z-index: 9999; position: relative;">
-          <a href="./week1.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100">
+          <a href="./week1.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
             Week 1
           </a>
-          <a href="./week2.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100">
+          <a href="./week2.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
             Week 2
           </a>
-          <a href="./week3.html" class="block px-8 py-2 bg-white text-black hover:bg-gray-100">
+          <a href="./week3.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
             Week 3
           </a>
         </div>
@@ -621,47 +621,37 @@
           <div id="carouselWrapper" class="flex transition-transform duration-300 ease-in-out">
             <!-- Slide 1 -->
             <div class="w-full flex-shrink-0">
-              <div class="relative bg-black/20 flex items-center justify-center min-h-[500px]">
-                <img src="../media/scanner.jpg" alt="Camera Taking" class="max-w-full max-h-[500px] object-contain">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h3 class="text-white text-lg font-semibold">Camera Taking</h3>
-                </div>
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/scanner.jpg" alt="Camera Taking" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Camera Taking</h3>
               </div>
             </div>
             <!-- Slide 2 -->
             <div class="w-full flex-shrink-0">
-              <div class="relative bg-black/20 flex items-center justify-center min-h-[500px]">
-                <img src="../media/high_confidence.jpg" alt="Species Identification (High Confidence)" class="max-w-full max-h-[500px] object-contain">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h3 class="text-white text-lg font-semibold">Species Identification (High Confidence)</h3>
-                </div>
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/high_confidence.jpg" alt="Species Identification (High Confidence)" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Species Identification (High Confidence)</h3>
               </div>
             </div>
             <!-- Slide 3 -->
             <div class="w-full flex-shrink-0">
-              <div class="relative bg-black/20 flex items-center justify-center min-h-[500px]">
-                <img src="../media/low_confidence.jpg" alt="Species Identification (Low Confidence)" class="max-w-full max-h-[500px] object-contain">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h3 class="text-white text-lg font-semibold">Species Identification (Low Confidence)</h3>
-                </div>
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/low_confidence.jpg" alt="Species Identification (Low Confidence)" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Species Identification (Low Confidence)</h3>
               </div>
             </div>
             <!-- Slide 4 -->
             <div class="w-full flex-shrink-0">
-              <div class="relative bg-black/20 flex items-center justify-center min-h-[500px]">
-                <img src="../media/communityview.jpg" alt="Community View" class="max-w-full max-h-[500px] object-contain">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h3 class="text-white text-lg font-semibold">Community View</h3>
-                </div>
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/communityview.jpg" alt="Community View" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Community View</h3>
               </div>
             </div>
             <!-- Slide 5 -->
             <div class="w-full flex-shrink-0">
-              <div class="relative bg-black/20 flex items-center justify-center min-h-[500px]">
-                <img src="../media/map.jpg" alt="Map View" class="max-w-full max-h-[500px] object-contain">
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h3 class="text-white text-lg font-semibold">Map View</h3>
-                </div>
+              <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
+                <img src="../media/map.jpg" alt="Map View" class="max-w-full max-h-[450px] object-contain">
+                <h3 class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">Map View</h3>
               </div>
             </div>
           </div>
@@ -1101,6 +1091,7 @@
       let startX = 0;
       let currentX = 0;
       let isDragging = false;
+      let isTransitioning = false;
 
       // Update carousel position
       function updateCarousel() {
@@ -1121,14 +1112,20 @@
 
       // Next slide
       function nextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
         currentSlide = (currentSlide + 1) % totalSlides;
         updateCarousel();
+        setTimeout(() => { isTransitioning = false; }, 300);
       }
 
       // Previous slide
       function prevSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         updateCarousel();
+        setTimeout(() => { isTransitioning = false; }, 300);
       }
 
       // Go to specific slide
