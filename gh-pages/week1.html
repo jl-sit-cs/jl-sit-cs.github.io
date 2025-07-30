@@ -295,6 +295,75 @@
         display: flex !important;
       }
     }
+
+    /* Mobile-specific fixes */
+    @media (max-width: 767px) {
+      /* Fix mobile navigation */
+      .max-w-6xl {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      /* Fix mobile header text */
+      .text-enhanced {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+      
+      /* Fix mobile carousel */
+      #prototypeCarousel {
+        margin: 0 -1rem;
+      }
+      
+      .min-h-[500px] {
+        min-height: 400px !important;
+      }
+      
+      .max-h-[450px] {
+        max-height: 350px !important;
+      }
+      
+      /* Fix mobile section boxes */
+      .section-box {
+        padding: 1.5rem !important;
+        margin: 1rem 0 !important;
+        border-radius: 1rem !important;
+      }
+      
+      /* Fix mobile text sizes */
+      .text-4xl {
+        font-size: 1.875rem !important;
+      }
+      
+      .text-3xl {
+        font-size: 1.5rem !important;
+      }
+      
+      .text-xl {
+        font-size: 1.125rem !important;
+      }
+      
+      /* Fix mobile spacing */
+      .py-12 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+      
+      .space-y-12 > * + * {
+        margin-top: 2rem !important;
+      }
+      
+      /* Fix mobile overflow */
+      body {
+        overflow-x: hidden;
+      }
+      
+      /* Fix mobile background attachment */
+      body {
+        background-attachment: scroll !important;
+      }
+    }
   </style>
 </head>
 
