@@ -14,15 +14,22 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
+    /* Enhanced Custom Styles for Species Identification Project */
     :root {
       --inat-green-primary: #73AB00;
       --inat-green-dark: #2E5B00;
       --inat-peach-light: #F9C3AB;
+      --inat-text-dark: #333333;
+      --inat-text-light: #f5f5f5;
+      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
-    
+
     body {
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
+      color: var(--inat-text-dark);
       scroll-behavior: smooth;
       background-image: url('../media/glasgow%20botanics%20cropped_1479274578.jpg');
       background-size: cover;
@@ -39,9 +46,179 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(46, 91, 0, 0.1);
-      z-index: -1;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -2;
       pointer-events: none;
+    }
+
+    /* Enhanced text readability */
+    .text-enhanced {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Polished section boxes */
+    .section-box {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    .section-box:hover {
+      transform: translateY(-5px);
+      border-color: rgba(115, 171, 0, 0.4);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(115, 171, 0, 0.2) inset,
+        0 0 30px rgba(115, 171, 0, 0.1);
+    }
+
+    /* White text for all content on dark background */
+    .section-box h2,
+    .section-box h3,
+    .section-box h4,
+    .section-box p,
+    .section-box li,
+    .section-box span,
+    .section-box div {
+      color: white !important;
+    }
+
+    /* Enhanced section headers */
+    .section-header {
+      color: white !important;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 1rem;
+    }
+
+    /* Ensure background shows through other elements */
+    .bg-gray-50,
+    .bg-white,
+    body>* {
+      background: transparent !important;
+    }
+
+    /* Override any canvas or section backgrounds that might be blocking */
+    canvas,
+    section,
+    main,
+    header {
+      background: transparent !important;
+    }
+
+    /* Enhanced scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--inat-green-primary), var(--inat-green-dark));
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--inat-green-dark), #1a3d00);
+    }
+
+    /* Enhanced Cards */
+    .card-enhanced {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-light);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(115, 171, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--inat-green-primary), var(--inat-peach-light));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .card-enhanced:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-heavy);
+    }
+
+    .card-enhanced:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Interactive hover effects */
+    .interactive-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .interactive-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .interactive-card:hover::before {
+      left: 100%;
+    }
+
+    .interactive-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Floating elements */
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     /* Enhanced Table and Grid Styling */
@@ -140,7 +317,10 @@
   </style>
 </head>
 
-<body class="bg-gray-50">
+<body class="min-h-screen text-inat-light">
+  <canvas id="particles" class="fixed inset-0 w-full h-full pointer-events-none -z-10"
+    style="background: transparent !important;"></canvas>
+
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 shadow-2xl" style="background: #43a876 !important; backdrop-filter: none !important;"
     data-aos="fade-down" data-aos-delay="100">
@@ -269,13 +449,18 @@
     }
   </script>
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-green-600 to-green-700 text-white py-12">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Design Journey</h1>
-      <p class="text-xl opacity-90 max-w-3xl mx-auto">
-        From research to final solution: A comprehensive overview of our design process and key insights
-      </p>
+  <!-- Enhanced Interactive Header -->
+  <header class="bg-gradient-to-r from-[#2E5B00] to-[#73AB00] text-white py-12 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-enhanced floating animate__animated animate__fadeInDown">
+          🎨 Design Journey 🚀
+        </h1>
+        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto text-enhanced animate__animated animate__fadeInUp animate__delay-1s">
+          From research to final solution: A comprehensive overview of our design process and key insights
+        </p>
+      </div>
     </div>
   </header>
 
@@ -283,83 +468,83 @@
   <main class="max-w-6xl mx-auto py-12 px-4 space-y-16">
     
     <!-- Journey Overview -->
-    <section class="text-center" data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-gray-800 mb-8">Our Design Process</h2>
+    <section class="section-box text-center" data-aos="fade-up">
+      <h2 class="section-header text-3xl font-bold mb-8">Our Design Process</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="text-center">
           <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Research & Discovery</h3>
-          <p class="text-gray-600">Understanding stakeholder needs, current workflows, and identifying opportunities for improvement</p>
+          <h3 class="text-xl font-semibold mb-3 text-white">Research & Discovery</h3>
+          <p class="text-gray-300">Understanding stakeholder needs, current workflows, and identifying opportunities for improvement</p>
         </div>
         
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="text-center">
           <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Ideation & Prototyping</h3>
-          <p class="text-gray-600">Exploring solutions, developing concepts, and creating testable prototypes</p>
+          <h3 class="text-xl font-semibold mb-3 text-white">Ideation & Prototyping</h3>
+          <p class="text-gray-300">Exploring solutions, developing concepts, and creating testable prototypes</p>
         </div>
         
-        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="text-center">
           <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Solution Development</h3>
-          <p class="text-gray-600">Refining concepts, validation testing, and preparing implementation recommendations</p>
+          <h3 class="text-xl font-semibold mb-3 text-white">Solution Development</h3>
+          <p class="text-gray-300">Refining concepts, validation testing, and preparing implementation recommendations</p>
         </div>
       </div>
     </section>
 
     <!-- Week 1: Research & Discovery -->
-    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up">
+    <section class="section-box" data-aos="fade-up">
       <div class="flex items-center mb-6">
         <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
           <span class="text-green-600 font-bold text-lg">1</span>
         </div>
         <div>
-          <h2 class="text-2xl font-bold text-gray-800">Week 1: Research & Discovery</h2>
-          <p class="text-gray-600">Understanding the problem space and stakeholder needs</p>
+          <h2 class="section-header text-2xl font-bold">Week 1: Research & Discovery</h2>
+          <p class="text-white">Understanding the problem space and stakeholder needs</p>
         </div>
       </div>
       
       <div class="grid md:grid-cols-2 gap-8">
         <div>
           <h3 class="text-lg font-semibold mb-4 text-green-700">Key Activities</h3>
-          <ul class="space-y-3 text-gray-600">
+          <ul class="space-y-3 text-white">
             <li class="flex items-start">
-              <span class="text-green-500 mr-2">•</span>
+              <span class="text-green-400 mr-2">•</span>
               Stakeholder interview with Chrissy Sanachan from Glasgow Botanic Gardens
             </li>
             <li class="flex items-start">
-              <span class="text-green-500 mr-2">•</span>
+              <span class="text-green-400 mr-2">•</span>
               Analysis of current species identification and data collection workflows
             </li>
             <li class="flex items-start">
-              <span class="text-green-500 mr-2">•</span>
+              <span class="text-green-400 mr-2">•</span>
               Research into iNaturalist platform capabilities and citizen science best practices
             </li>
             <li class="flex items-start">
-              <span class="text-green-500 mr-2">•</span>
+              <span class="text-green-400 mr-2">•</span>
               Initial problem definition and opportunity identification
             </li>
           </ul>
         </div>
         
         <div>
-          <h3 class="text-lg font-semibold mb-4 text-green-700">Key Insights</h3>
-          <div class="bg-green-50 p-4 rounded-lg">
-            <p class="text-gray-700 mb-3">
+          <h3 class="text-lg font-semibold mb-4 text-green-400">Key Insights</h3>
+          <div class="bg-black/30 p-4 rounded-lg border border-green-400/30">
+            <p class="text-white mb-3">
               <strong>Main Challenge:</strong> Manual data entry processes are time-consuming and prone to errors, limiting the scale and consistency of species monitoring.
             </p>
-            <p class="text-gray-700">
+            <p class="text-white">
               <strong>Opportunity:</strong> Leveraging citizen science and AI-powered identification tools could significantly enhance data collection while engaging the public in biodiversity conservation.
             </p>
           </div>
@@ -368,50 +553,50 @@
     </section>
 
     <!-- Week 2: Ideation & Prototyping -->
-    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="100">
+    <section class="section-box" data-aos="fade-up" data-aos-delay="100">
       <div class="flex items-center mb-6">
         <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
           <span class="text-blue-600 font-bold text-lg">2</span>
         </div>
         <div>
-          <h2 class="text-2xl font-bold text-gray-800">Week 2: Ideation & Prototyping</h2>
-          <p class="text-gray-600">Exploring solutions and developing testable concepts</p>
+          <h2 class="section-header text-2xl font-bold">Week 2: Ideation & Prototyping</h2>
+          <p class="text-white">Exploring solutions and developing testable concepts</p>
         </div>
       </div>
       
       <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <h3 class="text-lg font-semibold mb-4 text-blue-700">Design Activities</h3>
-          <ul class="space-y-3 text-gray-600">
+          <h3 class="text-lg font-semibold mb-4 text-blue-400">Design Activities</h3>
+          <ul class="space-y-3 text-white">
             <li class="flex items-start">
-              <span class="text-blue-500 mr-2">•</span>
+              <span class="text-blue-400 mr-2">•</span>
               User persona development for different stakeholder groups
             </li>
             <li class="flex items-start">
-              <span class="text-blue-500 mr-2">•</span>
+              <span class="text-blue-400 mr-2">•</span>
               Journey mapping for current and proposed workflows
             </li>
             <li class="flex items-start">
-              <span class="text-blue-500 mr-2">•</span>
+              <span class="text-blue-400 mr-2">•</span>
               Prototype development for iNaturalist integration concepts
             </li>
             <li class="flex items-start">
-              <span class="text-blue-500 mr-2">•</span>
+              <span class="text-blue-400 mr-2">•</span>
               Initial testing and feedback collection
             </li>
           </ul>
         </div>
         
         <div>
-          <h3 class="text-lg font-semibold mb-4 text-blue-700">Prototype Concepts</h3>
+          <h3 class="text-lg font-semibold mb-4 text-blue-400">Prototype Concepts</h3>
           <div class="space-y-4">
-            <div class="bg-blue-50 p-4 rounded-lg">
-              <h4 class="font-semibold text-gray-800 mb-2">AI-Assisted Identification</h4>
-              <p class="text-gray-600 text-sm">Integration with iNaturalist's computer vision for real-time species identification</p>
+            <div class="bg-black/30 p-4 rounded-lg border border-blue-400/30">
+              <h4 class="font-semibold text-white mb-2">AI-Assisted Identification</h4>
+              <p class="text-gray-300 text-sm">Integration with iNaturalist's computer vision for real-time species identification</p>
             </div>
-            <div class="bg-blue-50 p-4 rounded-lg">
-              <h4 class="font-semibold text-gray-800 mb-2">Expert Validation System</h4>
-              <p class="text-gray-600 text-sm">Workflow for expert review and validation of citizen science contributions</p>
+            <div class="bg-black/30 p-4 rounded-lg border border-blue-400/30">
+              <h4 class="font-semibold text-white mb-2">Expert Validation System</h4>
+              <p class="text-gray-300 text-sm">Workflow for expert review and validation of citizen science contributions</p>
             </div>
           </div>
         </div>
@@ -419,14 +604,14 @@
     </section>
 
     <!-- Week 3: Solution Development -->
-    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+    <section class="section-box" data-aos="fade-up" data-aos-delay="200">
       <div class="flex items-center mb-6">
         <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
           <span class="text-purple-600 font-bold text-lg">3</span>
         </div>
         <div>
-          <h2 class="text-2xl font-bold text-gray-800">Week 3: Solution Development</h2>
-          <p class="text-gray-600">Refining and validating the final solution</p>
+          <h2 class="section-header text-2xl font-bold">Week 3: Solution Development</h2>
+          <p class="text-white">Refining and validating the final solution</p>
         </div>
       </div>
       
@@ -454,12 +639,12 @@
         </div>
         
         <div>
-          <h3 class="text-lg font-semibold mb-4 text-purple-700">Final Solution</h3>
-          <div class="bg-purple-50 p-4 rounded-lg">
-            <p class="text-gray-700 mb-3">
+          <h3 class="text-lg font-semibold mb-4 text-purple-400">Final Solution</h3>
+          <div class="bg-black/30 p-4 rounded-lg border border-purple-400/30">
+            <p class="text-black mb-3">
               A comprehensive citizen science platform integrating iNaturalist's AI capabilities with expert validation workflows, designed to:
             </p>
-            <ul class="text-gray-600 text-sm space-y-1">
+            <ul class="text-black text-sm space-y-1">
               <li>• Reduce manual data entry by 70%</li>
               <li>• Increase citizen participation by 300%</li>
               <li>• Maintain scientific accuracy through expert review</li>
@@ -471,8 +656,8 @@
     </section>
 
     <!-- Verification Steps -->
-    <section class="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="300">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">Solution Verification</h2>
+    <section class="section-box" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="section-header text-2xl font-bold mb-6">Solution Verification</h2>
       
       <div class="grid md:grid-cols-3 gap-6">
         <div class="text-center">
@@ -508,8 +693,8 @@
     </section>
 
     <!-- Key Learnings -->
-    <section class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8" data-aos="fade-up" data-aos-delay="400">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Key Learnings & Insights</h2>
+    <section class="section-box" data-aos="fade-up" data-aos-delay="400">
+      <h2 class="section-header text-2xl font-bold mb-6 text-center">Key Learnings & Insights</h2>
       
       <div class="grid md:grid-cols-2 gap-8">
         <div>
@@ -735,5 +920,74 @@
       once: true,
     });
   </script>
+
+  <script>
+    const canvas = document.getElementById('particles'),
+      ctx = canvas.getContext('2d'),
+      leaves = [];
+    let W, H;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function createLeaf() {
+      return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 8 + 4,
+        dx: (Math.random() - 0.5) * 1.0,    // faster
+        dy: (Math.random() - 0.5) * 1.0,    // faster
+        angle: Math.random() * Math.PI * 2,
+        da: (Math.random() - 0.5) * 0.05, // faster spin
+        alpha: Math.random() * 0.5 + 0.2
+      };
+    }
+
+    function init() {
+      resize();
+      for (let i = 0; i < 80; i++) leaves.push(createLeaf());
+      animate();
+      // spawn one new leaf every 200ms
+      setInterval(() => {
+        leaves.push(createLeaf());
+        if (leaves.length > 200) leaves.shift();
+      }, 200);
+    }
+
+    function drawLeaf(p) {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.angle);
+      ctx.beginPath();
+      ctx.moveTo(-p.r, 0);
+      ctx.quadraticCurveTo(0, -p.r * 1.5, p.r, 0);
+      ctx.quadraticCurveTo(0, p.r * 1.5, -p.r, 0);
+      ctx.fillStyle = `rgba(245,245,245,${p.alpha})`;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, W, H);
+      leaves.forEach(p => {
+        p.x += p.dx;
+        p.y += p.dy;
+        p.angle += p.da;
+        if (p.x < -p.r) p.x = W + p.r;
+        if (p.x > W + p.r) p.x = -p.r;
+        if (p.y < -p.r) p.y = H + p.r;
+        if (p.y > H + p.r) p.y = -p.r;
+        drawLeaf(p);
+      });
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resize);
+    init();
+  </script>
+
 </body>
+
 </html>
