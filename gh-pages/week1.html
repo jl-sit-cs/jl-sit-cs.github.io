@@ -73,17 +73,19 @@
 
     /* Polished section boxes */
     .section-box {
-      background: linear-gradient(135deg, #2E5B00 0%, #73AB00 100%) !important;
-      backdrop-filter: none !important;
-      border: 1px solid rgba(115, 171, 0, 0.5);
+      background: #000000 !important;
+      background-color: #000000 !important;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
       border-radius: 1.5rem;
       padding: 2rem;
       margin: 1.5rem 0;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      opacity: 1 !important;
+      z-index: 10;
     }
 
     .section-box::before {
@@ -98,10 +100,10 @@
 
     .section-box:hover {
       transform: translateY(-5px);
-      border-color: rgba(115, 171, 0, 0.35);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12),
-        0 0 0 1px rgba(255, 255, 255, 0.9) inset,
-        0 0 25px rgba(115, 171, 0, 0.15);
+      border-color: rgba(115, 171, 0, 0.4);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(115, 171, 0, 0.2) inset,
+        0 0 30px rgba(115, 171, 0, 0.1);
     }
 
     /* White text for all content on green background */
@@ -276,6 +278,13 @@
       backdrop-filter: none !important;
     }
 
+    /* force header itself to be see‑through so the page background‑image shows */
+    canvas,
+    main,
+    header {
+      background: transparent !important;
+    }
+
     /* Force desktop menu to be visible */
     .hidden.md\:flex {
       display: flex !important;
@@ -422,16 +431,15 @@
   </script>
 
   <!-- Enhanced Interactive Header -->
-  <header class="bg-gradient-to-r from-[#2E5B00] to-[#73AB00] text-white py-12 px-4 relative overflow-hidden">
+  <header class="bg-transparent text-white py-12 px-4 relative overflow-hidden">
     <div class="absolute inset-0 bg-black/30"></div>
     <div class="max-w-6xl mx-auto relative z-10">
       <div class="text-center mb-8">
         <h1 class="text-4xl md:text-5xl font-bold mb-4 text-enhanced floating animate__animated animate__fadeInDown">
-          🌿 Species Identification Project 🔬
+          📚 Week 1: Understanding the Problem Space 🔍
         </h1>
-        <p
-          class="text-xl md:text-2xl font-light max-w-4xl mx-auto text-enhanced animate__animated animate__fadeInUp animate__delay-1s">
-          Week 1: Understanding the Problem Space - Empowering biodiversity data collection through citizen science and AI-powered species identification at Glasgow Botanic Gardens
+        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto text-enhanced animate__animated animate__fadeInUp animate__delay-1s">
+          Research, discovery, and initial prototyping: Building our understanding of stakeholder needs and design challenges
         </p>
       </div>
     </div>
@@ -465,33 +473,33 @@
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="p-6 bg-inat-white-light rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-inat-green-dark mb-3">1. Discover</h3>
-          <p class="text-inat-dark">
+        <div class="p-6 bg-gray-800/50 rounded-lg shadow-inner border border-gray-600/30">
+          <h3 class="text-2xl font-semibold text-white mb-3">1. Discover</h3>
+          <p class="text-white">
             We began by understanding the needs of all stakeholders: Friends of Glasgow Botanic Gardens. We researched
             existing
             data collection methods, the iNaturalist app, and other identification services
             to identify pain points and opportunities.
           </p>
         </div>
-        <div class="p-6 bg-inat-white-light rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-inat-green-dark mb-3">2. Define</h3>
-          <p class="text-inat-dark">
+        <div class="p-6 bg-gray-800/50 rounded-lg shadow-inner border border-gray-600/30">
+          <h3 class="text-2xl font-semibold text-white mb-3">2. Define</h3>
+          <p class="text-white">
             Based on our research, we defined the core problem: Reducing the manual effort required for species
             identification and data collection while expanding citizen participation year-round.
           </p>
         </div>
-        <div class="p-6 bg-inat-white-light rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-inat-green-dark mb-3">3. Develop</h3>
-          <p class="text-inat-dark">
+        <div class="p-6 bg-gray-800/50 rounded-lg shadow-inner border border-gray-600/30">
+          <h3 class="text-2xl font-semibold text-white mb-3">3. Develop</h3>
+          <p class="text-white">
             We brainstormed various solutions, focusing on leveraging existing tools like
             iNaturalist and integrating new functionalities. Elements like prototyping and user feedback were crucial
             to refining our ideas.
           </p>
         </div>
-        <div class="p-6 bg-inat-white-light rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-inat-green-dark mb-3">4. Deliver</h3>
-          <p class="text-inat-dark">
+        <div class="p-6 bg-gray-800/50 rounded-lg shadow-inner border border-gray-600/30">
+          <h3 class="text-2xl font-semibold text-white mb-3">4. Deliver</h3>
+          <p class="text-white">
             We created a prototype of the proposed solution, which included a user-friendly interface for species
             identification and data collection. This prototype was tested with stakeholders to gather feedback and
             ensure it met their needs.
