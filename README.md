@@ -13,10 +13,12 @@ This project aims to enhance species recording by reducing manual data entry and
 
 
 ## Problem Statement
-How might we encourage citizens and visitors to collect more sighting data to improve their understanding and educate about their characteristics while maintaining efficient scientific records?
+How might we encourage botanic friends and visitors to collect more sighting data to improve their understanding and educate about their characteristics while maintaining efficient scientific records.
 
 ## Technologies Used
-- HTML/CSS
+- Hyper Text Marketup Language
+- Cascending Spreadsheet
+- Javascript
 - iNaturalist API (if applicable)
 
 ## Contributors
