@@ -150,6 +150,17 @@
       box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 25px rgba(115, 171, 0, 0.15);
     }
 
+    /* Force visible text in solution boxes */
+    .solution-visible-text {
+      color: #1f2937 !important;
+      text-shadow: none !important;
+    }
+
+    .solution-visible-icon {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
     .timeline-line {
       position: absolute;
       left: 50%;
@@ -1019,169 +1030,71 @@
     </h2>
     
     <!-- Solution Overview -->
-    <div class="mb-8">
-      <div class="solution-content">
-        <h3 class="timeline-title flex items-center">
-          <i class="fas fa-bullseye mr-2" style="color: #3b82f6 !important; font-size: 1.2em;"></i>Solution Overview
-        </h3>
-        <p class="timeline-description">
-          Our proposed solution integrates <strong>citizen science tools</strong> with <strong>expert validation workflows</strong> to create a comprehensive species identification and data collection system. By leveraging the existing <strong>iNaturalist platform</strong> and enhancing it with user-friendly interfaces, gamification elements, and educational features, we aim to increase community engagement while maintaining scientific accuracy.
-        </p>
-      </div>
-    </div>
-
-    <!-- Key Components -->
-    <div class="grid md:grid-cols-2 gap-8 mb-8">
-      <!-- Core Features -->
-      <div>
-        <h3 class="text-xl font-semibold mb-6 flex items-center" style="color: white !important;">
-          <i class="fas fa-cogs mr-2 text-white"></i>Core Features
-        </h3>
-        <div class="space-y-4">
-          <div class="solution-content">
-            <h4 class="timeline-title flex items-center">
-              <i class="fas fa-mobile-alt mr-2 text-blue-600"></i>iNaturalist Integration
-            </h4>
-            <p class="timeline-description">
-              Seamless integration with the existing iNaturalist platform to leverage its robust species identification capabilities and global community network.
-            </p>
-          </div>
-          
-          <div class="solution-content">
-            <h4 class="timeline-title flex items-center">
-              <i class="fas fa-user-friends mr-2 text-purple-600"></i>User-Friendly Interface
-            </h4>
-            <p class="timeline-description">
-              Intuitive design that makes species identification accessible to both novice citizen scientists and experienced botanists.
-            </p>
-          </div>
-          
-          <div class="solution-content">
-            <h4 class="timeline-title flex items-center">
-              <i class="fas fa-gamepad mr-2 text-orange-600"></i>Gamification Elements
-            </h4>
-            <p class="timeline-description">
-              Achievement systems, progress tracking, and community challenges to encourage regular participation and learning.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Technical Approach -->
-      <div>
-        <h3 class="text-xl font-semibold mb-6 flex items-center" style="color: white !important;">
-          <i class="fas fa-code mr-2 text-white"></i>Technical Approach
-        </h3>
-        <div class="space-y-4">
-          <div class="solution-content">
-            <h4 class="timeline-title flex items-center">
-              <i class="fas fa-database mr-2 text-green-600"></i>Data Management
-            </h4>
-            <p class="timeline-description">
-              Automated data entry and validation processes to reduce manual workload while maintaining data quality and scientific standards.
-            </p>
-          </div>
-          
-          <div class="solution-content">
-            <h4 class="timeline-title flex items-center">
-              <i class="fas fa-check-circle mr-2 text-cyan-600"></i>Expert Validation
-            </h4>
-            <p class="timeline-description">
-              Streamlined workflows for expert review and validation of citizen science contributions, ensuring scientific accuracy.
-            </p>
-          </div>
-          
-          <div class="solution-content">
-            <h4 class="timeline-title flex items-center">
-              <i class="fas fa-graduation-cap mr-2 text-pink-600"></i>Educational Integration
-            </h4>
-            <p class="timeline-description">
-              Built-in learning resources and species information to enhance user knowledge and identification skills.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Solution Benefits -->
-    <div class="mb-8">
-      <h3 class="text-xl font-semibold mb-6 text-center" style="color: white !important;">
-        <i class="fas fa-star mr-2 text-white"></i>Solution Benefits
+    <div class="solution-content mb-8">
+      <h3 class="timeline-title flex items-center mb-4">
+        <i class="fas fa-bullseye mr-2" style="color: #3b82f6 !important; font-size: 1.2em;"></i>Solution Overview
       </h3>
-      
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="solution-content text-center">
-          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-chart-line text-xl text-green-600"></i>
-          </div>
-          <h4 class="timeline-title">Increased Participation</h4>
-          <p class="timeline-description">
-            Engaging interface and gamification elements encourage more visitors to participate in species recording activities.
-          </p>
-        </div>
+      <p class="timeline-description">
+        We integrate <strong>citizen science tools</strong> with <strong>expert validation workflows</strong> using the <strong>iNaturalist platform</strong>, enhanced with user-friendly interfaces and gamification to increase community engagement while maintaining scientific accuracy.
+      </p>
+    </div>
 
-        <div class="solution-content text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-clock text-xl text-blue-600"></i>
-          </div>
-          <h4 class="timeline-title">Reduced Manual Work</h4>
-          <p class="timeline-description">
-            Automated data entry and processing significantly reduce the time spent on manual data management tasks.
-          </p>
-        </div>
+    <!-- Key Features -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div style="background: white !important; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1rem;">
+        <h3 style="color: #1f2937 !important; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; text-shadow: none !important;">
+          <i class="fas fa-cogs" style="color: #6b7280 !important; margin-right: 0.5rem;"></i>Key Features
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0; color: #1f2937 !important;">
+          <li style="display: flex; align-items: flex-start; margin-bottom: 0.5rem; color: #1f2937 !important;">
+            <i class="fas fa-mobile-alt" style="color: #3b82f6 !important; margin-right: 0.5rem; margin-top: 0.25rem; font-size: 1rem;"></i>
+            <span style="color: #1f2937 !important; text-shadow: none !important;"><strong style="color: #1f2937 !important;">iNaturalist Integration</strong> - Leverage existing platform capabilities</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; margin-bottom: 0.5rem; color: #1f2937 !important;">
+            <i class="fas fa-user-friends" style="color: #8b5cf6 !important; margin-right: 0.5rem; margin-top: 0.25rem; font-size: 1rem;"></i>
+            <span style="color: #1f2937 !important; text-shadow: none !important;"><strong style="color: #1f2937 !important;">User-Friendly Interface</strong> - Accessible to all skill levels</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; margin-bottom: 0.5rem; color: #1f2937 !important;">
+            <i class="fas fa-gamepad" style="color: #f97316 !important; margin-right: 0.5rem; margin-top: 0.25rem; font-size: 1rem;"></i>
+            <span style="color: #1f2937 !important; text-shadow: none !important;"><strong style="color: #1f2937 !important;">Gamification</strong> - Achievement systems and challenges</span>
+          </li>
+        </ul>
+      </div>
 
-        <div class="solution-content text-center">
-          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-shield-alt text-xl text-purple-600"></i>
-          </div>
-          <h4 class="timeline-title">Maintained Quality</h4>
-          <p class="timeline-description">
-            Expert validation workflows ensure that scientific accuracy and data quality standards are preserved.
-          </p>
-        </div>
+      <div style="background: white !important; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1rem;">
+        <h3 style="color: #1f2937 !important; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; text-shadow: none !important;">
+          <i class="fas fa-rocket" style="color: #6b7280 !important; margin-right: 0.5rem;"></i>Key Benefits
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0; color: #1f2937 !important;">
+          <li style="display: flex; align-items: flex-start; margin-bottom: 0.5rem; color: #1f2937 !important;">
+            <i class="fas fa-chart-line" style="color: #10b981 !important; margin-right: 0.5rem; margin-top: 0.25rem; font-size: 1rem;"></i>
+            <span style="color: #1f2937 !important; text-shadow: none !important;"><strong style="color: #1f2937 !important;">Increased Participation</strong> - Engaging user experience</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; margin-bottom: 0.5rem; color: #1f2937 !important;">
+            <i class="fas fa-clock" style="color: #3b82f6 !important; margin-right: 0.5rem; margin-top: 0.25rem; font-size: 1rem;"></i>
+            <span style="color: #1f2937 !important; text-shadow: none !important;"><strong style="color: #1f2937 !important;">Reduced Manual Work</strong> - Automated data processing</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; margin-bottom: 0.5rem; color: #1f2937 !important;">
+            <i class="fas fa-shield-alt" style="color: #8b5cf6 !important; margin-right: 0.5rem; margin-top: 0.25rem; font-size: 1rem;"></i>
+            <span style="color: #1f2937 !important; text-shadow: none !important;"><strong style="color: #1f2937 !important;">Maintained Quality</strong> - Expert validation workflows</span>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <!-- Implementation Strategy -->
+    <!-- Implementation -->
     <div class="solution-content">
-      <h3 class="timeline-title flex items-center">
-        <i class="fas fa-rocket mr-2 text-purple-600"></i>
-        Implementation Strategy
+      <h3 class="timeline-title mb-4">
+        <i class="fas fa-road mr-2 text-green-600"></i>Implementation Approach
       </h3>
       <div class="grid md:grid-cols-2 gap-6">
         <div>
-          <h4 class="timeline-title">Phase 1: Foundation</h4>
-          <ul class="timeline-description space-y-2">
-            <li class="flex items-start">
-              <i class="fas fa-arrow-right text-purple-600 mr-2 mt-1 text-xs"></i>
-              <span>Establish iNaturalist integration and API connections</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-arrow-right text-purple-600 mr-2 mt-1 text-xs"></i>
-              <span>Develop core user interface and basic functionality</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-arrow-right text-purple-600 mr-2 mt-1 text-xs"></i>
-              <span>Create initial user testing and feedback mechanisms</span>
-            </li>
-          </ul>
+          <h4 class="timeline-title text-sm mb-2">Phase 1: Foundation</h4>
+          <p class="timeline-description text-sm">iNaturalist integration, core UI development, and initial testing</p>
         </div>
         <div>
-          <h4 class="timeline-title">Phase 2: Enhancement</h4>
-          <ul class="timeline-description space-y-2">
-            <li class="flex items-start">
-              <i class="fas fa-arrow-right text-blue-600 mr-2 mt-1 text-xs"></i>
-              <span>Implement gamification features and achievement systems</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-arrow-right text-blue-600 mr-2 mt-1 text-xs"></i>
-              <span>Add educational content and species information resources</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-arrow-right text-blue-600 mr-2 mt-1 text-xs"></i>
-              <span>Deploy expert validation workflows and quality assurance</span>
-            </li>
-          </ul>
+          <h4 class="timeline-title text-sm mb-2">Phase 2: Enhancement</h4>
+          <p class="timeline-description text-sm">Gamification features, educational content, and validation workflows</p>
         </div>
       </div>
     </div>
