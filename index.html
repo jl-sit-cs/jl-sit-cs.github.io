@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- AOS JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Enhanced Animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -72,7 +77,7 @@
       backdrop-filter: blur(5px);
     }
 
-    /* Polished section boxes */
+    /* Enhanced animated section boxes */
     .section-box {
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(15px);
@@ -83,10 +88,48 @@
       max-width: 72rem;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      transform: translateY(0px);
+      animation: floatGentle 6s ease-in-out infinite, pulseGlow 8s ease-in-out infinite;
+      opacity: 0; /* Hidden by default */
+      visibility: hidden; /* Hidden by default */
     }
+
+    /* Show sections when AOS animates them */
+    .section-box.aos-animate {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Floating animation */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Pulse animation for extra effect */
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset; }
+      50% { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(115, 171, 0, 0.2) inset, 0 0 20px rgba(115, 171, 0, 0.1); }
+    }
+
+    /* Enhanced hover effects */
+    .section-box:hover {
+      transform: translateY(-15px) scale(1.02);
+      border-color: rgba(115, 171, 0, 0.6);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(115, 171, 0, 0.3) inset,
+        0 0 40px rgba(115, 171, 0, 0.2);
+      animation: none; /* Stop floating on hover */
+    }
+
+    /* Staggered animation delays for different sections */
+    #project-brief { animation-delay: 0s; }
+    #timeline { animation-delay: 1.5s; }
+    #proposed-solution { animation-delay: 3s; }
+    #explore-more { animation-delay: 4.5s; }
 
     .section-box::before {
       content: '';
@@ -98,13 +141,6 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     }
 
-    .section-box:hover {
-      transform: translateY(-5px);
-      border-color: rgba(115, 171, 0, 0.4);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(115, 171, 0, 0.2) inset,
-        0 0 30px rgba(115, 171, 0, 0.1);
-    }
 
     /* Black text for all content on green background */
     .section-box h2,
@@ -941,7 +977,7 @@
   </script>
 
   <!-- Project Brief Section -->
-  <section id="project-brief" class="section-box" data-aos="fade-up" data-aos-delay="100">
+  <section id="project-brief" class="section-box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200" data-aos-easing="ease-out-back" data-aos-offset="300">
     <h2 class="section-header text-3xl font-bold mb-8" style="color:white !important;">
       <i class="fa-solid fa-bullseye"></i> The Challenge
     </h2>
@@ -971,7 +1007,7 @@
   </section>
 
   <!-- Project Timeline Section -->
-  <section id="timeline" class="section-box" data-aos="fade-up" data-aos-delay="200">
+  <section id="timeline" class="section-box" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1400" data-aos-easing="ease-out-back" data-aos-offset="300">
     <h2 class="section-header text-3xl font-bold mb-8" style="color:white !important;">
       <i class="fa-solid fa-timeline"></i> Project Timeline
     </h2>
@@ -1067,7 +1103,7 @@
   </section>
 
   <!-- Proposed Solution Section -->
-  <section id="proposed-solution" class="section-box" data-aos="fade-up" data-aos-delay="300">
+  <section id="proposed-solution" class="section-box" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1300" data-aos-easing="ease-out-back" data-aos-offset="300">
     <h2 class="section-header text-3xl font-bold mb-8" style="color:white !important;">
       <i class="fa-solid fa-lightbulb"></i> Proposed Solution
     </h2>
@@ -1145,7 +1181,7 @@
   </section>
 
   <!-- Explore More Section -->
-  <section id="explore-more" class="section-box" data-aos="fade-up" data-aos-delay="400">
+  <section id="explore-more" class="section-box" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1500" data-aos-easing="ease-out-back" data-aos-offset="300">
     <h2 class="section-header text-3xl font-bold mb-8 text-center" style="color:white !important;">
       <i class="fa-solid fa-compass"></i> Explore Our Journey
     </h2>
@@ -1549,6 +1585,17 @@
 
     window.addEventListener('resize', resize);
     init();
+  </script>
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-out-back',
+      once: true, // Animation happens only once
+      offset: 200, // Start animation when element is 200px from viewport
+      delay: 100
+    });
   </script>
 
   <!-- Video Modal Script -->

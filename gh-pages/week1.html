@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- AOS JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Enhanced Animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -72,7 +77,7 @@
       backdrop-filter: blur(5px);
     }
 
-    /* Polished section boxes */
+    /* Enhanced animated section boxes */
     .section-box {
       background: #000000 !important;
       background-color: #000000 !important;
@@ -83,10 +88,25 @@
       margin: 1.5rem 0;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
       z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      animation: floatGentle 6s ease-in-out infinite;
+    }
+
+    /* Floating animation */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Show sections when AOS animates them */
+    .section-box.aos-animate {
+      opacity: 1;
+      visibility: visible;
     }
 
     .section-box::before {
@@ -538,7 +558,7 @@
   </header>
 
   <main class="w-full mx-auto py-12 px-6 space-y-12 md:max-w-6xl">
-    <section id="initial-idea" class="section-box" data-aos="fade-up">
+    <section id="initial-idea" class="section-box" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-6">
         Initial Idea
       </h2>
@@ -552,7 +572,7 @@
       by the citizen scientists.
     </section>
 
-    <section id="design-thinking" class="section-box" data-aos="fade-up">
+    <section id="design-thinking" class="section-box" data-aos="fade-up" data-aos-duration="1100" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-6">
         Our Design Thinking Process
       </h2>
@@ -600,7 +620,7 @@
       </div>
     </section>
 
-    <section id="gathering-ideas" class="section-box">
+    <section id="gathering-ideas" class="section-box" data-aos="fade-up" data-aos-duration="1200" data-aos-offset="200">
 
       <h2 class="section-header text-3xl font-bold mb-6">
         Gathering Ideas
@@ -612,7 +632,7 @@
       as having multiple stakeholders to deal with.
     </section>
 
-    <section id="client-requirement" class="section-box" data-aos="fade-up">
+    <section id="client-requirement" class="section-box" data-aos="fade-up" data-aos-duration="1300" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-6">
         Client Requirements
       </h2>
@@ -636,7 +656,7 @@
     </section>
 
 
-    <section id="problem-statement" class="section-box" data-aos="fade-up">
+    <section id="problem-statement" class="section-box" data-aos="fade-up" data-aos-duration="1400" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-6">
         Revised Problem Statement from Client
       </h2>
@@ -646,7 +666,7 @@
     </section>
 
 
-    <section id="mental-model" class="section-box" data-aos="fade-up">
+    <section id="mental-model" class="section-box" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-6">
         Mental Model
       </h2>
@@ -664,7 +684,7 @@
     </section>
 
 
-    <section id="team-research" class="section-box" data-aos="fade-up">
+    <section id="team-research" class="section-box" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-6">
         Team Research
       </h2>
@@ -1094,6 +1114,17 @@
     <button id="lightbox-close" class="absolute top-4 right-4 text-white text-2xl">×</button>
   </div>
 
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-out-back',
+      once: true,
+      offset: 200,
+      delay: 100
+    });
+  </script>
 
   <!-- LIGHTBOX SCRIPT -->
   <script>

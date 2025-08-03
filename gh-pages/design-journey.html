@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- AOS JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Enhanced Animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -66,7 +71,7 @@
       backdrop-filter: blur(5px);
     }
 
-    /* Polished section boxes */
+    /* Enhanced animated section boxes */
     .section-box {
       background: #000000 !important;
       background-color: #000000 !important;
@@ -77,10 +82,25 @@
       margin: 1.5rem 0;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
       z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      animation: floatGentle 6s ease-in-out infinite;
+    }
+
+    /* Floating animation */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Show sections when AOS animates them */
+    .section-box.aos-animate {
+      opacity: 1;
+      visibility: visible;
     }
 
     .section-box::before {
@@ -529,7 +549,7 @@
     </section>
 
     <!-- User-Centric Problem Statement -->
-    <section class="section-box" data-aos="fade-up">
+    <section class="section-box" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-8">
         <i class="fa-solid fa-bullseye"></i> User-Centric Problem Statement
       </h2>
@@ -659,7 +679,7 @@
 
     <!-- Week 3: Solution Development -->
     <!-- Solution Proposed -->
-    <section class="section-box" data-aos="fade-up">
+    <section class="section-box" data-aos="fade-up" data-aos-duration="1200" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-8">
         <i class="fa-solid fa-rocket"></i> Solution Proposed
       </h2>
@@ -896,7 +916,7 @@
 
 
     <!-- Team Composition & Roles -->
-    <section class="section-box" data-aos="fade-up">
+    <section class="section-box" data-aos="fade-up" data-aos-duration="1300" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-8">
         <i class="fa-solid fa-users"></i> Our Design Team
       </h2>
@@ -1055,7 +1075,7 @@
     </section>
 
     <!-- Pre-existing Solutions Analysis -->
-    <section class="section-box" data-aos="fade-up">
+    <section class="section-box" data-aos="fade-up" data-aos-duration="1100" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-8">
         <i class="fa-solid fa-search"></i> Pre-existing Solutions Analysis
       </h2>
@@ -1113,7 +1133,7 @@
     </section>
 
     <!-- Ideation Process & Ideas Explored -->
-    <section class="section-box" data-aos="fade-up">
+    <section class="section-box" data-aos="fade-up" data-aos-duration="1400" data-aos-offset="200">
       <h2 class="section-header text-3xl font-bold mb-8">
         <i class="fa-solid fa-lightbulb"></i> Ideation Process & Ideas Explored
       </h2>
@@ -1411,6 +1431,17 @@
   </script>
 
   <script>
+  </script>
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-out-back',
+      once: true,
+      offset: 200,
+      delay: 100
+    });
   </script>
 
 </body>
