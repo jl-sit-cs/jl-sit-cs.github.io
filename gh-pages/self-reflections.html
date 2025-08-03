@@ -734,7 +734,24 @@
         <i class="fas fa-handshake mr-3"></i>Partner Interactions & Stakeholder Engagement
       </h2>
 
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
+      <!-- Summary Section -->
+      <div class="bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-lg p-6 border border-green-500/20 mb-6">
+        <h4 class="text-lg font-semibold text-green-300 mb-3">🤝 Stakeholder Collaboration Summary</h4>
+        <p class="text-white mb-4">
+          Our project involved extensive collaboration with <strong>Glasgow Botanic Gardens</strong> and key stakeholders. 
+          We conducted <strong>regular meetings</strong>, gathered <strong>expert insights</strong>, and maintained 
+          <strong>continuous feedback loops</strong> to ensure our solution aligned with real-world needs and organizational goals.
+        </p>
+        <button onclick="toggleStakeholderDetails()" 
+                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+          <span id="stakeholder-toggle-text">View Full Stakeholder Details</span>
+          <i id="stakeholder-toggle-icon" class="fas fa-chevron-down ml-2 transition-transform"></i>
+        </button>
+      </div>
+
+      <!-- Detailed Content (Initially Hidden) -->
+      <div id="stakeholder-details" class="hidden">
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
         <!-- Key Partnership -->
         <div>
           <h3 class="text-xl font-semibold mb-4 text-blue-400">
@@ -1212,6 +1229,25 @@
   </script>
 
   <script>
+  </script>
+
+  <!-- Stakeholder Toggle Script -->
+  <script>
+    function toggleStakeholderDetails() {
+      const details = document.getElementById('stakeholder-details');
+      const toggleText = document.getElementById('stakeholder-toggle-text');
+      const toggleIcon = document.getElementById('stakeholder-toggle-icon');
+      
+      if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        toggleText.textContent = 'Hide Stakeholder Details';
+        toggleIcon.classList.add('rotate-180');
+      } else {
+        details.classList.add('hidden');
+        toggleText.textContent = 'View Full Stakeholder Details';
+        toggleIcon.classList.remove('rotate-180');
+      }
+    }
   </script>
 
 </body>
