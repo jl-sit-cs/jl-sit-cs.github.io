@@ -535,18 +535,35 @@
 
       <br>
       <br>
-      The interview question follow this format:
-      <br>
-      1. An Introduction: "Hello, I am from University of Glasgow and is doing a survey for my project on improving data
-      collection and species identification on living species."
-      <br>
-      2. A question to get user utilizing iNaturalist: "Have you used iNaturalist before?
-      If so, how often do you use it?" resulting in another question: "What are the pain points/extra features would you
-      like?"
-      <br>
-      3. A Question to get user utilizing other species identification tools: "Have you used any other species
-      identification tools before? If so, how often do you use it?"
-      <br>
+      <h4 class="text-lg font-medium mb-3">Interview Methodology:</h4>
+      <div class="bg-gray-800/30 p-4 rounded-lg mb-4">
+        <p class="mb-4">A total of <strong>5 user interviews</strong> were conducted to gather comprehensive insights about visitor experiences and app usage preferences.</p>
+        
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-gray-700/30 p-3 rounded">
+            <p class="font-medium text-gray-300 mb-2">Interview Set A (3 participants):</p>
+            <p class="text-sm mb-2">Focus: Existing tool usage and technical preferences</p>
+            <ul class="text-sm space-y-1">
+              <li>• iNaturalist usage patterns</li>
+              <li>• Pain points with current tools</li>
+              <li>• Feature enhancement suggestions</li>
+            </ul>
+          </div>
+          
+          <div class="bg-blue-700/30 p-3 rounded">
+            <p class="font-medium text-blue-300 mb-2">Interview Set B (2 participants - documented):</p>
+            <p class="text-sm mb-2">Focus: Visitor motivations and app adoption willingness</p>
+            <ul class="text-sm space-y-1">
+              <li>• Garden visit motivations</li>
+              <li>• Learning interest levels</li>
+              <li>• App recommendation receptiveness</li>
+              <li>• Overall experience feedback</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p class="text-sm mt-3 text-gray-400">The two documented interviews (Set B) are presented below with detailed analysis, representing different user segments: nature professionals and casual visitors.</p>
+      </div>
       <br>
       These questions were designed to gather insights on the users' experiences with species identification tools,
       their needs, and expectations for the species identification tool.
@@ -583,6 +600,202 @@
       The team will take this feedback into account when designing the species identification tool, ensuring it is
       user-friendly and accessible to all users, regardless of their level of expertise in species identification.
       <br>
+
+      <h3 class="mt-8 text-xl font-semibold">
+        User Interview Videos:
+      </h3>
+      <p class="mb-4">
+        The following videos document our user interview sessions, capturing real conversations with garden visitors about their experiences and preferences:
+      </p>
+      
+      <div class="relative w-full mx-auto md:max-w-4xl">
+        <!-- Video Carousel container -->
+        <div id="videoCarousel" class="relative overflow-hidden rounded-lg bg-gray-900/50 backdrop-blur-sm">
+          <!-- Carousel wrapper -->
+          <div id="videoCarouselWrapper" class="flex transition-transform duration-300 ease-in-out">
+            <!-- Video 1 -->
+            <div class="w-full flex-shrink-0">
+              <div class="relative bg-black/20 flex flex-col items-center justify-center p-4">
+                <h4 class="text-white text-lg font-semibold text-center mb-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
+                  User Interview 1 - RSPB Volunteer</h4>
+                <video controls class="w-full max-h-[500px] rounded-lg shadow-lg">
+                  <source src="../media/UserVideo1_Sub.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <!-- Video 2 -->
+            <div class="w-full flex-shrink-0">
+              <div class="relative bg-black/20 flex flex-col items-center justify-center p-4">
+                <h4 class="text-white text-lg font-semibold text-center mb-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
+                  User Interview 2 - Casual Visitors</h4>
+                <video controls class="w-full max-h-[500px] rounded-lg shadow-lg">
+                  <source src="../media/UserVideo2_Sub.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation buttons -->
+          <button id="videoPrevBtn"
+            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button id="videoNextBtn"
+            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dots indicator -->
+        <div class="flex justify-center mt-4 space-x-2">
+          <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
+            data-slide="0"></button>
+          <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
+            data-slide="1"></button>
+        </div>
+      </div>
+
+      <h3 class="mt-8 text-xl font-semibold">
+        Key Feedback Analysis from Video Interviews:
+      </h3>
+      
+      <div class="space-y-6">
+        <div class="bg-green-800/20 p-4 rounded-lg">
+          <h4 class="text-lg font-medium mb-3">📹 Video 1 - RSPB Volunteer Interview</h4>
+          
+          <div class="space-y-3">
+            <div>
+              <p class="font-medium text-green-300">Q1: What brings you to Botanic Gardens today?</p>
+              <p class="ml-4 italic">"I am with the RSPB, so it's a territory that looks up in nature, and so I'm just here to do some fundraising basically and let people know what we do if they want to help."</p>
+            </div>
+            
+            <div>
+              <p class="font-medium text-green-300">Q2: Are you interested in learning about the plants or animals here?</p>
+              <p class="ml-4 italic">"Yeah, sure. You can tell me about it, yeah."</p>
+            </div>
+            
+            <div>
+              <p class="font-medium text-green-300">Q3: Would you use a free app to take photos and learn about species?</p>
+              <p class="ml-4 italic">"Yeah, I think I would look at it and probably use it."</p>
+            </div>
+            
+            <div>
+              <p class="font-medium text-green-300">Q4: Do you already use apps like iNaturalist?</p>
+              <p class="ml-4 italic">"Yes, I use that one. And then there's another one called Merlin ID. That one helps you know the bird sounds and which species the bird sounds come from."</p>
+            </div>
+            
+            <div>
+              <p class="font-medium text-green-300">Overall Experience:</p>
+              <p class="ml-4 italic">"It's been good. I think it's useful sometimes because I'm new to Scotland. I don't know everything. So it's useful to know what the different species are so I can learn a bit better."</p>
+            </div>
+          </div>
+          
+          <div class="mt-4 p-3 bg-green-900/30 rounded">
+            <p class="font-medium text-green-200">Key Takeaways & Feedback:</p>
+            <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+              <li>User is already engaged with nature (RSPB volunteer)</li>
+              <li>Existing user of species identification apps (iNaturalist, Merlin ID)</li>
+              <li>Positive attitude towards new app recommendations</li>
+              <li>Values learning about local species, especially as newcomer to Scotland</li>
+              <li>Finds current apps useful for educational purposes</li>
+              <li><strong>Feature Suggestion:</strong> "A journal section where you can record and remember the things you see. For example, if you spot a bird, you can look back two weeks later and add it to your journal"</li>
+              <li><strong>User Experience:</strong> Already actively uses iNaturalist for species identification</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-blue-800/20 p-4 rounded-lg">
+          <h4 class="text-lg font-medium mb-3">📹 Video 2 - Casual Visitors Interview</h4>
+          
+          <div class="space-y-3">
+            <div>
+              <p class="font-medium text-blue-300">Q1: What brings you to Botanic Gardens today?</p>
+              <p class="ml-4 italic">"No, we were just passing by and going for a walk because it's sunny."</p>
+            </div>
+            
+            <div>
+              <p class="font-medium text-blue-300">Q1b: What do you enjoy most here?</p>
+              <p class="ml-4 italic">"Having greenery surrounding us, just being away from the city and the ocean."</p>
+            </div>
+            
+            <div>
+              <p class="font-medium text-blue-300">Q2: Are you interested in learning about the plants and animals here?</p>
+              <p class="ml-4 italic">"Yeah, I've been here with my sister and I went in with my nieces and nephews just to like learn about the plants because I think it's really, really fascinating, interesting, different plants from different parts of the world."</p>
+            </div>
+            
+            <div>
+              <p class="font-medium text-blue-300">Q3: Would you use a free app to snap photos and identify species?</p>
+              <p class="ml-4 italic">"Yeah, that would be very interesting. It's also very educational for young children because I know a lot of families bring their children here. So I think as a learning curve for both adults and children, it would be very useful and especially if it's free as well."</p>
+            </div>
+            
+            <div>
+              <p class="font-medium text-blue-300">Extended thoughts on nature education:</p>
+              <p class="ml-4 italic">"We need nature. We have to live in harmony with nature because without it we can't exist. So from a young age, if children are taught that nature is part, should be part of your life, and for them to actually take interest in nature and understand why we feel good when we're in parks... that's going to make them want to come to places like parks and be in nature, and they'll respect nature as well."</p>
+            </div>
+          </div>
+          
+          <div class="mt-4 p-3 bg-blue-900/30 rounded">
+            <p class="font-medium text-blue-200">Key Takeaways & Feedback:</p>
+            <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+              <li>Casual visitor - came for leisure walk, not specifically for nature study</li>
+              <li>Values gardens as escape from urban environment</li>
+              <li>Strong interest in learning about plants from different parts of the world</li>
+              <li>Family-oriented - brings nieces/nephews for educational visits</li>
+              <li>Highly supportive of educational apps, especially for children</li>
+              <li>Deep philosophical connection to nature and environmental education</li>
+              <li>Emphasizes importance of free access to educational tools</li>
+              <li><strong>Tech Awareness:</strong> Don't know about iNaturalist specifically, but familiar with AI identification models</li>
+              <li><strong>AI Understanding:</strong> Know about ChatGPT and understand AI capabilities for identification tasks</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-purple-800/20 p-4 rounded-lg">
+          <h4 class="text-lg font-medium mb-3">🔍 Comparative Analysis</h4>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <p class="font-medium text-purple-300 mb-2">Video 1 (RSPB Volunteer):</p>
+              <ul class="list-disc list-inside text-sm space-y-1">
+                <li>Professional nature engagement</li>
+                <li>Already uses multiple apps</li>
+                <li>Focused on personal learning</li>
+                <li>Newcomer to Scotland perspective</li>
+              </ul>
+            </div>
+            
+            <div>
+              <p class="font-medium text-purple-300 mb-2">Video 2 (Casual Visitors):</p>
+              <ul class="list-disc list-inside text-sm space-y-1">
+                <li>Recreational garden use</li>
+                <li>No mention of existing app usage</li>
+                <li>Family/children education focused</li>
+                <li>Strong environmental philosophy</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-4 p-3 bg-purple-900/30 rounded">
+            <p class="font-medium text-purple-200">Overall Insights & Feature Implications:</p>
+            <ul class="list-disc list-inside text-sm space-y-1">
+              <li><strong>Universal Appeal:</strong> Both user types showed strong interest in species identification apps</li>
+              <li><strong>Educational Value:</strong> Both emphasized learning benefits, with Video 2 particularly focused on children</li>
+              <li><strong>Accessibility:</strong> Free access was highlighted as important factor</li>
+              <li><strong>Different Entry Points:</strong> Professional vs. casual users have different motivations but similar outcomes</li>
+              <li><strong>Feature Request:</strong> Journal/logging functionality for tracking observations over time</li>
+              <li><strong>Tech Readiness:</strong> Mixed familiarity - some know iNaturalist, others understand AI but not specific apps</li>
+              <li><strong>AI Awareness:</strong> General understanding of AI capabilities (ChatGPT) suggests openness to AI-powered identification</li>
+              <li><strong>Validation:</strong> Confirms broad market appeal across different user segments and tech literacy levels</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
     </section>
 
@@ -1126,7 +1339,146 @@
     });
   </script>
 
+  <!-- VIDEO CAROUSEL SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const videoCarousel = document.getElementById('videoCarousel');
+      const videoWrapper = document.getElementById('videoCarouselWrapper');
+      const videoPrevBtn = document.getElementById('videoPrevBtn');
+      const videoNextBtn = document.getElementById('videoNextBtn');
+      const videoDots = document.querySelectorAll('.video-carousel-dot');
 
+      let currentVideoSlide = 0;
+      const totalVideoSlides = 2;
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+      let isTransitioning = false;
+
+      // Update video carousel position
+      function updateVideoCarousel() {
+        const translateX = -currentVideoSlide * 100;
+        videoWrapper.style.transform = `translateX(${translateX}%)`;
+
+        // Update dots
+        videoDots.forEach((dot, index) => {
+          if (index === currentVideoSlide) {
+            dot.classList.remove('bg-white/50');
+            dot.classList.add('bg-white');
+          } else {
+            dot.classList.remove('bg-white');
+            dot.classList.add('bg-white/50');
+          }
+        });
+
+        // Pause only videos that are not currently visible
+        const videos = videoCarousel.querySelectorAll('video');
+        videos.forEach((video, index) => {
+          if (index !== currentVideoSlide) {
+            video.pause();
+          }
+        });
+      }
+
+      // Next video slide
+      function nextVideoSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentVideoSlide = (currentVideoSlide + 1) % totalVideoSlides;
+        updateVideoCarousel();
+        setTimeout(() => { isTransitioning = false; }, 300);
+      }
+
+      // Previous video slide
+      function prevVideoSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentVideoSlide = (currentVideoSlide - 1 + totalVideoSlides) % totalVideoSlides;
+        updateVideoCarousel();
+        setTimeout(() => { isTransitioning = false; }, 300);
+      }
+
+      // Go to specific video slide
+      function goToVideoSlide(slideIndex) {
+        currentVideoSlide = slideIndex;
+        updateVideoCarousel();
+      }
+
+      // Button event listeners
+      videoNextBtn.addEventListener('click', nextVideoSlide);
+      videoPrevBtn.addEventListener('click', prevVideoSlide);
+
+      // Dot event listeners
+      videoDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToVideoSlide(index));
+      });
+
+      // Touch/Mouse events for swiping
+      function handleVideoStart(e) {
+        // Don't start dragging if clicking on a video element
+        if (e.target.tagName === 'VIDEO') {
+          return;
+        }
+        isDragging = true;
+        startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+        videoWrapper.style.transition = 'none';
+      }
+
+      function handleVideoMove(e) {
+        if (!isDragging) return;
+        // Don't prevent default if interacting with video
+        if (e.target.tagName !== 'VIDEO') {
+          e.preventDefault();
+        }
+
+        currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const diffX = currentX - startX;
+        const translateX = -currentVideoSlide * 100 + (diffX / videoCarousel.offsetWidth) * 100;
+        videoWrapper.style.transform = `translateX(${translateX}%)`;
+      }
+
+      function handleVideoEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        videoWrapper.style.transition = 'transform 0.3s ease-in-out';
+
+        const diffX = currentX - startX;
+        const threshold = videoCarousel.offsetWidth * 0.2; // 20% of carousel width
+
+        if (Math.abs(diffX) > threshold) {
+          if (diffX > 0) {
+            prevVideoSlide();
+          } else {
+            nextVideoSlide();
+          }
+        } else {
+          updateVideoCarousel(); // Snap back to current slide
+        }
+      }
+
+      // Mouse events
+      videoCarousel.addEventListener('mousedown', handleVideoStart);
+      document.addEventListener('mousemove', handleVideoMove);
+      document.addEventListener('mouseup', handleVideoEnd);
+
+      // Touch events
+      videoCarousel.addEventListener('touchstart', handleVideoStart, { passive: false });
+      videoCarousel.addEventListener('touchmove', handleVideoMove, { passive: false });
+      videoCarousel.addEventListener('touchend', handleVideoEnd);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          prevVideoSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextVideoSlide();
+        }
+      });
+
+      // Initialize
+      updateVideoCarousel();
+    });
+  </script>
 
 </body>
 
