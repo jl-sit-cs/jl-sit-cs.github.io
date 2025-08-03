@@ -321,8 +321,6 @@
 </head>
 
 <body class="min-h-screen text-inat-light overflow-x-hidden">
-  <canvas id="particles" class="fixed inset-0 w-full h-full pointer-events-none -z-10"
-    style="background: transparent !important;"></canvas>
 
   <!-- Navigation -->
   <nav class="h-16 sticky top-0 z-50 shadow-2xl"
@@ -1243,72 +1241,6 @@
     <button id="lightbox-close" class="absolute top-4 right-4 text-white text-2xl">×</button>
   </div>
 
-  <script>
-    const canvas = document.getElementById('particles'),
-      ctx = canvas.getContext('2d'),
-      leaves = [];
-    let W, H;
-
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-
-    function createLeaf() {
-      return {
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 8 + 4,
-        dx: (Math.random() - 0.5) * 1.0,    // faster
-        dy: (Math.random() - 0.5) * 1.0,    // faster
-        angle: Math.random() * Math.PI * 2,
-        da: (Math.random() - 0.5) * 0.05, // faster spin
-        alpha: Math.random() * 0.5 + 0.2
-      };
-    }
-
-    function init() {
-      resize();
-      for (let i = 0; i < 80; i++) leaves.push(createLeaf());
-      animate();
-      // spawn one new leaf every 200ms
-      setInterval(() => {
-        leaves.push(createLeaf());
-        if (leaves.length > 200) leaves.shift();
-      }, 200);
-    }
-
-    function drawLeaf(p) {
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.angle);
-      ctx.beginPath();
-      ctx.moveTo(-p.r, 0);
-      ctx.quadraticCurveTo(0, -p.r * 1.5, p.r, 0);
-      ctx.quadraticCurveTo(0, p.r * 1.5, -p.r, 0);
-      ctx.fillStyle = `rgba(245,245,245,${p.alpha})`;
-      ctx.fill();
-      ctx.restore();
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, W, H);
-      leaves.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-        p.angle += p.da;
-        if (p.x < -p.r) p.x = W + p.r;
-        if (p.x > W + p.r) p.x = -p.r;
-        if (p.y < -p.r) p.y = H + p.r;
-        if (p.y > H + p.r) p.y = -p.r;
-        drawLeaf(p);
-      });
-      requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', resize);
-    init();
-  </script>
 
   <!-- LIGHTBOX SCRIPT -->
   <script>
