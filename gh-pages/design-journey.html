@@ -976,50 +976,80 @@
         
         <!-- Cross-Team Learning Section -->
         <div class="mt-6 bg-indigo-800/20 p-4 rounded-lg border border-indigo-500/30">
-          <h4 class="font-medium text-indigo-200 mb-3">🤝 Cross-Team Learning & Knowledge Transfer:</h4>
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <h5 class="text-indigo-300 text-sm font-medium mb-2">Technical Skills Exchange:</h5>
-              <ul class="text-sm space-y-1">
-                <li>• Frontend development techniques shared across team</li>
-                <li>• UX research methods taught to technical members</li>
-                <li>• Video editing and presentation skills distributed</li>
-                <li>• Documentation standards established collectively</li>
-              </ul>
-            </div>
-            <div>
-              <h5 class="text-indigo-300 text-sm font-medium mb-2">Collaborative Insights:</h5>
-              <ul class="text-sm space-y-1">
-                <li>• Design thinking approach adopted by all members</li>
-                <li>• Research findings interpretation improved through discussion</li>
-                <li>• Stakeholder communication refined through team feedback</li>
-                <li>• Problem-solving approaches diversified through collaboration</li>
-              </ul>
+          <div class="flex justify-between items-center mb-3">
+            <h4 class="font-medium text-indigo-200">🤝 Cross-Team Learning & Knowledge Transfer</h4>
+            <button onclick="toggleSection('team-learning-detail')" class="text-indigo-300 hover:text-indigo-100 text-sm flex items-center transition-colors">
+              <span id="team-learning-toggle-text">View Details</span>
+              <i id="team-learning-toggle-icon" class="fas fa-chevron-down ml-1 transition-transform"></i>
+            </button>
+          </div>
+          
+          <!-- Brief Summary -->
+          <div class="text-sm text-indigo-100 mb-3">
+            <strong>Collaborative approach:</strong> Technical skills exchange, UX research training, and design thinking adoption across all team members.
+          </div>
+          
+          <!-- Detailed Content (Initially Hidden) -->
+          <div id="team-learning-detail" class="hidden">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <h5 class="text-indigo-300 text-sm font-medium mb-2">Technical Skills Exchange:</h5>
+                <ul class="text-sm space-y-1">
+                  <li>• Frontend development techniques shared across team</li>
+                  <li>• UX research methods taught to technical members</li>
+                  <li>• Video editing and presentation skills distributed</li>
+                  <li>• Documentation standards established collectively</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="text-indigo-300 text-sm font-medium mb-2">Collaborative Insights:</h5>
+                <ul class="text-sm space-y-1">
+                  <li>• Design thinking approach adopted by all members</li>
+                  <li>• Research findings interpretation improved through discussion</li>
+                  <li>• Stakeholder communication refined through team feedback</li>
+                  <li>• Problem-solving approaches diversified through collaboration</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
         
         <!-- Future Research & Industry Connections -->
         <div class="mt-6 bg-teal-800/20 p-4 rounded-lg border border-teal-500/30">
-          <h4 class="font-medium text-teal-200 mb-3">🔬 Future Research Directions & Industry Context:</h4>
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <h5 class="text-teal-300 text-sm font-medium mb-2">Emerging Research Questions:</h5>
-              <ul class="text-sm space-y-1">
-                <li>• How might AI-powered species identification enhance citizen science accuracy?</li>
-                <li>• What role does gamification play in long-term engagement?</li>
-                <li>• How can we measure the educational impact of citizen science participation?</li>
-                <li>• What are the optimal feedback mechanisms for maintaining data quality?</li>
-              </ul>
-            </div>
-            <div>
-              <h5 class="text-teal-300 text-sm font-medium mb-2">Industry Trends & Connections:</h5>
-              <ul class="text-sm space-y-1">
-                <li>• <strong>Digital Transformation:</strong> Traditional institutions leveraging existing platforms</li>
-                <li>• <strong>Citizen Science Growth:</strong> Community-driven environmental monitoring expansion</li>
-                <li>• <strong>Open Data Movement:</strong> Increasing emphasis on accessible biodiversity data</li>
-                <li>• <strong>Climate Action:</strong> Local data collection supporting global environmental goals</li>
-              </ul>
+          <div class="flex justify-between items-center mb-3">
+            <h4 class="font-medium text-teal-200">🔬 Future Research Directions & Industry Context</h4>
+            <button onclick="toggleSection('future-research-detail')" class="text-teal-300 hover:text-teal-100 text-sm flex items-center transition-colors">
+              <span id="future-research-toggle-text">View Details</span>
+              <i id="future-research-toggle-icon" class="fas fa-chevron-down ml-1 transition-transform"></i>
+            </button>
+          </div>
+          
+          <!-- Brief Summary -->
+          <div class="text-sm text-teal-100 mb-3">
+            <strong>Forward-looking insights:</strong> AI enhancement opportunities, gamification potential, and connections to broader citizen science and climate action trends.
+          </div>
+          
+          <!-- Detailed Content (Initially Hidden) -->
+          <div id="future-research-detail" class="hidden">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <h5 class="text-teal-300 text-sm font-medium mb-2">Emerging Research Questions:</h5>
+                <ul class="text-sm space-y-1">
+                  <li>• How might AI-powered species identification enhance citizen science accuracy?</li>
+                  <li>• What role does gamification play in long-term engagement?</li>
+                  <li>• How can we measure the educational impact of citizen science participation?</li>
+                  <li>• What are the optimal feedback mechanisms for maintaining data quality?</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="text-teal-300 text-sm font-medium mb-2">Industry Trends & Connections:</h5>
+                <ul class="text-sm space-y-1">
+                  <li>• <strong>Digital Transformation:</strong> Traditional institutions leveraging existing platforms</li>
+                  <li>• <strong>Citizen Science Growth:</strong> Community-driven environmental monitoring expansion</li>
+                  <li>• <strong>Open Data Movement:</strong> Increasing emphasis on accessible biodiversity data</li>
+                  <li>• <strong>Climate Action:</strong> Local data collection supporting global environmental goals</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -1167,6 +1197,42 @@
     </section>
 
   </main>
+
+  <!-- Collapsible Sections Script -->
+  <script>
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      const toggleText = document.getElementById(sectionId.replace('-detail', '-toggle-text'));
+      const toggleIcon = document.getElementById(sectionId.replace('-detail', '-toggle-icon'));
+      
+      if (section.classList.contains('hidden')) {
+        // Show section
+        section.classList.remove('hidden');
+        section.classList.add('animate-fadeIn');
+        toggleText.textContent = 'Hide Details';
+        toggleIcon.classList.add('rotate-180');
+      } else {
+        // Hide section
+        section.classList.add('hidden');
+        section.classList.remove('animate-fadeIn');
+        toggleText.textContent = 'View Details';
+        toggleIcon.classList.remove('rotate-180');
+      }
+    }
+    
+    // Add CSS animation class
+    const style = document.createElement('style');
+    style.textContent = `
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
 
   <!-- Footer -->
   <footer class="relative overflow-hidden"

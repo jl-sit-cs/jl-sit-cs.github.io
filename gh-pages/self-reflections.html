@@ -147,8 +147,9 @@
       background-color: #000000 !important;
     }
 
-    /* Force team member names to be black in Meet Our Team section */
-    .team-card h3 {
+    /* Force team member names and roles to be black in Meet Our Team section */
+    .team-card h3,
+    .team-card p {
       color: #000000 !important;
     }
 
@@ -219,11 +220,19 @@
 
     .team-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .team-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Ensure LinkedIn buttons align at bottom */
+    .team-card .linkedin-btn {
+      margin-top: auto;
     }
 
     .linkedin-btn {
@@ -440,11 +449,12 @@
     <section class="section-box" data-aos="fade-up" data-aos-delay="100">
       <h2 class="section-header text-3xl font-bold mb-8 text-center">Meet Our Team</h2>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 max-w-6xl mx-auto">
         <!-- Team Member 1 -->
         <div class="team-card bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 text-center">
           <img src="../media/wm.jpg" alt="Jiang Weimin" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-          <h3 class="text-lg font-bold text-black mb-3">Jiang Weimin</h3>
+          <h3 class="text-lg font-bold text-black mb-2">Jiang Weimin</h3>
+          <p class="text-blue-600 text-sm font-medium mb-3">Technical Lead & User Research Coordinator</p>
           <a href="https://www.linkedin.com/in/jiang-weimin1" target="_blank"
             class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
             <i class="fab fa-linkedin mr-2"></i>
@@ -455,7 +465,8 @@
         <!-- Team Member 2 -->
         <div class="team-card bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-6 text-center">
           <img src="../media/edwin.jpg" alt="Hew Zhong Xuan" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-          <h3 class="text-lg font-bold text-black mb-3">Hew Zhong Xuan</h3>
+          <h3 class="text-lg font-bold text-black mb-2">Hew Zhong Xuan</h3>
+          <p class="text-green-600 text-sm font-medium mb-3">UX Research Lead & Prototype Designer</p>
           <a href="https://www.linkedin.com/in/hew-zhongxuan/" target="_blank"
             class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
             <i class="fab fa-linkedin mr-2"></i>
@@ -467,7 +478,8 @@
         <div class="team-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 text-center">
           <img src="../media/alvis.jpg" alt="Alvis Ngo Kok Wei"
             class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-          <h3 class="text-lg font-bold text-black mb-3">Alvis Ngo Kok Wei</h3>
+          <h3 class="text-lg font-bold text-black mb-2">Alvis Ngo Kok Wei</h3>
+          <p class="text-purple-600 text-sm font-medium mb-3">Creative Director & Strategic Lead</p>
           <a href="https://www.linkedin.com/in/alvis-ngo/" target="_blank"
             class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
             <i class="fab fa-linkedin mr-2"></i>
@@ -478,7 +490,8 @@
         <!-- Team Member 4 -->
         <div class="team-card bg-gradient-to-br from-orange-50 to-red-50 rounded-lg p-6 text-center">
           <img src="../media/junlong.jpg" alt="Ng Jun Long" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-          <h3 class="text-lg font-bold text-black mb-3">Ng Jun Long</h3>
+          <h3 class="text-lg font-bold text-black mb-2">Ng Jun Long</h3>
+          <p class="text-orange-600 text-sm font-medium mb-3">Content Developer & Data Analyst</p>
           <a href="https://www.linkedin.com/in/ng-jun-long/" target="_blank"
             class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
             <i class="fab fa-linkedin mr-2"></i>
@@ -490,7 +503,8 @@
         <div class="team-card bg-gradient-to-br from-teal-50 to-green-50 rounded-lg p-6 text-center">
           <img src="../media/ben.jpg" alt="Ong Ming Feng Benedict"
             class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-          <h3 class="text-lg font-bold text-black mb-3">Ong Ming Feng Benedict</h3>
+          <h3 class="text-lg font-bold text-black mb-2">Ong Ming Feng Benedict</h3>
+          <p class="text-teal-600 text-sm font-medium mb-3">UI/UX Designer & Prototype Specialist</p>
           <a href="https://www.linkedin.com/in/benedict-ong-mf/" target="_blank"
             class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
             <i class="fab fa-linkedin mr-2"></i>
@@ -501,7 +515,8 @@
         <!-- Team Member 6 -->
         <div class="team-card bg-gradient-to-br from-pink-50 to-purple-50 rounded-lg p-6 text-center">
           <img src="../media/kwan.jpg" alt="Tan Kwan Yee" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-          <h3 class="text-lg font-bold text-black mb-3">Tan Kwan Yee</h3>
+          <h3 class="text-lg font-bold text-black mb-2">Tan Kwan Yee</h3>
+          <p class="text-pink-600 text-sm font-medium mb-3">Visual Communications Designer & Documentation Lead</p>
           <a href="https://www.linkedin.com/in/tankwanyee/" target="_blank"
             class="linkedin-btn inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition">
             <i class="fab fa-linkedin mr-2"></i>
@@ -520,6 +535,10 @@
           <img src="../media/wm.jpg" alt="Jiang Weimin" class="w-16 h-16 rounded-full mr-4 object-cover">
           <div>
             <h3 class="text-xl font-bold text-white">Jiang Weimin</h3>
+            <p class="text-gray-300 text-sm">Technical Lead & User Research Coordinator</p>
+            <div class="mt-2 text-xs text-blue-300 bg-blue-900/30 p-2 rounded">
+              <strong>Key Contributions:</strong> Technical development, user interview coordination, website implementation, team coordination, pitch video presentation
+            </div>
           </div>
         </div>
 
@@ -527,13 +546,13 @@
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
             <p class="text-white text-sm">
-              I'm proud of taking the initiative to design our presentation materials using Canva, which helped us create professional and visually appealing slides for the pitch videos. I also designed and developed the website to ensure it looked polished, was easy to navigate, and showcased our project well. On top of that, I regularly updated the team on assessment criteria and key announcements from Moodle so everyone stayed on the same page with project requirements.
+              I'm really proud of stepping up as the technical lead and keeping our team organized throughout the project. Creating those professional Canva presentations and building our comprehensive website from scratch was challenging but rewarding - seeing everything come together visually really showcased our hard work. I also made sure everyone stayed informed about assessment requirements and deadlines, which helped us stay on track. Most importantly, I coordinated the user interviews and managed to present our pitch confidently, even though public speaking isn't my strongest suit.
             </p>
           </div>
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Not Proud Of</h4>
             <p class="text-white text-sm">
-              Looking back, I wish I had been more involved in the early research phase. While I focused on design and technical work, I could have contributed more to stakeholder engagement and user research. There were also times when I spent too much time perfecting design details instead of joining more collaborative brainstorming sessions. Lastly, I think I could have done more to guide structured discussions so everyone's ideas were equally heard during decision-making.
+              I regret not diving deeper into the initial stakeholder research - I was so focused on the technical implementation that I missed some valuable early insights. Sometimes I got too caught up in perfecting the website design details when I should have been more involved in the collaborative brainstorming sessions. I also wish I had been more assertive in facilitating team discussions; there were moments when I could have helped ensure everyone's voices were heard equally during our decision-making process.
             </p>
           </div>
 
@@ -546,23 +565,25 @@
           <img src="../media/edwin.jpg" alt="Hew Zhong Xuan" class="w-16 h-16 rounded-full mr-4 object-cover">
           <div>
             <h3 class="text-xl font-bold text-white">Hew Zhong Xuan</h3>
+            <p class="text-gray-300 text-sm">UX Research Lead & Prototype Designer</p>
+            <div class="mt-2 text-xs text-green-300 bg-green-900/30 p-2 rounded">
+              <strong>Key Contributions:</strong> Low-fi prototyping, user interview coordination, conversation leadership, ideation facilitation, pitch presentations
+            </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              Creating user-centered prototypes that effectively communicated our vision to stakeholders. The iterative
-              design process helped us refine concepts based on real feedback.
+            <p class="text-white text-sm">
+              I'm most proud of how I led our user research efforts and facilitated meaningful conversations with stakeholders. Creating those low-fidelity prototypes that actually resonated with users felt like a real breakthrough - seeing their faces light up when they understood our vision was incredible. I also pushed our team to think more deeply about user needs during our ideation sessions, and I'm proud that I helped coordinate those crucial user interviews that shaped our final design. My presentation skills really improved throughout this project too.
             </p>
           </div>
 
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Not Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              Designing for citizen science requires balancing simplicity with scientific rigor. Users need tools that
-              are easy to use but still maintain data quality standards.
+            <p class="text-white text-sm">
+              I sometimes got so excited about new ideas that I didn't always listen carefully to what others were saying first. There were moments when I dominated conversations when I should have been creating more space for quieter team members to contribute. I also realize I could have been more systematic in documenting our user research findings - we gathered so much valuable feedback, but I didn't always organize it as clearly as I could have for the team to reference later.
             </p>
           </div>
 
@@ -575,23 +596,25 @@
           <img src="../media/alvis.jpg" alt="Alvis Ngo Kok Wei" class="w-16 h-16 rounded-full mr-4 object-cover">
           <div>
             <h3 class="text-xl font-bold text-white">Alvis Ngo Kok Wei</h3>
+            <p class="text-gray-300 text-sm">Creative Director & Strategic Lead</p>
+            <div class="mt-2 text-xs text-purple-300 bg-purple-900/30 p-2 rounded">
+              <strong>Key Contributions:</strong> Pitch content strategy, creative leadership, strategic planning, conversation facilitation, pitch presentations
+            </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              Successfully researching and proposing the iNaturalist API integration strategy. Understanding the
-              technical feasibility was crucial for creating a realistic implementation plan.
+            <p class="text-white text-sm">
+              I'm really proud of the strategic thinking I brought to this project, especially researching the iNaturalist API integration - that became a cornerstone of our solution. I loved being the creative director and helping shape our pitch content strategy. Leading those strategic planning sessions and facilitating conversations when the team needed direction felt natural to me. I also think I did well at seeing the bigger picture and helping connect different ideas from team members into a cohesive vision.
             </p>
           </div>
 
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Not Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              The importance of understanding existing platforms and APIs before designing new solutions. Leveraging
-              established tools like iNaturalist can significantly accelerate development.
+            <p class="text-white text-sm">
+              I wish I had been more hands-on with the technical implementation side of things. While I was good at the strategic planning, I sometimes felt disconnected from the actual building process. I also think I could have been better at following up on action items - I'd have great ideas in meetings but didn't always ensure they got properly executed. Sometimes my enthusiasm for big-picture thinking meant I overlooked important details that my teammates had to catch.
             </p>
           </div>
 
@@ -604,26 +627,25 @@
           <img src="../media/junlong.jpg" alt="Ng Jun Long" class="w-16 h-16 rounded-full mr-4 object-cover">
           <div>
             <h3 class="text-xl font-bold text-white">Ng Jun Long</h3>
+            <p class="text-gray-300 text-sm">Content Developer & Data Analyst</p>
+            <div class="mt-2 text-xs text-indigo-300 bg-indigo-900/30 p-2 rounded">
+              <strong>Key Contributions:</strong> Website content development, user research analysis, technical development support, data interpretation, research methodology
+            </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              Working together as a team to map out the current and proposed workflows. This collaborative effort
-              ensured everyone had a shared understanding of the system and its requirements. Additionally, the team
-              motivated each other throughout the process ensuring that every individual was engaged and contributing.
+            <p class="text-white text-sm">
+              I'm proud of how I contributed to our collaborative workflow mapping - it really helped everyone understand the system we were designing. I enjoyed diving deep into the user research analysis and interpreting all the data we collected from interviews. Supporting the technical development while also helping with website content felt like I was making meaningful contributions across different areas. I also think I did well at keeping team morale up during challenging moments and making sure everyone stayed engaged throughout the process.
             </p>
           </div>
 
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Not Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              The beginning of the project was challenging as we had to quickly familiarize ourselves with the
-              Glasgow Botanic Gardens and existing applications. Additionally, we had to made sure that we are not
-              missing out
-              on any piece of information that could be useful for our project.
+            <p class="text-white text-sm">
+              The steep learning curve at the beginning really threw me off - trying to quickly understand Glasgow Botanic Gardens and all the existing applications felt overwhelming. I worry that I might have missed some important details in my rush to catch up. I also wish I had been more proactive in suggesting new ideas rather than mainly responding to others' suggestions. Sometimes I held back from sharing thoughts because I wasn't sure if they were valuable enough, when I should have just spoken up.
             </p>
           </div>
 
@@ -636,23 +658,25 @@
           <img src="../media/ben.jpg" alt="Ong Ming Feng Benedict" class="w-16 h-16 rounded-full mr-4 object-cover">
           <div>
             <h3 class="text-xl font-bold text-white">Ong Ming Feng Benedict</h3>
+            <p class="text-gray-300 text-sm">UI/UX Designer & Prototype Specialist</p>
+            <div class="mt-2 text-xs text-orange-300 bg-orange-900/30 p-2 rounded">
+              <strong>Key Contributions:</strong> Figma prototyping, visual design, user interface development, design systems, pitch presentations
+            </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              Creating comprehensive documentation that effectively communicated our process and findings. The project
-              website serves as a complete record of our journey.
+            <p class="text-white text-sm">
+              I'm really proud of the Figma prototypes I created - they brought our ideas to life in a way that everyone could understand and interact with. Developing the user interface and design systems was challenging but rewarding, especially seeing how users responded to the visual design during testing. I also contributed to our pitch presentations and helped ensure our design work was communicated clearly. The comprehensive documentation I helped create will be valuable for anyone who wants to understand our design process.
             </p>
           </div>
 
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Not Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              Clear documentation is essential for project success and knowledge transfer. Regular documentation
-              throughout the process is more effective than trying to document everything at the end.
+            <p class="text-white text-sm">
+              I definitely left too much of the documentation work until the end, which created unnecessary stress and probably meant some details got lost along the way. I wish I had been more systematic about documenting design decisions as we made them. I also think I could have been more involved in the user research phase - I was so focused on the design work that I missed opportunities to better understand our users' needs firsthand, which would have made my designs even better.
             </p>
           </div>
 
@@ -665,23 +689,25 @@
           <img src="../media/kwan.jpg" alt="Tan Kwan Yee" class="w-16 h-16 rounded-full mr-4 object-cover">
           <div>
             <h3 class="text-xl font-bold text-white">Tan Kwan Yee</h3>
+            <p class="text-gray-300 text-sm">Visual Communications Designer & Documentation Lead</p>
+            <div class="mt-2 text-xs text-pink-300 bg-pink-900/30 p-2 rounded">
+              <strong>Key Contributions:</strong> Poster design, visual communications, documentation coordination, quality assurance, project presentation materials
+            </div>
           </div>
         </div>
 
         <div class="space-y-4">
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              Conducting thorough user research that informed our design decisions. Understanding the needs of both
-              experts and citizen scientists was crucial for our solution's success.
+            <p class="text-white text-sm">
+              I'm most proud of the market analysis I conducted and how it informed our design decisions. Creating that project poster was a highlight for me - I loved translating all our complex research into clear visual communications that anyone could understand. I also took pride in coordinating our documentation efforts and ensuring quality across all our deliverables. My attention to detail really helped polish our final presentation materials, and I think the visual communications work I did helped tell our story effectively.
             </p>
           </div>
 
           <div>
             <h4 class="font-semibold text-green-600 mb-2">What I'm Not Proud Of</h4>
-            <p class="text-gray-700 text-sm">
-              The importance of empathy in design. Understanding users' motivations, frustrations, and goals is
-              essential for creating solutions that people will actually use and value.
+            <p class="text-white text-sm">
+              I sometimes got so focused on making things look perfect that I didn't contribute as much to the brainstorming and ideation phases as I could have. I was often thinking about how to present ideas rather than generating them, which meant I missed opportunities to shape the direction of our solution. I also wish I had been more assertive about sharing my perspective during team discussions - I had insights about user needs from my research, but I didn't always speak up when I should have.
             </p>
           </div>
 

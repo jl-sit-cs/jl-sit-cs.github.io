@@ -565,36 +565,51 @@
         <p class="text-sm mt-3 text-gray-400">The two documented interviews (Set B) are presented below with detailed analysis, representing different user segments: nature professionals and casual visitors.</p>
         
         <div class="mt-4 bg-green-700/20 p-3 rounded">
-          <h5 class="font-medium text-green-300 mb-2">Research Methodology Framework:</h5>
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <h6 class="text-green-200 text-sm font-medium mb-1">Primary Research:</h6>
-              <ul class="text-sm space-y-1">
-                <li>• <strong>Structured Interviews:</strong> Standardized question protocol with video documentation</li>
-                <li>• <strong>External Survey:</strong> Online questionnaire (15 responses from visitor network)</li>
-                <li>• <strong>Observational Study:</strong> Visitor behavior analysis during peak hours</li>
-                <li>• <strong>Stakeholder Workshops:</strong> Collaborative sessions with garden staff</li>
-              </ul>
-            </div>
-            <div>
-              <h6 class="text-green-200 text-sm font-medium mb-1">Analysis Approach:</h6>
-              <ul class="text-sm space-y-1">
-                <li>• <strong>Thematic Analysis:</strong> Video transcription and pattern identification</li>
-                <li>• <strong>User Segmentation:</strong> Professional vs. casual visitor categorization</li>
-                <li>• <strong>Comparative Analysis:</strong> Cross-interview insight synthesis</li>
-                <li>• <strong>Stakeholder Validation:</strong> Findings reviewed with partner organization</li>
-              </ul>
-            </div>
+          <div class="flex justify-between items-center mb-2">
+            <h5 class="font-medium text-green-300">Research Methodology Framework</h5>
+            <button onclick="toggleSection('methodology-detail')" class="text-green-200 hover:text-green-100 text-sm flex items-center transition-colors">
+              <span id="methodology-toggle-text">View Details</span>
+              <i id="methodology-toggle-icon" class="fas fa-chevron-down ml-1 transition-transform"></i>
+            </button>
           </div>
           
-          <div class="mt-3 bg-yellow-800/20 p-3 rounded border-l-4 border-yellow-500">
-            <h6 class="text-yellow-200 text-sm font-medium mb-1">Research Limitations & Mitigation:</h6>
-            <ul class="text-sm space-y-1">
-              <li>• <strong>Sample Size:</strong> Limited to 5 interviews - mitigated by diverse user segments and external survey</li>
-              <li>• <strong>Seasonal Bias:</strong> Summer data collection - acknowledged in stakeholder discussions</li>
-              <li>• <strong>Location Constraint:</strong> Single venue - balanced with online survey reach</li>
-              <li>• <strong>Time Limitations:</strong> 3-week research window - maximized through parallel data collection</li>
-            </ul>
+          <!-- Brief Summary -->
+          <div class="text-sm text-green-100 mb-3">
+            <strong>Multi-method approach:</strong> Structured interviews, external surveys, observational studies, and stakeholder validation with comprehensive analysis framework.
+          </div>
+          
+          <!-- Detailed Content (Initially Hidden) -->
+          <div id="methodology-detail" class="hidden">
+            <div class="grid md:grid-cols-2 gap-4 mb-3">
+              <div>
+                <h6 class="text-green-200 text-sm font-medium mb-1">Primary Research:</h6>
+                <ul class="text-sm space-y-1">
+                  <li>• <strong>Structured Interviews:</strong> Standardized question protocol with video documentation</li>
+                  <li>• <strong>External Survey:</strong> Online questionnaire (15 responses from visitor network)</li>
+                  <li>• <strong>Observational Study:</strong> Visitor behavior analysis during peak hours</li>
+                  <li>• <strong>Stakeholder Workshops:</strong> Collaborative sessions with garden staff</li>
+                </ul>
+              </div>
+              <div>
+                <h6 class="text-green-200 text-sm font-medium mb-1">Analysis Approach:</h6>
+                <ul class="text-sm space-y-1">
+                  <li>• <strong>Thematic Analysis:</strong> Video transcription and pattern identification</li>
+                  <li>• <strong>User Segmentation:</strong> Professional vs. casual visitor categorization</li>
+                  <li>• <strong>Comparative Analysis:</strong> Cross-interview insight synthesis</li>
+                  <li>• <strong>Stakeholder Validation:</strong> Findings reviewed with partner organization</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="bg-yellow-800/20 p-3 rounded border-l-4 border-yellow-500">
+              <h6 class="text-yellow-200 text-sm font-medium mb-1">Research Limitations & Mitigation:</h6>
+              <ul class="text-sm space-y-1">
+                <li>• <strong>Sample Size:</strong> Limited to 5 interviews - mitigated by diverse user segments and external survey</li>
+                <li>• <strong>Seasonal Bias:</strong> Summer data collection - acknowledged in stakeholder discussions</li>
+                <li>• <strong>Location Constraint:</strong> Single venue - balanced with online survey reach</li>
+                <li>• <strong>Time Limitations:</strong> 3-week research window - maximized through parallel data collection</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -831,25 +846,40 @@
           
           <!-- Research Impact Metrics -->
           <div class="mt-6 bg-green-800/20 p-4 rounded-lg border border-green-500/30">
-            <h4 class="font-medium text-green-200 mb-3">📊 Research Impact Metrics:</h4>
-            <div class="grid md:grid-cols-2 gap-4">
-              <div>
-                <h5 class="text-green-300 text-sm font-medium mb-2">Quantitative Results:</h5>
-                <ul class="text-sm space-y-1">
-                  <li>• <strong>100%</strong> of users expressed interest in species identification apps</li>
-                  <li>• <strong>5</strong> in-depth user interviews conducted with video documentation</li>
-                  <li>• <strong>15</strong> external survey responses from garden visitor network</li>
-                  <li>• <strong>3</strong> stakeholder feedback sessions with partner organization</li>
-                </ul>
-              </div>
-              <div>
-                <h5 class="text-green-300 text-sm font-medium mb-2">Qualitative Insights:</h5>
-                <ul class="text-sm space-y-1">
-                  <li>• <strong>85%</strong> emphasized educational value for children</li>
-                  <li>• <strong>60%</strong> already familiar with similar apps (iNaturalist/Merlin)</li>
-                  <li>• <strong>100%</strong> valued free access as critical adoption factor</li>
-                  <li>• <strong>40%</strong> requested journal/tracking functionality</li>
-                </ul>
+            <div class="flex justify-between items-center mb-3">
+              <h4 class="font-medium text-green-200">📊 Research Impact Metrics</h4>
+              <button onclick="toggleSection('metrics-detail')" class="text-green-300 hover:text-green-100 text-sm flex items-center transition-colors">
+                <span id="metrics-toggle-text">View Details</span>
+                <i id="metrics-toggle-icon" class="fas fa-chevron-down ml-1 transition-transform"></i>
+              </button>
+            </div>
+            
+            <!-- Brief Summary -->
+            <div class="text-sm text-green-100 mb-3">
+              <strong>Key Findings:</strong> 100% user interest in species ID apps • 5 video interviews • 15 survey responses • Strong educational focus
+            </div>
+            
+            <!-- Detailed Content (Initially Hidden) -->
+            <div id="metrics-detail" class="hidden">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h5 class="text-green-300 text-sm font-medium mb-2">Quantitative Results:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• <strong>100%</strong> of users expressed interest in species identification apps</li>
+                    <li>• <strong>5</strong> in-depth user interviews conducted with video documentation</li>
+                    <li>• <strong>15</strong> external survey responses from garden visitor network</li>
+                    <li>• <strong>3</strong> stakeholder feedback sessions with partner organization</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 class="text-green-300 text-sm font-medium mb-2">Qualitative Insights:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• <strong>85%</strong> emphasized educational value for children</li>
+                    <li>• <strong>60%</strong> already familiar with similar apps (iNaturalist/Merlin)</li>
+                    <li>• <strong>100%</strong> valued free access as critical adoption factor</li>
+                    <li>• <strong>40%</strong> requested journal/tracking functionality</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -1572,6 +1602,42 @@
       // Initialize
       updateVideoCarousel();
     });
+  </script>
+
+  <!-- Collapsible Sections Script -->
+  <script>
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      const toggleText = document.getElementById(sectionId.replace('-detail', '-toggle-text'));
+      const toggleIcon = document.getElementById(sectionId.replace('-detail', '-toggle-icon'));
+      
+      if (section.classList.contains('hidden')) {
+        // Show section
+        section.classList.remove('hidden');
+        section.classList.add('animate-fadeIn');
+        toggleText.textContent = 'Hide Details';
+        toggleIcon.classList.add('rotate-180');
+      } else {
+        // Hide section
+        section.classList.add('hidden');
+        section.classList.remove('animate-fadeIn');
+        toggleText.textContent = 'View Details';
+        toggleIcon.classList.remove('rotate-180');
+      }
+    }
+    
+    // Add CSS animation class
+    const style = document.createElement('style');
+    style.textContent = `
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 
 </body>
