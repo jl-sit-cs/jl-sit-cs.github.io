@@ -545,15 +545,31 @@
         User Interview
       </h2>
 
-      To conduct the interview with users, the team prepared a set of questions to gather
-      insights on their
-      experiences, needs, and expectations regarding the species identification tool.
-      The interview was structured to gain insights of the users'
-      experiences, needs, and expectations regarding the species identification tool.
+      <!-- Summary Section -->
+      <div class="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 rounded-lg p-6 border border-blue-500/20 mb-6">
+        <h4 class="text-lg font-semibold text-blue-300 mb-3">📋 Interview Summary</h4>
+        <p class="text-white mb-4">
+          We conducted comprehensive user interviews with <strong>5 participants</strong> including botanic garden visitors, 
+          nature enthusiasts, and researchers. The interviews covered <strong>8 key question areas</strong> and gathered 
+          <strong>detailed feedback</strong> on user needs, preferences, and pain points related to species identification.
+        </p>
+        <button onclick="toggleInterviewDetails()" 
+                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+          <span id="interview-toggle-text">View Full Interview Details</span>
+          <i id="interview-toggle-icon" class="fas fa-chevron-down ml-2 transition-transform"></i>
+        </button>
+      </div>
 
-      <br>
-      <br>
-      <h4 class="text-lg font-medium mb-3">Interview Methodology:</h4>
+      <!-- Detailed Content (Initially Hidden) -->
+      <div id="interview-details" class="hidden">
+        <p class="mb-4">
+          To conduct the interview with users, the team prepared a set of questions to gather
+          insights on their experiences, needs, and expectations regarding the species identification tool.
+          The interview was structured to gain insights of the users'
+          experiences, needs, and expectations regarding the species identification tool.
+        </p>
+
+        <h4 class="text-lg font-medium mb-3">Interview Methodology:</h4>
       <div class="bg-gray-800/30 p-4 rounded-lg mb-4">
         <p class="mb-4">A total of <strong>5 user interviews</strong> were conducted to gather comprehensive insights about visitor experiences and app usage preferences.</p>
         
@@ -903,6 +919,7 @@
           </div>
         </div>
       </div>
+      </div> <!-- End of interview-details -->
 
     </section>
 
@@ -1601,6 +1618,25 @@
       }
     `;
     document.head.appendChild(style);
+  </script>
+
+  <!-- Interview Toggle Script -->
+  <script>
+    function toggleInterviewDetails() {
+      const details = document.getElementById('interview-details');
+      const toggleText = document.getElementById('interview-toggle-text');
+      const toggleIcon = document.getElementById('interview-toggle-icon');
+      
+      if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        toggleText.textContent = 'Hide Interview Details';
+        toggleIcon.classList.add('rotate-180');
+      } else {
+        details.classList.add('hidden');
+        toggleText.textContent = 'View Full Interview Details';
+        toggleIcon.classList.remove('rotate-180');
+      }
+    }
   </script>
 
 </body>
