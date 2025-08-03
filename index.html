@@ -995,31 +995,43 @@
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-content">
+        <div class="timeline-content cursor-pointer hover:bg-gray-50 transition-colors duration-300" onclick="openVideoModal('week1')">
           <div class="timeline-date" style="color:white !important;">22 July - 25 July 2025</div>
-          <h4 class="timeline-title"><i class="fa-solid fa-video"></i> First Pitch Video</h4>
+          <h4 class="timeline-title">
+            <i class="fa-solid fa-video"></i> First Pitch Video
+            <i class="fas fa-play-circle ml-2 text-blue-600 hover:text-blue-800 transition-colors"></i>
+          </h4>
           <p class="timeline-description">
             The video serves as an introduction to the project, outlining the problem statement, objectives, and initial
             research findings. It includes a brief overview of the current workflow of species identification and
             highlights the key challenges faced by users in the existing systems. Additionally, crafting a prototype
             to understand the user journey and identify areas for improvement. Therefore, allowing the team to visualize
-            the
             the number of steps for the user to identify the species.
-
           </p>
+          <div class="mt-3 text-blue-600 text-sm font-medium flex items-center">
+            <i class="fas fa-mouse-pointer mr-1"></i>
+            Click to watch video
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-content">
+        <div class="timeline-content cursor-pointer hover:bg-gray-50 transition-colors duration-300" onclick="openVideoModal('week2')">
           <div class="timeline-date" style="color:white !important;">26 July - 1 August 2025</div>
-          <h4 class="timeline-title"><i class="fa-solid fa-video"></i> Second Pitch Video</h4>
+          <h4 class="timeline-title">
+            <i class="fa-solid fa-video"></i> Second Pitch Video
+            <i class="fas fa-play-circle ml-2 text-blue-600 hover:text-blue-800 transition-colors"></i>
+          </h4>
           <p class="timeline-description">
             The second pitch video builds upon the initial findings and presents a refined prototype based on user
             feedback and further research. It actively showcases the proposed solution, highlighting the key features
             and functionalities that address the identified challenges in species identification. The video serves as a
             platform to communicate the project's progress and gather additional feedback from stakeholders.
           </p>
+          <div class="mt-3 text-blue-600 text-sm font-medium flex items-center">
+            <i class="fas fa-mouse-pointer mr-1"></i>
+            Click to watch video
+          </div>
         </div>
       </div>
 
@@ -1445,6 +1457,32 @@
   </div>
   </footer>
 
+  <!-- Video Modal -->
+  <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 p-4">
+    <div class="relative bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden border border-gray-600">
+      <!-- Modal Header -->
+      <div class="flex justify-between items-center p-4 border-b border-gray-600 bg-gray-800">
+        <h3 id="modalTitle" class="text-xl font-bold text-white"></h3>
+        <button onclick="closeVideoModal()" class="text-gray-300 hover:text-white text-3xl font-bold p-2 hover:bg-gray-700 rounded-full transition-all duration-200">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <!-- Modal Content -->
+      <div class="p-4 bg-gray-900">
+        <div id="modalVideoContainer" class="w-full">
+          <!-- Video will be inserted here -->
+        </div>
+        <div class="mt-4 flex justify-center space-x-4">
+          <a id="modalWeekLink" href="#" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+            <i class="fas fa-external-link-alt mr-2"></i>
+            <span id="modalLinkText">View Week Documentation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     const canvas = document.getElementById('particles'),
       ctx = canvas.getContext('2d'),
@@ -1510,6 +1548,84 @@
 
     window.addEventListener('resize', resize);
     init();
+  </script>
+
+  <!-- Video Modal Script -->
+  <script>
+    const videoModal = document.getElementById('videoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    const modalWeekLink = document.getElementById('modalWeekLink');
+    const modalLinkText = document.getElementById('modalLinkText');
+
+    const videoData = {
+      week1: {
+        title: 'Week 1 - First Pitch Video',
+        videoSrc: './media/group09_week1_pitch.mp4',
+        weekLink: './gh-pages/week1.html',
+        linkText: 'View Week 1 Documentation'
+      },
+      week2: {
+        title: 'Week 2 - Second Pitch Video',
+        videoSrc: './media/Group09_week2_pitch2.mp4',
+        weekLink: './gh-pages/week2.html',
+        linkText: 'View Week 2 Documentation'
+      }
+    };
+
+    function openVideoModal(week) {
+      const data = videoData[week];
+      if (!data) return;
+
+      // Set modal content
+      modalTitle.textContent = data.title;
+      modalWeekLink.href = data.weekLink;
+      modalLinkText.textContent = data.linkText;
+      
+      // Create video element
+      modalVideoContainer.innerHTML = `
+        <video controls class="w-full max-h-[60vh] rounded-lg shadow-lg" autoplay>
+          <source src="${data.videoSrc}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `;
+
+      // Show modal
+      videoModal.classList.remove('hidden');
+      videoModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+      // Hide modal
+      videoModal.classList.add('hidden');
+      videoModal.classList.remove('flex');
+      document.body.style.overflow = '';
+      
+      // Stop video
+      const video = modalVideoContainer.querySelector('video');
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+      
+      // Clear content
+      modalVideoContainer.innerHTML = '';
+    }
+
+    // Close modal when clicking outside
+    videoModal.addEventListener('click', function(e) {
+      if (e.target === videoModal) {
+        closeVideoModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+        closeVideoModal();
+      }
+    });
   </script>
 
 </body>
