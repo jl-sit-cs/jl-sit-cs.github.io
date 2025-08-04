@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+
   <!-- AOS JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
     integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
@@ -99,8 +99,15 @@
 
     /* Floating animation */
     @keyframes floatGentle {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
     }
 
     /* Show sections when AOS animates them */
@@ -549,12 +556,14 @@
       <div class="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 rounded-lg p-6 border border-blue-500/20 mb-6">
         <h4 class="text-lg font-semibold text-blue-300 mb-3">📋 Interview Summary</h4>
         <p class="text-white mb-4">
-          We conducted comprehensive user interviews with <strong>5 participants</strong> including botanic garden visitors, 
-          nature enthusiasts, and researchers. The interviews covered <strong>8 key question areas</strong> and gathered 
-          <strong>detailed feedback</strong> on user needs, preferences, and pain points related to species identification.
+          We conducted comprehensive user interviews with <strong>5 participants</strong> including botanic garden
+          visitors,
+          nature enthusiasts, and researchers. The interviews covered <strong>8 key question areas</strong> and gathered
+          <strong>detailed feedback</strong> on user needs, preferences, and pain points related to species
+          identification.
         </p>
-        <button onclick="toggleInterviewDetails()" 
-                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+        <button onclick="toggleInterviewDetails()"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
           <span id="interview-toggle-text">View Full Interview Details</span>
           <i id="interview-toggle-icon" class="fas fa-chevron-down ml-2 transition-transform"></i>
         </button>
@@ -570,361 +579,408 @@
         </p>
 
         <h4 class="text-lg font-medium mb-3">Interview Methodology:</h4>
-      <div class="bg-gray-800/30 p-4 rounded-lg mb-4">
-        <p class="mb-4">A total of <strong>5 user interviews</strong> were conducted to gather comprehensive insights about visitor experiences and app usage preferences.</p>
-        
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-gray-700/30 p-3 rounded">
-            <p class="font-medium text-gray-300 mb-2">Interview Set A (3 participants):</p>
-            <p class="text-sm mb-2">Focus: Existing tool usage and technical preferences</p>
-            <ul class="text-sm space-y-1">
-              <li>• iNaturalist usage patterns</li>
-              <li>• Pain points with current tools</li>
-              <li>• Feature enhancement suggestions</li>
-            </ul>
-          </div>
-          
-          <div class="bg-blue-700/30 p-3 rounded">
-            <p class="font-medium text-blue-300 mb-2">Interview Set B (2 participants - documented):</p>
-            <p class="text-sm mb-2">Focus: Visitor motivations and app adoption willingness</p>
-            <ul class="text-sm space-y-1">
-              <li>• Garden visit motivations</li>
-              <li>• Learning interest levels</li>
-              <li>• App recommendation receptiveness</li>
-              <li>• Overall experience feedback</li>
-            </ul>
-          </div>
-        </div>
-        
-        <p class="text-sm mt-3 text-gray-400">The two documented interviews (Set B) are presented below with detailed analysis, representing different user segments: nature professionals and casual visitors.</p>
-        
-        <div class="mt-4 bg-green-700/20 p-3 rounded">
-          <div class="flex justify-between items-center mb-2">
-            <h5 class="font-medium text-green-300">Research Methodology Framework</h5>
-            <button onclick="toggleSection('methodology-detail')" class="text-green-200 hover:text-green-100 text-sm flex items-center transition-colors">
-              <span id="methodology-toggle-text">View Details</span>
-              <i id="methodology-toggle-icon" class="fas fa-chevron-down ml-1 transition-transform"></i>
-            </button>
-          </div>
-          
-          <!-- Brief Summary -->
-          <div class="text-sm text-green-100 mb-3">
-            <strong>Multi-method approach:</strong> Structured interviews, external surveys, observational studies, and stakeholder validation with comprehensive analysis framework.
-          </div>
-          
-          <!-- Detailed Content (Initially Hidden) -->
-          <div id="methodology-detail" class="hidden">
-            <div class="grid md:grid-cols-2 gap-4 mb-3">
-              <div>
-                <h6 class="text-green-200 text-sm font-medium mb-1">Primary Research:</h6>
-                <ul class="text-sm space-y-1">
-                  <li>• <strong>Structured Interviews:</strong> Standardized question protocol with video documentation</li>
-                  <li>• <strong>External Survey:</strong> Online questionnaire (15 responses from visitor network)</li>
-                  <li>• <strong>Observational Study:</strong> Visitor behavior analysis during peak hours</li>
-                  <li>• <strong>Stakeholder Workshops:</strong> Collaborative sessions with garden staff</li>
-                </ul>
-              </div>
-              <div>
-                <h6 class="text-green-200 text-sm font-medium mb-1">Analysis Approach:</h6>
-                <ul class="text-sm space-y-1">
-                  <li>• <strong>Thematic Analysis:</strong> Video transcription and pattern identification</li>
-                  <li>• <strong>User Segmentation:</strong> Professional vs. casual visitor categorization</li>
-                  <li>• <strong>Comparative Analysis:</strong> Cross-interview insight synthesis</li>
-                  <li>• <strong>Stakeholder Validation:</strong> Findings reviewed with partner organization</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="bg-yellow-800/20 p-3 rounded border-l-4 border-yellow-500">
-              <h6 class="text-yellow-200 text-sm font-medium mb-1">Research Limitations & Mitigation:</h6>
-              <ul class="text-sm space-y-1">
-                <li>• <strong>Sample Size:</strong> Limited to 5 interviews - mitigated by diverse user segments and external survey</li>
-                <li>• <strong>Seasonal Bias:</strong> Summer data collection - acknowledged in stakeholder discussions</li>
-                <li>• <strong>Location Constraint:</strong> Single venue - balanced with online survey reach</li>
-                <li>• <strong>Time Limitations:</strong> 3-week research window - maximized through parallel data collection</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      These questions were designed to gather insights on the users' experiences with species identification tools,
-      their needs, and expectations for the species identification tool.
-      The team also present the prototype (Hi-Fidelity) to the users and gather feedback on the design and
-      functionality of the tool. The feedback was used to refine the design and ensure it aligns well with the users'
-      needs and expectations.
-      <br>
+        <div class="bg-gray-800/30 p-4 rounded-lg mb-4">
+          <p class="mb-4">A total of <strong>5 user interviews</strong> were conducted to gather comprehensive insights
+            about visitor experiences and app usage preferences.</p>
 
-      <h3 class="mt-8 text-xl font-semibold">
-        Results of the interview:
-      </h3>
-      <ul>
-        <li class="mb-2">
-          1. <strong>Ranger</strong> - "I am in charge of the security, fire safety basically the infrastructure of the
-          gardens.
-          Hence, I do not have much knowledge about the species here but love coming to spend time here."
-        </li>
-        <li class="mb-2">
-          2. <strong>A parent with his/her baby</strong> - "I come here often to spend time but not explicitly looking
-          for species."
-        </li>
-        <li class="mb-2">
-          3. <strong>Random girl</strong> - "Here to chill and relax, not really looking for species."
-        </li>
-      </ul>
-      <br>
-
-      <h3 class="mt-8 text-xl font-semibold">
-        Summary of the interview:
-      </h3>
-      The interview shows that the users are not explicitly looking for species identification but rather enjoying their
-      time in the gardens. They appreciate the opportunity to learn about the flora and fauna around them in a casual
-      manner.
-      The team will take this feedback into account when designing the species identification tool, ensuring it is
-      user-friendly and accessible to all users, regardless of their level of expertise in species identification.
-      <br>
-
-      <h3 class="mt-8 text-xl font-semibold">
-        User Interview Videos:
-      </h3>
-      <p class="mb-4">
-        The following videos document our user interview sessions, capturing real conversations with garden visitors about their experiences and preferences:
-      </p>
-      
-      <div class="relative w-full mx-auto md:max-w-4xl">
-        <!-- Video Carousel container -->
-        <div id="videoCarousel" class="relative overflow-hidden rounded-lg bg-gray-900/50 backdrop-blur-sm">
-          <!-- Carousel wrapper -->
-          <div id="videoCarouselWrapper" class="flex transition-transform duration-300 ease-in-out">
-            <!-- Video 1 -->
-            <div class="w-full flex-shrink-0">
-              <div class="relative bg-black/20 flex flex-col items-center justify-center p-4">
-                <h4 class="text-white text-lg font-semibold text-center mb-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                  User Interview 1 - RSPB Volunteer</h4>
-                <video controls class="w-full max-h-[500px] rounded-lg shadow-lg">
-                  <source src="../media/UserVideo1_Sub.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-            <!-- Video 2 -->
-            <div class="w-full flex-shrink-0">
-              <div class="relative bg-black/20 flex flex-col items-center justify-center p-4">
-                <h4 class="text-white text-lg font-semibold text-center mb-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                  User Interview 2 - Casual Visitors</h4>
-                <video controls class="w-full max-h-[500px] rounded-lg shadow-lg">
-                  <source src="../media/UserVideo2_Sub.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation buttons -->
-          <button id="videoPrevBtn"
-            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-          </button>
-          <button id="videoNextBtn"
-            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Dots indicator -->
-        <div class="flex justify-center mt-4 space-x-2">
-          <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
-            data-slide="0"></button>
-          <button class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
-            data-slide="1"></button>
-        </div>
-      </div>
-
-      <h3 class="mt-8 text-xl font-semibold">
-        Key Feedback Analysis from Video Interviews:
-      </h3>
-      
-      <div class="space-y-6">
-        <div class="bg-green-800/20 p-4 rounded-lg">
-          <h4 class="text-lg font-medium mb-3">📹 Video 1 - RSPB Volunteer Interview</h4>
-          
-          <div class="space-y-3">
-            <div>
-              <p class="font-medium text-green-300">Q1: What brings you to Botanic Gardens today?</p>
-              <p class="ml-4 italic">"I am with the RSPB, so it's a territory that looks up in nature, and so I'm just here to do some fundraising basically and let people know what we do if they want to help."</p>
-            </div>
-            
-            <div>
-              <p class="font-medium text-green-300">Q2: Are you interested in learning about the plants or animals here?</p>
-              <p class="ml-4 italic">"Yeah, sure. You can tell me about it, yeah."</p>
-            </div>
-            
-            <div>
-              <p class="font-medium text-green-300">Q3: Would you use a free app to take photos and learn about species?</p>
-              <p class="ml-4 italic">"Yeah, I think I would look at it and probably use it."</p>
-            </div>
-            
-            <div>
-              <p class="font-medium text-green-300">Q4: Do you already use apps like iNaturalist?</p>
-              <p class="ml-4 italic">"Yes, I use that one. And then there's another one called Merlin ID. That one helps you know the bird sounds and which species the bird sounds come from."</p>
-            </div>
-            
-            <div>
-              <p class="font-medium text-green-300">Overall Experience:</p>
-              <p class="ml-4 italic">"It's been good. I think it's useful sometimes because I'm new to Scotland. I don't know everything. So it's useful to know what the different species are so I can learn a bit better."</p>
-            </div>
-          </div>
-          
-          <div class="mt-4 p-3 bg-green-900/30 rounded">
-            <p class="font-medium text-green-200">Key Takeaways & Feedback:</p>
-            <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
-              <li>User is already engaged with nature (RSPB volunteer)</li>
-              <li>Existing user of species identification apps (iNaturalist, Merlin ID)</li>
-              <li>Positive attitude towards new app recommendations</li>
-              <li>Values learning about local species, especially as newcomer to Scotland</li>
-              <li>Finds current apps useful for educational purposes</li>
-              <li><strong>Feature Suggestion:</strong> "A journal section where you can record and remember the things you see. For example, if you spot a bird, you can look back two weeks later and add it to your journal"</li>
-              <li><strong>User Experience:</strong> Already actively uses iNaturalist for species identification</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="bg-blue-800/20 p-4 rounded-lg">
-          <h4 class="text-lg font-medium mb-3">📹 Video 2 - Casual Visitors Interview</h4>
-          
-          <div class="space-y-3">
-            <div>
-              <p class="font-medium text-blue-300">Q1: What brings you to Botanic Gardens today?</p>
-              <p class="ml-4 italic">"No, we were just passing by and going for a walk because it's sunny."</p>
-            </div>
-            
-            <div>
-              <p class="font-medium text-blue-300">Q1b: What do you enjoy most here?</p>
-              <p class="ml-4 italic">"Having greenery surrounding us, just being away from the city and the ocean."</p>
-            </div>
-            
-            <div>
-              <p class="font-medium text-blue-300">Q2: Are you interested in learning about the plants and animals here?</p>
-              <p class="ml-4 italic">"Yeah, I've been here with my sister and I went in with my nieces and nephews just to like learn about the plants because I think it's really, really fascinating, interesting, different plants from different parts of the world."</p>
-            </div>
-            
-            <div>
-              <p class="font-medium text-blue-300">Q3: Would you use a free app to snap photos and identify species?</p>
-              <p class="ml-4 italic">"Yeah, that would be very interesting. It's also very educational for young children because I know a lot of families bring their children here. So I think as a learning curve for both adults and children, it would be very useful and especially if it's free as well."</p>
-            </div>
-            
-            <div>
-              <p class="font-medium text-blue-300">Extended thoughts on nature education:</p>
-              <p class="ml-4 italic">"We need nature. We have to live in harmony with nature because without it we can't exist. So from a young age, if children are taught that nature is part, should be part of your life, and for them to actually take interest in nature and understand why we feel good when we're in parks... that's going to make them want to come to places like parks and be in nature, and they'll respect nature as well."</p>
-            </div>
-          </div>
-          
-          <div class="mt-4 p-3 bg-blue-900/30 rounded">
-            <p class="font-medium text-blue-200">Key Takeaways & Feedback:</p>
-            <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
-              <li>Casual visitor - came for leisure walk, not specifically for nature study</li>
-              <li>Values gardens as escape from urban environment</li>
-              <li>Strong interest in learning about plants from different parts of the world</li>
-              <li>Family-oriented - brings nieces/nephews for educational visits</li>
-              <li>Highly supportive of educational apps, especially for children</li>
-              <li>Deep philosophical connection to nature and environmental education</li>
-              <li>Emphasizes importance of free access to educational tools</li>
-              <li><strong>Tech Awareness:</strong> Don't know about iNaturalist specifically, but familiar with AI identification models</li>
-              <li><strong>AI Understanding:</strong> Know about ChatGPT and understand AI capabilities for identification tasks</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="bg-purple-800/20 p-4 rounded-lg">
-          <h4 class="text-lg font-medium mb-3">🔍 Comparative Analysis</h4>
-          
           <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <p class="font-medium text-purple-300 mb-2">Video 1 (RSPB Volunteer):</p>
-              <ul class="list-disc list-inside text-sm space-y-1">
-                <li>Professional nature engagement</li>
-                <li>Already uses multiple apps</li>
-                <li>Focused on personal learning</li>
-                <li>Newcomer to Scotland perspective</li>
+            <div class="bg-gray-700/30 p-3 rounded">
+              <p class="font-medium text-gray-300 mb-2">Interview Set A (3 participants):</p>
+              <p class="text-sm mb-2">Focus: Existing tool usage and technical preferences</p>
+              <ul class="text-sm space-y-1">
+                <li>• iNaturalist usage patterns</li>
+                <li>• Pain points with current tools</li>
+                <li>• Feature enhancement suggestions</li>
               </ul>
             </div>
-            
-            <div>
-              <p class="font-medium text-purple-300 mb-2">Video 2 (Casual Visitors):</p>
-              <ul class="list-disc list-inside text-sm space-y-1">
-                <li>Recreational garden use</li>
-                <li>No mention of existing app usage</li>
-                <li>Family/children education focused</li>
-                <li>Strong environmental philosophy</li>
+
+            <div class="bg-blue-700/30 p-3 rounded">
+              <p class="font-medium text-blue-300 mb-2">Interview Set B (2 participants - documented):</p>
+              <p class="text-sm mb-2">Focus: Visitor motivations and app adoption willingness</p>
+              <ul class="text-sm space-y-1">
+                <li>• Garden visit motivations</li>
+                <li>• Learning interest levels</li>
+                <li>• App recommendation receptiveness</li>
+                <li>• Overall experience feedback</li>
               </ul>
             </div>
           </div>
-          
-          <div class="mt-4 p-3 bg-purple-900/30 rounded">
-            <p class="font-medium text-purple-200">Overall Insights & Feature Implications:</p>
-            <ul class="list-disc list-inside text-sm space-y-1">
-              <li><strong>Universal Appeal:</strong> Both user types showed strong interest in species identification apps</li>
-              <li><strong>Educational Value:</strong> Both emphasized learning benefits, with Video 2 particularly focused on children</li>
-              <li><strong>Accessibility:</strong> Free access was highlighted as important factor</li>
-              <li><strong>Different Entry Points:</strong> Professional vs. casual users have different motivations but similar outcomes</li>
-              <li><strong>Feature Request:</strong> Journal/logging functionality for tracking observations over time</li>
-              <li><strong>Tech Readiness:</strong> Mixed familiarity - some know iNaturalist, others understand AI but not specific apps</li>
-              <li><strong>AI Awareness:</strong> General understanding of AI capabilities (ChatGPT) suggests openness to AI-powered identification</li>
-              <li><strong>Validation:</strong> Confirms broad market appeal across different user segments and tech literacy levels</li>
-            </ul>
-          </div>
-          
-          <!-- Research Impact Metrics -->
-          <div class="mt-6 bg-green-800/20 p-4 rounded-lg border border-green-500/30">
-            <div class="flex justify-between items-center mb-3">
-              <h4 class="font-medium text-green-200">📊 Research Impact Metrics</h4>
-              <button onclick="toggleSection('metrics-detail')" class="text-green-300 hover:text-green-100 text-sm flex items-center transition-colors">
-                <span id="metrics-toggle-text">View Details</span>
-                <i id="metrics-toggle-icon" class="fas fa-chevron-down ml-1 transition-transform"></i>
+
+          <p class="text-sm mt-3 text-gray-400">The two documented interviews (Set B) are presented below with detailed
+            analysis, representing different user segments: nature professionals and casual visitors.</p>
+
+          <div class="mt-4 bg-green-700/20 p-3 rounded">
+            <div class="flex justify-between items-center mb-2">
+              <h5 class="font-medium text-green-300">Research Methodology Framework</h5>
+              <button onclick="toggleSection('methodology-detail')"
+                class="text-green-200 hover:text-green-100 text-sm flex items-center transition-colors">
+                <span id="methodology-toggle-text">View Details</span>
+                <i id="methodology-toggle-icon" class="fas fa-chevron-down ml-1 transition-transform"></i>
               </button>
             </div>
-            
+
             <!-- Brief Summary -->
             <div class="text-sm text-green-100 mb-3">
-              <strong>Key Findings:</strong> 100% user interest in species ID apps • 5 video interviews • 15 survey responses • Strong educational focus
+              <strong>Multi-method approach:</strong> Structured interviews, external surveys, observational studies,
+              and stakeholder validation with comprehensive analysis framework.
             </div>
-            
+
             <!-- Detailed Content (Initially Hidden) -->
-            <div id="metrics-detail" class="hidden">
-              <div class="grid md:grid-cols-2 gap-4">
+            <div id="methodology-detail" class="hidden">
+              <div class="grid md:grid-cols-2 gap-4 mb-3">
                 <div>
-                  <h5 class="text-green-300 text-sm font-medium mb-2">Quantitative Results:</h5>
+                  <h6 class="text-green-200 text-sm font-medium mb-1">Primary Research:</h6>
                   <ul class="text-sm space-y-1">
-                    <li>• <strong>100%</strong> of users expressed interest in species identification apps</li>
-                    <li>• <strong>5</strong> in-depth user interviews conducted with video documentation</li>
-                    <li>• <strong>15</strong> external survey responses from garden visitor network</li>
-                    <li>• <strong>3</strong> stakeholder feedback sessions with partner organization</li>
+                    <li>• <strong>Structured Interviews:</strong> Standardized question protocol with video
+                      documentation</li>
+                    <li>• <strong>External Survey:</strong> Online questionnaire (15 responses from visitor network)
+                    </li>
+                    <li>• <strong>Observational Study:</strong> Visitor behavior analysis during peak hours</li>
+                    <li>• <strong>Stakeholder Workshops:</strong> Collaborative sessions with garden staff</li>
                   </ul>
                 </div>
                 <div>
-                  <h5 class="text-green-300 text-sm font-medium mb-2">Qualitative Insights:</h5>
+                  <h6 class="text-green-200 text-sm font-medium mb-1">Analysis Approach:</h6>
                   <ul class="text-sm space-y-1">
-                    <li>• <strong>85%</strong> emphasized educational value for children</li>
-                    <li>• <strong>60%</strong> already familiar with similar apps (iNaturalist/Merlin)</li>
-                    <li>• <strong>100%</strong> valued free access as critical adoption factor</li>
-                    <li>• <strong>40%</strong> requested journal/tracking functionality</li>
+                    <li>• <strong>Thematic Analysis:</strong> Video transcription and pattern identification</li>
+                    <li>• <strong>User Segmentation:</strong> Professional vs. casual visitor categorization</li>
+                    <li>• <strong>Comparative Analysis:</strong> Cross-interview insight synthesis</li>
+                    <li>• <strong>Stakeholder Validation:</strong> Findings reviewed with partner organization</li>
                   </ul>
+                </div>
+              </div>
+
+              <div class="bg-yellow-800/20 p-3 rounded border-l-4 border-yellow-500">
+                <h6 class="text-yellow-200 text-sm font-medium mb-1">Research Limitations & Mitigation:</h6>
+                <ul class="text-sm space-y-1">
+                  <li>• <strong>Sample Size:</strong> Limited to 5 interviews - mitigated by diverse user segments and
+                    external survey</li>
+                  <li>• <strong>Seasonal Bias:</strong> Summer data collection - acknowledged in stakeholder discussions
+                  </li>
+                  <li>• <strong>Location Constraint:</strong> Single venue - balanced with online survey reach</li>
+                  <li>• <strong>Time Limitations:</strong> 3-week research window - maximized through parallel data
+                    collection</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        These questions were designed to gather insights on the users' experiences with species identification tools,
+        their needs, and expectations for the species identification tool.
+        The team also present the prototype (Hi-Fidelity) to the users and gather feedback on the design and
+        functionality of the tool. The feedback was used to refine the design and ensure it aligns well with the users'
+        needs and expectations.
+        <br>
+
+        <h3 class="mt-8 text-xl font-semibold">
+          Results of the interview:
+        </h3>
+        <ul>
+          <li class="mb-2">
+            1. <strong>Ranger</strong> - "I am in charge of the security, fire safety basically the infrastructure of
+            the
+            gardens.
+            Hence, I do not have much knowledge about the species here but love coming to spend time here."
+          </li>
+          <li class="mb-2">
+            2. <strong>A parent with his/her baby</strong> - "I come here often to spend time but not explicitly looking
+            for species."
+          </li>
+          <li class="mb-2">
+            3. <strong>Random girl</strong> - "Here to chill and relax, not really looking for species."
+          </li>
+        </ul>
+        <br>
+
+        <h3 class="mt-8 text-xl font-semibold">
+          Summary of the interview:
+        </h3>
+        The interview shows that the users are not explicitly looking for species identification but rather enjoying
+        their
+        time in the gardens. They appreciate the opportunity to learn about the flora and fauna around them in a casual
+        manner.
+        The team will take this feedback into account when designing the species identification tool, ensuring it is
+        user-friendly and accessible to all users, regardless of their level of expertise in species identification.
+        <br>
+
+        <h3 class="mt-8 text-xl font-semibold">
+          User Interview Videos:
+        </h3>
+        <p class="mb-4">
+          The following videos document our user interview sessions, capturing real conversations with garden visitors
+          about their experiences and preferences:
+        </p>
+
+        <div class="relative w-full mx-auto md:max-w-4xl">
+          <!-- Video Carousel container -->
+          <div id="videoCarousel" class="relative overflow-hidden rounded-lg bg-gray-900/50 backdrop-blur-sm">
+            <!-- Carousel wrapper -->
+            <div id="videoCarouselWrapper" class="flex transition-transform duration-300 ease-in-out">
+              <!-- Video 1 -->
+              <div class="w-full flex-shrink-0">
+                <div class="relative bg-black/20 flex flex-col items-center justify-center p-4">
+                  <h4
+                    class="text-white text-lg font-semibold text-center mb-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
+                    User Interview 1 - RSPB Volunteer</h4>
+                  <video controls class="w-full max-h-[500px] rounded-lg shadow-lg">
+                    <source src="../media/UserVideo1_Sub.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <!-- Video 2 -->
+              <div class="w-full flex-shrink-0">
+                <div class="relative bg-black/20 flex flex-col items-center justify-center p-4">
+                  <h4
+                    class="text-white text-lg font-semibold text-center mb-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
+                    User Interview 2 - Casual Visitors</h4>
+                  <video controls class="w-full max-h-[500px] rounded-lg shadow-lg">
+                    <source src="../media/UserVideo2_Sub.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <button id="videoPrevBtn"
+              class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button id="videoNextBtn"
+              class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Dots indicator -->
+          <div class="flex justify-center mt-4 space-x-2">
+            <button
+              class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
+              data-slide="0"></button>
+            <button
+              class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
+              data-slide="1"></button>
+          </div>
+        </div>
+
+        <h3 class="mt-8 text-xl font-semibold">
+          Key Feedback Analysis from Video Interviews:
+        </h3>
+
+        <div class="space-y-6">
+          <div class="bg-green-800/20 p-4 rounded-lg">
+            <h4 class="text-lg font-medium mb-3">📹 Video 1 - RSPB Volunteer Interview</h4>
+
+            <div class="space-y-3">
+              <div>
+                <p class="font-medium text-green-300">Q1: What brings you to Botanic Gardens today?</p>
+                <p class="ml-4 italic">"I am with the RSPB, so it's a territory that looks up in nature, and so I'm just
+                  here to do some fundraising basically and let people know what we do if they want to help."</p>
+              </div>
+
+              <div>
+                <p class="font-medium text-green-300">Q2: Are you interested in learning about the plants or animals
+                  here?</p>
+                <p class="ml-4 italic">"Yeah, sure. You can tell me about it, yeah."</p>
+              </div>
+
+              <div>
+                <p class="font-medium text-green-300">Q3: Would you use a free app to take photos and learn about
+                  species?</p>
+                <p class="ml-4 italic">"Yeah, I think I would look at it and probably use it."</p>
+              </div>
+
+              <div>
+                <p class="font-medium text-green-300">Q4: Do you already use apps like iNaturalist?</p>
+                <p class="ml-4 italic">"Yes, I use that one. And then there's another one called Merlin ID. That one
+                  helps you know the bird sounds and which species the bird sounds come from."</p>
+              </div>
+
+              <div>
+                <p class="font-medium text-green-300">Overall Experience:</p>
+                <p class="ml-4 italic">"It's been good. I think it's useful sometimes because I'm new to Scotland. I
+                  don't know everything. So it's useful to know what the different species are so I can learn a bit
+                  better."</p>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-green-900/30 rounded">
+              <p class="font-medium text-green-200">Key Takeaways & Feedback:</p>
+              <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                <li>User is already engaged with nature (RSPB volunteer)</li>
+                <li>Existing user of species identification apps (iNaturalist, Merlin ID)</li>
+                <li>Positive attitude towards new app recommendations</li>
+                <li>Values learning about local species, especially as newcomer to Scotland</li>
+                <li>Finds current apps useful for educational purposes</li>
+                <li><strong>Feature Suggestion:</strong> "A journal section where you can record and remember the things
+                  you see. For example, if you spot a bird, you can look back two weeks later and add it to your
+                  journal"</li>
+                <li><strong>User Experience:</strong> Already actively uses iNaturalist for species identification</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-blue-800/20 p-4 rounded-lg">
+            <h4 class="text-lg font-medium mb-3">📹 Video 2 - Casual Visitors Interview</h4>
+
+            <div class="space-y-3">
+              <div>
+                <p class="font-medium text-blue-300">Q1: What brings you to Botanic Gardens today?</p>
+                <p class="ml-4 italic">"No, we were just passing by and going for a walk because it's sunny."</p>
+              </div>
+
+              <div>
+                <p class="font-medium text-blue-300">Q1b: What do you enjoy most here?</p>
+                <p class="ml-4 italic">"Having greenery surrounding us, just being away from the city and the ocean."
+                </p>
+              </div>
+
+              <div>
+                <p class="font-medium text-blue-300">Q2: Are you interested in learning about the plants and animals
+                  here?</p>
+                <p class="ml-4 italic">"Yeah, I've been here with my sister and I went in with my nieces and nephews
+                  just to like learn about the plants because I think it's really, really fascinating, interesting,
+                  different plants from different parts of the world."</p>
+              </div>
+
+              <div>
+                <p class="font-medium text-blue-300">Q3: Would you use a free app to snap photos and identify species?
+                </p>
+                <p class="ml-4 italic">"Yeah, that would be very interesting. It's also very educational for young
+                  children because I know a lot of families bring their children here. So I think as a learning curve
+                  for both adults and children, it would be very useful and especially if it's free as well."</p>
+              </div>
+
+              <div>
+                <p class="font-medium text-blue-300">Extended thoughts on nature education:</p>
+                <p class="ml-4 italic">"We need nature. We have to live in harmony with nature because without it we
+                  can't exist. So from a young age, if children are taught that nature is part, should be part of your
+                  life, and for them to actually take interest in nature and understand why we feel good when we're in
+                  parks... that's going to make them want to come to places like parks and be in nature, and they'll
+                  respect nature as well."</p>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-blue-900/30 rounded">
+              <p class="font-medium text-blue-200">Key Takeaways & Feedback:</p>
+              <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                <li>Casual visitor - came for leisure walk, not specifically for nature study</li>
+                <li>Values gardens as escape from urban environment</li>
+                <li>Strong interest in learning about plants from different parts of the world</li>
+                <li>Family-oriented - brings nieces/nephews for educational visits</li>
+                <li>Highly supportive of educational apps, especially for children</li>
+                <li>Deep philosophical connection to nature and environmental education</li>
+                <li>Emphasizes importance of free access to educational tools</li>
+                <li><strong>Tech Awareness:</strong> Don't know about iNaturalist specifically, but familiar with AI
+                  identification models</li>
+                <li><strong>AI Understanding:</strong> Know about ChatGPT and understand AI capabilities for
+                  identification tasks</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-purple-800/20 p-4 rounded-lg">
+            <h4 class="text-lg font-medium mb-3">🔍 Comparative Analysis</h4>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="font-medium text-purple-300 mb-2">Video 1 (RSPB Volunteer):</p>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                  <li>Professional nature engagement</li>
+                  <li>Already uses multiple apps</li>
+                  <li>Focused on personal learning</li>
+                  <li>Newcomer to Scotland perspective</li>
+                </ul>
+              </div>
+
+              <div>
+                <p class="font-medium text-purple-300 mb-2">Video 2 (Casual Visitors):</p>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                  <li>Recreational garden use</li>
+                  <li>No mention of existing app usage</li>
+                  <li>Family/children education focused</li>
+                  <li>Strong environmental philosophy</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-purple-900/30 rounded">
+              <p class="font-medium text-purple-200">Overall Insights & Feature Implications:</p>
+              <ul class="list-disc list-inside text-sm space-y-1">
+                <li><strong>Universal Appeal:</strong> Both user types showed strong interest in species identification
+                  apps</li>
+                <li><strong>Educational Value:</strong> Both emphasized learning benefits, with Video 2 particularly
+                  focused on children</li>
+                <li><strong>Accessibility:</strong> Free access was highlighted as important factor</li>
+                <li><strong>Different Entry Points:</strong> Professional vs. casual users have different motivations
+                  but similar outcomes</li>
+                <li><strong>Feature Request:</strong> Journal/logging functionality for tracking observations over time
+                </li>
+                <li><strong>Tech Readiness:</strong> Mixed familiarity - some know iNaturalist, others understand AI but
+                  not specific apps</li>
+                <li><strong>AI Awareness:</strong> General understanding of AI capabilities (ChatGPT) suggests openness
+                  to AI-powered identification</li>
+                <li><strong>Validation:</strong> Confirms broad market appeal across different user segments and tech
+                  literacy levels</li>
+              </ul>
+            </div>
+
+            <!-- Research Impact Metrics -->
+            <div class="mt-6 bg-green-800/20 p-4 rounded-lg border border-green-500/30">
+              <div class="flex justify-between items-center mb-3">
+                <h4 class="font-medium text-green-200">📊 Research Impact Metrics</h4>
+                <button onclick="toggleSection('metrics-detail')"
+                  class="text-green-300 hover:text-green-100 text-sm flex items-center transition-colors">
+                  <span id="metrics-toggle-text">View Details</span>
+                  <i id="metrics-toggle-icon" class="fas fa-chevron-down ml-1 transition-transform"></i>
+                </button>
+              </div>
+
+              <!-- Brief Summary -->
+              <div class="text-sm text-green-100 mb-3">
+                <strong>Key Findings:</strong> 100% user interest in species ID apps • 5 video interviews • 15 survey
+                responses • Strong educational focus
+              </div>
+
+              <!-- Detailed Content (Initially Hidden) -->
+              <div id="metrics-detail" class="hidden">
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h5 class="text-green-300 text-sm font-medium mb-2">Quantitative Results:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• <strong>100%</strong> of users expressed interest in species identification apps</li>
+                      <li>• <strong>5</strong> in-depth user interviews conducted with video documentation</li>
+                      <li>• <strong>15</strong> external survey responses from garden visitor network</li>
+                      <li>• <strong>3</strong> stakeholder feedback sessions with partner organization</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="text-green-300 text-sm font-medium mb-2">Qualitative Insights:</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• <strong>85%</strong> emphasized educational value for children</li>
+                      <li>• <strong>60%</strong> already familiar with similar apps (iNaturalist/Merlin)</li>
+                      <li>• <strong>100%</strong> valued free access as critical adoption factor</li>
+                      <li>• <strong>40%</strong> requested journal/tracking functionality</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </div> <!-- End of interview-details -->
 
     </section>
 
 
-    <section id="Usability-testing" class="section-box" data-aos="fade-up" data-aos-duration="1200" data-aos-offset="200">
+    <section id="Usability-testing" class="section-box" data-aos="fade-up" data-aos-duration="1200"
+      data-aos-offset="200">
 
       <h2 class="section-header text-3xl font-bold mb-6">
         Usability Testing
@@ -963,49 +1019,50 @@
             <!-- Slide 1 -->
             <div class="w-full flex-shrink-0">
               <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
-                <img src="../media/scanner.jpg" alt="Camera Taking" class="max-w-full max-h-[450px] object-contain">
+                <img src="../media/home_page(hi-fi).JPG" alt="Home Page"
+                  class="max-w-full max-h-[450px] object-contain">
                 <h3
                   class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                  Camera Taking</h3>
+                  Home Page</h3>
               </div>
             </div>
             <!-- Slide 2 -->
             <div class="w-full flex-shrink-0">
               <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
-                <img src="../media/high_confidence.jpg" alt="Species Identification (High Confidence)"
+                <img src="../media/community_page.JPG" alt="Community Page"
                   class="max-w-full max-h-[450px] object-contain">
                 <h3
                   class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                  Species Identification (High Confidence)</h3>
+                  Community Page</h3>
               </div>
             </div>
             <!-- Slide 3 -->
             <div class="w-full flex-shrink-0">
               <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
-                <img src="../media/low_confidence.jpg" alt="Species Identification (Low Confidence)"
+                <img src="../media/camera.JPG" alt="Camera Take of Species"
                   class="max-w-full max-h-[450px] object-contain">
                 <h3
                   class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                  Species Identification (Low Confidence)</h3>
+                  Camera Take of Species</h3>
               </div>
             </div>
             <!-- Slide 4 -->
             <div class="w-full flex-shrink-0">
               <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
-                <img src="../media/communityview.jpg" alt="Community View"
-                  class="max-w-full max-h-[450px] object-contain">
+                <img src="../media/leaderboard.JPG" alt="Leaderboard" class="max-w-full max-h-[450px] object-contain">
                 <h3
                   class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                  Community View</h3>
+                  Leaderboard</h3>
               </div>
             </div>
             <!-- Slide 5 -->
             <div class="w-full flex-shrink-0">
               <div class="relative bg-black/20 flex flex-col items-center justify-center min-h-[500px] p-4">
-                <img src="../media/map.jpg" alt="Map View" class="max-w-full max-h-[450px] object-contain">
+                <img src="../media/information_page.JPG" alt="Information Page"
+                  class="max-w-full max-h-[450px] object-contain">
                 <h3
                   class="text-white text-lg font-semibold text-center mt-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                  Map View</h3>
+                  Information Page</h3>
               </div>
             </div>
           </div>
@@ -1045,24 +1102,34 @@
       <br>
       The proposed solution includes deep integration of user feedback and iterative design principles to create a more
       effective and user-centered product.
+
+      <br>
+      <br>
+      To view the full prototype, please visit our Figma project by clicking
+      <a
+        href="https://www.figma.com/proto/W8JQ0TpcM3CpNIS5wn7BxA/OIP-Prototype?node-id=2093-1900&t=biYHkzBjCSlsoRnc-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2093%3A1900">
+        here.</a>
     </section>
 
     <section id="pitch-video" class="section-box" data-aos="fade-up">
       <h2 class="section-header text-3xl font-bold mb-6">
         Pitch Video 2
       </h2>
-      
+
       <p class="mb-4">
-        Our second pitch video presents the refined prototype based on user feedback and iterative design improvements from Week 2. This video showcases the enhanced features and demonstrates how user insights have been integrated into the solution.
+        Our second pitch video presents the refined prototype based on user feedback and iterative design improvements
+        from Week 2. This video showcases the enhanced features and demonstrates how user insights have been integrated
+        into the solution.
       </p>
-      
+
       <video controls class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
         <source src="../media/Group09_week2_pitch2.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      
+
       <p class="mt-4 text-sm text-gray-300">
-        This video demonstrates the iterative improvements made to our species identification tool based on comprehensive user research and feedback analysis conducted during Week 2.
+        This video demonstrates the iterative improvements made to our species identification tool based on
+        comprehensive user research and feedback analysis conducted during Week 2.
       </p>
     </section>
 
@@ -1070,30 +1137,63 @@
       <h2 class="section-header text-3xl font-bold mb-6">
         Summary
       </h2>
+      To summarize, the team had applied different methodologies such as integrative thinking, usability testing,
+      and user interviews to gather insights and feedback from the users. The team took time to understand user
+      requirements to incorporate it
+      into the design process. After gathering all the necessary information, the team had also created a high-fidelity
+      prototype using Figma, which incorporates the feedback and insights gathered.
     </section>
 
     <section id="references" class="section-box" data-aos="fade-up">
       <h2 class="section-header text-3xl font-bold mb-6">
         References
       </h2>
+      <li>
+        <a href="https://www.mural.co/blog/what-is-integrative-thinking" target="_blank">What is Integrative
+          Thinking?</a>
+      </li>
+      <li>
+        <a href="https://www.nngroup.com/articles/what-is-usability-testing/" target="_blank">What is Usability
+          Testing?</a>
+      </li>
+      <li>
+        <a href="https://www.usertesting.com/resources/guides/usability-testing" target="_blank">Why Usability Testing
+          is Important?</a>
+      </li>
+      <li>
+        <a href="https://www.nngroup.com/articles/usability-testing-101/" target="_blank">Usability Testing 101</a>
+      </li>
+      <li>
+        <a href="https://www.usertesting.com/resources/guides/usability-testing/methods#:~:text=1.,Guerrilla%20testing%20usability%20testing%20methods"
+          target="_blank">Different Usability Testing Methods</a>
+      </li>
+      <li>
+        <a href="https://www.figma.com/resource-library/high-fidelity-prototyping/" target="_blank">What is
+          High-Fidelity Prototyping?</a>
+      </li>
+      <li>
+        <a href="https://www.figma.com/" target="_blank">Figma</a>
+      </li>
     </section>
 
     <!-- Week Navigation -->
     <section class="section-box" data-aos="fade-up">
       <div class="flex justify-between items-center">
         <div class="flex-1">
-          <a href="./week1.html" class="inline-flex items-center bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
+          <a href="./week1.html"
+            class="inline-flex items-center bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
             <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
             <span>Previous: Week 1</span>
           </a>
         </div>
-        
+
         <div class="flex-1 text-center">
           <span class="text-white text-sm opacity-75">Week 2 of 3</span>
         </div>
-        
+
         <div class="flex-1 text-right">
-          <a href="./week3.html" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
+          <a href="./week3.html"
+            class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
             <span>Next: Week 3</span>
             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
           </a>
@@ -1590,7 +1690,7 @@
       const section = document.getElementById(sectionId);
       const toggleText = document.getElementById(sectionId.replace('-detail', '-toggle-text'));
       const toggleIcon = document.getElementById(sectionId.replace('-detail', '-toggle-icon'));
-      
+
       if (section.classList.contains('hidden')) {
         // Show section
         section.classList.remove('hidden');
@@ -1605,7 +1705,7 @@
         toggleIcon.classList.remove('rotate-180');
       }
     }
-    
+
     // Add CSS animation class
     const style = document.createElement('style');
     style.textContent = `
@@ -1626,7 +1726,7 @@
       const details = document.getElementById('interview-details');
       const toggleText = document.getElementById('interview-toggle-text');
       const toggleIcon = document.getElementById('interview-toggle-icon');
-      
+
       if (details.classList.contains('hidden')) {
         details.classList.remove('hidden');
         toggleText.textContent = 'Hide Interview Details';
