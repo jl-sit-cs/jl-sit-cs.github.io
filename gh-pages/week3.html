@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     integrity="sha512-Ho5YnXt2nGS+gJwmokI6XgzSi2BThCxj1NF4miugpWwZL7F/kn8RYe9ScV6g0y1pStkZJY/bD4c8Zg6jWRP3Ug=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+
   <!-- AOS JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
     integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
@@ -24,6 +24,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
+  <link rel="icon" href="../media/icon.png" type="image/png" />
   <!-- Google Fonts -->
   <link rel=" preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,8 +100,15 @@
 
     /* Floating animation */
     @keyframes floatGentle {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
     }
 
     /* Show sections when AOS animates them */
@@ -384,7 +392,7 @@
           </div>
 
           <a href="./design-journey.html" class="text-white font-medium hover:text-orange-200 transition">
-            Design Journey
+            Our Design Journey
           </a>
 
           <a href="./self-reflections.html" class="text-white font-medium hover:text-orange-200 transition">
@@ -498,6 +506,21 @@
 
     </section>
 
+    <section id="last-client-meeting" class="section-box" data-aos="fade-up">
+      <h2 class="section-header text-3xl font-bold mb-6">
+        Last Client Meeting
+      </h2>
+
+      The team met with the stakeholder, Chrissy Sanachan, to discuss about the work done during
+      our second week. The meeting focused on gathering feedback on the high-fidelity prototype
+      and ensuring that it aligns with the project goals. The stakeholders mentioned that
+      the team did well for the high-fidelity prototype and gave some valuable insights
+      on improving on the functionality and usability of the Species Identification Project.
+      These includes such as privacy mode for younger users, and different interface for experts vetting.
+
+    </section>
+
+
     <section id="poster" class="section-box" data-aos="fade-up">
       <h2 class="section-header text-3xl font-bold mb-6">
         Poster
@@ -537,6 +560,31 @@
       findings.
     </section>
 
+
+    <section id="future-works" class="section-box" data-aos="fade-up">
+      <h2 class="section-header text-3xl font-bold mb-6">
+        Future Works
+      </h2>
+
+      Meeting with the client helps the team acknowledge the areas that need improvement and
+      the features that can be added to the Species Identification Project. These includes features
+      like:
+      <br>
+      <br>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Privacy mode for younger users</li>
+        <li>Different interface for experts vetting</li>
+        <li>Search functionality for easier navigation</li>
+        <li>Improve the design (color schemes) for the application</li>
+        <li>Prize system for user engagement</li>
+      </ul>
+      <br>
+
+      Using this feedback, the team understands the importance of continuous improvement and iteration in
+      design projects and will utilize these insights to enhance in our future works.
+
+    </section>
+
     <section id="summary" class="section-box" data-aos="fade-up">
       <h2 class="section-header text-3xl font-bold mb-6">
         Summary
@@ -550,22 +598,23 @@
       Species Identification Project is accessible and informative for all.
     </section>
 
-    <!-- Week Navigation -->
     <section class="section-box" data-aos="fade-up">
       <div class="flex justify-between items-center">
         <div class="flex-1">
-          <a href="./week2.html" class="inline-flex items-center bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
+          <a href="./week2.html"
+            class="inline-flex items-center bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
             <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
             <span>Previous: Week 2</span>
           </a>
         </div>
-        
+
         <div class="flex-1 text-center">
           <span class="text-white text-sm opacity-75">Week 3 of 3</span>
         </div>
-        
+
         <div class="flex-1 text-right">
-          <a href="./design-journey.html" class="inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
+          <a href="./design-journey.html"
+            class="inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
             <span>Design Journey</span>
             <i class="fas fa-route ml-2 group-hover:translate-x-1 transition-transform"></i>
           </a>
@@ -577,7 +626,6 @@
 
   <footer class="relative overflow-hidden"
     style="background: #1a1a1a !important; background-image: none !important; opacity: 1 !important; backdrop-filter: none !important;">
-    <!-- Decorative background elements -->
     <div class="absolute inset-0 opacity-10">
       <div class="absolute top-0 left-0 w-32 h-32 bg-green-500 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 right-0 w-40 h-40 bg-green-400 rounded-full blur-3xl"></div>
@@ -585,10 +633,8 @@
 
     <div class="relative z-10 py-8 mt-12">
       <div class="w-full mx-auto px-6 md:max-w-6xl">
-        <!-- Main Footer Content -->
         <div class="grid md:grid-cols-2 gap-8 mb-8">
 
-          <!-- External Resources -->
           <div class="footer-section">
             <div class="mb-4">
               <h4 class="text-xl font-bold mb-2 text-white flex items-center">
@@ -689,7 +735,6 @@
             </div>
           </div>
 
-          <!-- Contact Information -->
           <div class="footer-section">
             <div class="mb-4">
               <h4 class="text-xl font-bold mb-2 text-white flex items-center">
@@ -708,7 +753,6 @@
 
 
 
-            <!-- Project Info Card -->
             <div
               class="mt-6 bg-gradient-to-r from-blue-800/30 to-purple-800/30 rounded-xl p-6 border border-blue-500/20">
               <h6 class="text-lg font-semibold text-white mb-3 flex items-center">
@@ -730,7 +774,6 @@
         </div>
       </div>
 
-      <!-- Footer Bottom -->
       <div class="border-t border-gray-700 mt-8 pt-8 text-center">
         <p class="text-gray-400">
           &copy; 2025 Species Identification Project - Group 9. All rights reserved.
@@ -744,7 +787,6 @@
   </div>
   </footer>
 
-  <!-- ★ LIGHTBOX OVERLAY –– paste this here, right before your scripts / </body> -->
   <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
     <img id="lightbox-img" src="" class="max-w-full max-h-full rounded" />
     <button id="lightbox-close" class="absolute top-4 right-4 text-white text-2xl">×</button>
@@ -753,7 +795,6 @@
   <script>
   </script>
 
-  <!-- Initialize AOS -->
   <script>
     AOS.init({
       duration: 1200,
@@ -764,7 +805,6 @@
     });
   </script>
 
-  <!-- LIGHTBOX SCRIPT -->
   <script>
     document.querySelectorAll('.photo-frame img').forEach(img => {
       img.style.cursor = 'zoom-in';
@@ -788,7 +828,6 @@
     });
   </script>
 
-  <!-- CAROUSEL SCRIPT -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const carousel = document.getElementById('prototypeCarousel');
@@ -804,12 +843,10 @@
       let isDragging = false;
       let isTransitioning = false;
 
-      // Update carousel position
       function updateCarousel() {
         const translateX = -currentSlide * 100;
         wrapper.style.transform = `translateX(${translateX}%)`;
 
-        // Update dots
         dots.forEach((dot, index) => {
           if (index === currentSlide) {
             dot.classList.remove('bg-white/50');
@@ -821,7 +858,6 @@
         });
       }
 
-      // Next slide
       function nextSlide() {
         if (isTransitioning) return;
         isTransitioning = true;
@@ -830,7 +866,6 @@
         setTimeout(() => { isTransitioning = false; }, 300);
       }
 
-      // Previous slide
       function prevSlide() {
         if (isTransitioning) return;
         isTransitioning = true;
@@ -839,17 +874,14 @@
         setTimeout(() => { isTransitioning = false; }, 300);
       }
 
-      // Go to specific slide
       function goToSlide(slideIndex) {
         currentSlide = slideIndex;
         updateCarousel();
       }
 
-      // Button event listeners
       nextBtn.addEventListener('click', nextSlide);
       prevBtn.addEventListener('click', prevSlide);
 
-      // Dot event listeners
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => goToSlide(index));
       });
@@ -890,17 +922,14 @@
         }
       }
 
-      // Mouse events
       carousel.addEventListener('mousedown', handleStart);
       document.addEventListener('mousemove', handleMove);
       document.addEventListener('mouseup', handleEnd);
 
-      // Touch events
       carousel.addEventListener('touchstart', handleStart, { passive: false });
       carousel.addEventListener('touchmove', handleMove, { passive: false });
       carousel.addEventListener('touchend', handleEnd);
 
-      // Keyboard navigation
       document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
           prevSlide();
@@ -912,12 +941,9 @@
       // Auto-play (optional - uncomment to enable)
       // setInterval(nextSlide, 5000);
 
-      // Initialize
       updateCarousel();
     });
   </script>
-
-
 
 </body>
 
