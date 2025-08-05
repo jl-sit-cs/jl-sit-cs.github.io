@@ -79,32 +79,19 @@
       background: #000000 !important;
       background-color: #000000 !important;
       backdrop-filter: blur(20px);
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.1);
       border-radius: 1.5rem;
       padding: 2rem;
       margin: 1.5rem 0;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
       z-index: 10;
       opacity: 0;
       visibility: hidden;
-      animation: floatGentle 6s ease-in-out infinite;
-    }
-
-    /* Floating animation */
-    @keyframes floatGentle {
-
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
+      transform: translateY(0px);
     }
 
     /* Show sections when AOS animates them */
@@ -119,16 +106,38 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      height: 4px;
+      background: transparent;
+      border-radius: 1.5rem 1.5rem 0 0;
+      z-index: 1;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .section-box::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000000;
+      border-radius: 1.2rem;
+      z-index: -1;
     }
 
     .section-box:hover {
-      transform: translateY(-5px);
-      border-color: rgba(115, 171, 0, 0.4);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(115, 171, 0, 0.2) inset,
-        0 0 30px rgba(115, 171, 0, 0.1);
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(115, 171, 0, 0.3) inset,
+        0 0 50px rgba(115, 171, 0, 0.4),
+        0 0 100px rgba(249, 195, 171, 0.2);
+      backdrop-filter: blur(25px);
+      z-index: 20;
+    }
+
+    .section-box:hover::before {
+      background: linear-gradient(90deg, #73AB00, #F9C3AB, #73AB00);
+      height: 6px;
     }
 
     /* White text for all content on dark background */
