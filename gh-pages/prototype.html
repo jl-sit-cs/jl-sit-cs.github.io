@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Species Identification Project - Week 3</title>
+  <title>Interactive Prototype - Species Identification Project</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -144,7 +144,7 @@
       height: 6px;
     }
 
-    /* White text for all content on green background */
+    /* White text for all content */
     .section-box h2,
     .section-box h3,
     .section-box h4,
@@ -164,204 +164,173 @@
       padding-bottom: 1rem;
     }
 
-    /* Black text for the four design thinking boxes */
-    .section-box .bg-inat-white-light,
-    .section-box .bg-inat-white-light *,
-    .section-box .bg-inat-white-light h3,
-    .section-box .bg-inat-white-light p,
-    .section-box .text-inat-green-dark,
-    .section-box .text-inat-dark {
-      color: black !important;
+    /* Prototype iframe styling */
+    .prototype-container {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      min-height: 600px;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
     }
 
-    ::-webkit-scrollbar {
-      width: 8px;
+    .prototype-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 1rem;
     }
 
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
+    /* Loading animation */
+    .loading-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--inat-green-primary);
+      font-size: 2rem;
+      z-index: 5;
     }
 
-    ::-webkit-scrollbar-thumb {
+    /* Prototype controls */
+    .prototype-controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .control-btn {
       background: var(--inat-green-primary);
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--inat-green-dark);
-    }
-
-    .bg-inat-green-primary {
-      background-color: var(--inat-green-primary);
-    }
-
-    .bg-inat-green-dark {
-      background-color: var(--inat-green-dark);
-    }
-
-    .bg-inat-peach-light {
-      background-color: var(--inat-peach-light);
-    }
-
-    .bg-inat-white-light {
-      background-color: var(--inat-green-light);
-    }
-
-    .text-inat-green-dark {
-      color: var(--inat-green-dark);
-    }
-
-    .text-inat-light {
-      color: var(--inat-text-light);
-    }
-
-    .border-inat-green-primary {
-      border-color: var(--inat-green-primary);
-    }
-
-    /* universal link effect */
-    a {
-      display: inline-block;
-      transition: transform 0.2s, color 0.2s;
-    }
-
-    a:hover {
-      color: var(--inat-peach-light);
-      transform: scale(1.05);
-    }
-
-    /* somewhere in your <head> <style> block */
-    .photo-frame {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 0.2rem;
-      border: 4px solid white;
+      color: white;
+      padding: 0.5rem 1rem;
       border-radius: 0.5rem;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      margin: 1.5rem auto;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
     }
 
-    .photo-frame img {
-      display: block;
-      max-width: 100%;
-      border-radius: 0.25rem;
+    .control-btn:hover {
+      background: var(--inat-green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(115, 171, 0, 0.3);
+    }
+
+
+    /* Current screen indicator */
+    .current-screen-indicator {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(115, 171, 0, 0.3);
+    }
+
+    /* Breadcrumb styling */
+    .breadcrumb {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Prototype tips */
+    .prototype-tips {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+
+
+    /* Highlight cards */
+    .highlight-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(115, 171, 0, 0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .highlight-card:hover {
+      background: rgba(115, 171, 0, 0.1);
+      border-color: rgba(115, 171, 0, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(115, 171, 0, 0.2);
+    }
+
+    .highlight-icon {
+      background: var(--inat-green-primary);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(115, 171, 0, 0.3);
+    }
+
+    .highlight-title {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     /* Enhanced scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 12px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
     }
 
     ::-webkit-scrollbar-thumb {
       background: linear-gradient(180deg, var(--inat-green-primary), var(--inat-green-dark));
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      border-radius: 6px;
+      border: 2px solid rgba(0, 0, 0, 0.3);
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(180deg, var(--inat-green-dark), #1a3d00);
+      background: linear-gradient(180deg, var(--inat-green-dark), var(--inat-green-primary));
     }
 
-    /* Enhanced Navigation */
-    .nav-enhanced {
-      background: linear-gradient(135deg, var(--inat-green-dark) 0%, #1a3d00 100%);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .nav-enhanced.scrolled {
-      background: rgba(46, 91, 0, 0.95);
-      backdrop-filter: blur(20px);
-    }
-
-    .nav-link-enhanced {
-      position: relative;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-    }
-
-    .nav-link-enhanced::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--inat-peach-light);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    .nav-link-enhanced:hover::before {
-      width: 80%;
-    }
-
-    .nav-link-enhanced:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-      color: var(--inat-peach-light) !important;
-    }
-
-    /* Ensure navigation stays solid and visible */
-    nav {
-      background: #1E3A00 !important;
-      backdrop-filter: none !important;
-    }
-
-    /* force header itself to be see‑through so the page background‑image shows */
-    canvas,
-    main,
-    header {
-      background: transparent !important;
-    }
-
-    /* Force desktop menu to be visible */
-    .hidden.md\:flex {
-      display: flex !important;
-    }
-
-    @media (min-width: 768px) {
-      .hidden.md\:flex {
-        display: flex !important;
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .prototype-container {
+        height: 70vh;
+        min-height: 500px;
+      }
+      
+      .prototype-controls {
+        justify-content: center;
       }
     }
 
-    /* Custom mobile-only navigation */
-    @media (max-width: 767px) {
-      .desktop-only {
-        display: none !important;
-      }
-
-      .mobile-only {
-        display: block !important;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .mobile-only {
-        display: none !important;
-      }
-
-      .desktop-only {
-        display: flex !important;
-      }
-    }
   </style>
 </head>
 
 <body class="min-h-screen text-inat-light overflow-x-hidden">
-
   <!-- Navigation -->
-  <nav class="h-16 sticky top-0 z-50 shadow-2xl"
-    style="background: #0e0e0e !important; backdrop-filter: none !important;" data-aos="fade-down" data-aos-delay="100">
+  <nav class="sticky top-0 z-50 shadow-2xl" style="background: #0e0e0e !important; backdrop-filter: none !important;"
+    data-aos="fade-down" data-aos-delay="100">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex justify-between items-center h-16">
 
@@ -372,7 +341,7 @@
         </a>
 
         <!-- Desktop menu -->
-        <div class="desktop-only space-x-6 items-center" style="display: none;">
+        <div class="hidden md:flex space-x-6 items-center">
           <a href="../index.html" class="text-white font-medium hover:text-orange-200 transition">
             Home
           </a>
@@ -404,7 +373,7 @@
             Our Design Journey
           </a>
 
-          <a href="./prototype.html" class="text-white font-medium hover:text-orange-200 transition">
+          <a href="./prototype.html" class="text-orange-200 font-medium hover:text-orange-200 transition border-b-2 border-orange-200">
             <i class="fas fa-mobile-alt mr-1"></i>Prototype
           </a>
 
@@ -416,15 +385,15 @@
             class="flex items-center bg-white/20 hover:bg-white/30 text-white px-3 py-1 rounded-md transition">
             <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
               <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23 1.01 1.653.24 2.873.12 3.176.77.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
             </svg>
             GitHub
           </a>
         </div>
 
         <!-- Mobile hamburger -->
-        <div class="mobile-only" style="display: block;">
-          <button id="menu-btn" class="focus:outline-none text-white p-2 hover:bg-white/10 rounded-md transition">
+        <div class="md:hidden">
+          <button id="menu-btn" class="focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -434,7 +403,7 @@
       </div>
 
       <!-- Mobile menu -->
-      <div id="menu" class="hidden" style="background: #000000 !important;">
+      <div id="menu" class="hidden md:hidden" style="background: #000000 !important;">
         <a href="../index.html"
           class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
           Home
@@ -443,25 +412,27 @@
           class="w-full text-left px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition flex justify-between items-center">
           Weekly Journal
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 111.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z"
-              clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M5.23 7.21…" />
           </svg>
         </button>
-        <div id="submenu" class="hidden" style="z-index: 9999; position: relative;">
-          <a href="./week1.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
-            Week 1
+        <div id="submenu" class="hidden bg-gray-900">
+          <a href="./week1.html" class="block px-8 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+            Week 1 - Research & Prototyping
           </a>
-          <a href="./week2.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
-            Week 2
+          <a href="./week2.html" class="block px-8 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+            Week 2 - Feedback & Iteration
           </a>
-          <a href="./week3.html" class="block px-8 py-2 bg-black text-white hover:bg-gray-800">
-            Week 3
+          <a href="./week3.html" class="block px-8 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+            Week 3 - Poster & Website
           </a>
         </div>
         <a href="./design-journey.html"
           class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
-          Design Journey
+          Our Design Journey
+        </a>
+        <a href="./prototype.html"
+          class="block px-4 py-2 text-orange-200 hover:text-orange-200 hover:bg-[#2E5B00]/80 transition border-l-4 border-orange-200">
+          <i class="fas fa-mobile-alt mr-2"></i>Prototype
         </a>
         <a href="./self-reflections.html"
           class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
@@ -469,185 +440,123 @@
         </a>
         <a href="https://github.com/jl-sit-cs/jl-sit-cs.github.io" target="_blank"
           class="block px-4 py-2 text-white hover:text-orange-200 hover:bg-[#2E5B00]/80 transition">
+          <svg class="w-4 h-4 mr-2 inline" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
           GitHub
         </a>
       </div>
     </div>
   </nav>
 
-  <script>
-    // Mobile menu toggle
-    document.getElementById('menu-btn').addEventListener('click', () => {
-      document.getElementById('menu').classList.toggle('hidden');
-    });
-    // Mobile submenu toggle
-    function toggleSubmenu() {
-      document.getElementById('submenu').classList.toggle('hidden');
-    }
-  </script>
-
-  <!-- Enhanced Interactive Header -->
-  <header class="bg-transparent text-white py-12 px-4 relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/30"></div>
-    <div class="w-full mx-auto relative z-10 md:max-w-6xl">
-      <div class="text-center mb-8">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-enhanced">
-          Week 3: Presenting Poster and Finalizing Website Design
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 pt-24 pb-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-12" data-aos="fade-up">
+      <div class="text-enhanced inline-block">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white">
+          <i class="fas fa-mobile-alt mr-4 text-green-400"></i>
+          Interactive Prototype
         </h1>
-        <p
-          class="text-xl md:text-2xl font-light w-full mx-auto text-enhanced animate__animated animate__fadeInUp animate__delay-1s md:max-w-4xl">
-          In this week, we will focus on creating a poster to present our project and finalizing the design of our
-          website.
+        <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+          Experience our Species Identification App in action. Test the interactive features and user flows designed to enhance botanical discovery and data collection.
         </p>
       </div>
-    </div>
-  </header>
-
-  <main class="w-full mx-auto py-12 px-6 space-y-12 md:max-w-6xl">
-    <section id="initial-idea" class="section-box" data-aos="fade-up">
-      <h2 class="section-header text-3xl font-bold mb-6">
-        Final Week Idea
-      </h2>
-
-      The Final Week of the Species Identification Project focuses on presenting the project
-      through a poster and finalizing the website design. The goal is to effectively communicate the
-      project's objectives, findings, and proposed solutions to a wider audience. The poster serves as a
-      visual summary of the project, highlighting key aspects such as the problem statement, proposed solution,
-      and the overall impact of the Species Identification Project. The website will be updated to include
-      all the information gathered throughout the project, providing a comprehensive resource for anyone interested
-      in the Species Identification Project.
-
-    </section>
-
-    <section id="last-client-meeting" class="section-box" data-aos="fade-up">
-      <h2 class="section-header text-3xl font-bold mb-6">
-        Last Client Meeting
-      </h2>
-
-      The team met with the stakeholder, Chrissy Sanachan, to discuss about the work done during
-      our second week. The meeting focused on gathering feedback on the high-fidelity prototype
-      and ensuring that it aligns with the project goals. The stakeholders mentioned that
-      the team did well for the high-fidelity prototype and gave some valuable insights
-      on improving on the functionality and usability of the Species Identification Project.
-      These includes such as privacy mode for younger users, and different interface for experts vetting.
-
     </section>
 
 
-    <section id="poster" class="section-box" data-aos="fade-up">
-      <h2 class="section-header text-3xl font-bold mb-6">
-        Poster
-      </h2>
-      <p class="mb-6">
-        To properly communicate the project and its goals, I created a poster that summarizes the
-        key aspects of the Species Identification Project. The poster is designed to be visually
-        appealing and informative, making it suitable for display at events or online sharing.
-        <br>
-        The poster includes the project description, problem statement, and proposed solution. This encapsulates
-        the essence of the project and provides a clear overview for anyone interested in the Species Identification
-        Project.
-
-      </p>
-
-      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-        <img src="../media/poster.PNG" alt="Poster for Species Identification Project"
-          class="photo-frame w-full max-w-3xl mx-auto mb-6">
-
+    <!-- Interactive Prototype -->
+    <section class="section-box" data-aos="fade-up" data-aos-delay="150">
+      <div class="mb-6">
+        <h2 class="section-header text-3xl font-bold mb-4">
+          <i class="fas fa-play-circle mr-3 text-green-400"></i>
+          Interactive Prototype
+        </h2>
+        
+        <!-- Prototype Controls -->
+        <div class="prototype-controls">
+          <button class="control-btn" onclick="toggleFullscreen()">
+            <i class="fas fa-expand mr-2"></i>Fullscreen
+          </button>
+          <a href="https://www.figma.com/proto/W8JQ0TpcM3CpNIS5wn7BxA/OIP-Prototype?node-id=0-1&t=IfdUN5hDS0yao1ra-1" 
+             target="_blank" class="control-btn" style="text-decoration: none;">
+            <i class="fas fa-external-link-alt mr-2"></i>Open in Figma
+          </a>
+          <button class="control-btn" onclick="showPrototypeHelp()">
+            <i class="fas fa-question-circle mr-2"></i>Help
+          </button>
+        </div>
       </div>
-      <p class="text-gray-400 text-sm text-center">
-        Poster designed to summarize the Species Identification Project.
-      </p>
+
+      <!-- Prototype Container -->
+      <div class="prototype-container" id="prototypeContainer">
+        <div class="loading-spinner" id="loadingSpinner">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <iframe 
+          id="prototypeFrame"
+          class="prototype-iframe"
+          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FW8JQ0TpcM3CpNIS5wn7BxA%2FOIP-Prototype%3Fnode-id%3D0-1%26t%3DIfdUN5hDS0yao1ra-1"
+          allowfullscreen
+          onload="hideLoading()">
+        </iframe>
+      </div>
     </section>
 
-    <section id="website-design" class="section-box" data-aos="fade-up" data-aos-duration="1200" data-aos-offset="200">
-
-      <h2 class="section-header text-3xl font-bold mb-6">
-        Website
-      </h2>
-
-      The website contains all the information that the team has gathered over the past weeks, including the
-      project description, problem statement, proposed solution, and the poster. It serves as a comprehensive
-      resource for anyone interested in the Species Identification Project.
-
-      Through this, the team aims to provide a clear and accessible platform for sharing the project's goals and
-      findings.
-    </section>
-
-
-    <section id="future-works" class="section-box" data-aos="fade-up">
-      <h2 class="section-header text-3xl font-bold mb-6">
-        Future Works
-      </h2>
-
-      Meeting with the client helps the team acknowledge the areas that need improvement and
-      the features that can be added to the Species Identification Project. These includes features
-      like:
-      <br>
-      <br>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>Privacy mode for younger users</li>
-        <li>Different interface for experts vetting</li>
-        <li>Search functionality for easier navigation</li>
-        <li>Improve the design (color schemes) for the application</li>
-        <li>Prize system for user engagement</li>
-      </ul>
-      <br>
-
-      Using this feedback, the team understands the importance of continuous improvement and iteration in
-      design projects and will utilize these insights to enhance in our future works.
-
-    </section>
-
-    <section id="summary" class="section-box" data-aos="fade-up">
-      <h2 class="section-header text-3xl font-bold mb-6">
-        Summary
-      </h2>
-      The final week of the Species Identification Project focuses on presenting the project through a poster and
-      finalizing the website design. The poster serves as a visual summary of the project, highlighting key aspects
-      such as the problem statement, proposed solution of the Species Identification Project.
-      The website will be updated to include all the information gathered throughout the project, providing a
-      comprehensive resource for anyone interested in the Species Identification Project. This week aims to effectively
-      communicate the project's objectives, findings, and proposed solutions to a wider audience, ensuring that the
-      Species Identification Project is accessible and informative for all.
-    </section>
-
-    <section class="section-box" data-aos="fade-up">
-      <div class="flex justify-between items-center">
-        <div class="flex-1">
-          <a href="./week2.html"
-            class="inline-flex items-center bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
-            <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
-            <span>Previous: Week 2</span>
-          </a>
+    <!-- Key Highlights -->
+    <section class="section-box" data-aos="fade-up" data-aos-delay="300">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="highlight-title">19 Interactive Screens</h3>
+          <p class="highlight-text">Complete user journey from onboarding to advanced features</p>
         </div>
 
-        <div class="flex-1 text-center">
-          <span class="text-white text-sm opacity-75">Week 3 of 3</span>
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h3 class="highlight-title">AI-Powered ID</h3>
+          <p class="highlight-text">Smart species identification with confidence scoring</p>
         </div>
 
-        <div class="flex-1 text-right">
-          <a href="./design-journey.html"
-            class="inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105 shadow-lg group">
-            <span>Design Journey</span>
-            <i class="fas fa-route ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </a>
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="highlight-title">Community Driven</h3>
+          <p class="highlight-text">Social features for sharing and collaborative learning</p>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3 class="highlight-title">Gamified Experience</h3>
+          <p class="highlight-text">Achievements and progress tracking to engage users</p>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- Footer -->
   <footer class="relative overflow-hidden"
     style="background: #1a1a1a !important; background-image: none !important; opacity: 1 !important; backdrop-filter: none !important;">
+    <!-- Decorative background elements -->
     <div class="absolute inset-0 opacity-10">
       <div class="absolute top-0 left-0 w-32 h-32 bg-green-500 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 right-0 w-40 h-40 bg-green-400 rounded-full blur-3xl"></div>
     </div>
 
     <div class="relative z-10 py-8 mt-12">
-      <div class="w-full mx-auto px-6 md:max-w-6xl">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- Main Footer Content -->
         <div class="grid md:grid-cols-2 gap-8 mb-8">
 
+          <!-- External Resources -->
           <div class="footer-section">
             <div class="mb-4">
               <h4 class="text-xl font-bold mb-2 text-white flex items-center">
@@ -748,6 +657,7 @@
             </div>
           </div>
 
+          <!-- Contact Information -->
           <div class="footer-section">
             <div class="mb-4">
               <h4 class="text-xl font-bold mb-2 text-white flex items-center">
@@ -765,7 +675,7 @@
             </div>
 
 
-
+            <!-- Project Info Card -->
             <div
               class="mt-6 bg-gradient-to-r from-blue-800/30 to-purple-800/30 rounded-xl p-6 border border-blue-500/20">
               <h6 class="text-lg font-semibold text-white mb-3 flex items-center">
@@ -787,6 +697,7 @@
         </div>
       </div>
 
+      <!-- Footer Bottom -->
       <div class="border-t border-gray-700 mt-8 pt-8 text-center">
         <p class="text-gray-400">
           &copy; 2025 Species Identification Project - Group 9. All rights reserved.
@@ -797,167 +708,240 @@
       </div>
     </div>
   </footer>
-  </div>
-  </footer>
-
-  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
-    <img id="lightbox-img" src="" class="max-w-full max-h-full rounded" />
-    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-2xl">×</button>
-  </div>
 
   <script>
-  </script>
-
-  <script>
+    // Initialize AOS
     AOS.init({
-      duration: 1200,
-      easing: 'ease-out-back',
+      duration: 1000,
       once: true,
-      offset: 200,
-      delay: 100
+      offset: 100
     });
-  </script>
 
-  <script>
-    document.querySelectorAll('.photo-frame img').forEach(img => {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => {
-        const lb = document.getElementById('lightbox'),
-          lbImg = document.getElementById('lightbox-img');
-        lbImg.src = img.src;
-        lb.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    if (menuBtn && menu) {
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
       });
-    });
-    document.getElementById('lightbox-close').onclick = () => {
-      document.getElementById('lightbox').classList.add('hidden');
-      document.body.style.overflow = '';
-    };
-    document.getElementById('lightbox').addEventListener('click', e => {
-      if (e.target.id === 'lightbox') {
-        e.currentTarget.classList.add('hidden');
-        document.body.style.overflow = '';
-      }
-    });
-  </script>
+    }
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const carousel = document.getElementById('prototypeCarousel');
-      const wrapper = document.getElementById('carouselWrapper');
+    // Toggle submenu
+    function toggleSubmenu() {
+      const submenu = document.getElementById('submenu');
+      if (submenu) {
+        submenu.classList.toggle('hidden');
+      }
+    }
+
+    // Hide loading spinner when iframe loads
+    function hideLoading() {
+      const spinner = document.getElementById('loadingSpinner');
+      if (spinner) {
+        spinner.style.display = 'none';
+      }
+    }
+
+    // Generate page data for 19 pages
+    const pageData = {};
+    for (let i = 1; i <= 19; i++) {
+      pageData[`page${i}`] = {
+        name: `Page ${i}`,
+        nodeId: `page${i}-node`, // Replace with actual node IDs from your Figma prototype
+        url: `https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FW8JQ0TpcM3CpNIS5wn7BxA%2FOIP-Prototype%3Fnode-id%3Dpage${i}-node%26t%3DIfdUN5hDS0yao1ra-1`
+      };
+    }
+
+    // Screen order for sequential navigation (19 pages total)
+    const screenOrder = [
+      'page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10',
+      'page11', 'page12', 'page13', 'page14', 'page15', 'page16', 'page17', 'page18', 'page19'
+    ];
+    let currentPageIndex = 0;
+    let currentScreen = 'page1';
+    let navigationHistory = ['page1'];
+
+    // Navigate to specific page
+    function navigateToPage(pageKey) {
+      const page = pageData[pageKey];
+      if (!page) return;
+
+      // Update current page index
+      currentPageIndex = screenOrder.indexOf(pageKey);
+      
+      // Update iframe source with specific node ID
+      const iframe = document.getElementById('prototypeFrame');
+      iframe.src = page.url;
+
+      // Update page counter
+      document.getElementById('pageCounter').textContent = `${currentPageIndex + 1}/19`;
+
+      // Update navigation history
+      if (currentScreen !== pageKey) {
+        navigationHistory.push(pageKey);
+        currentScreen = pageKey;
+      }
+
+      // Show back button if not on first page
+      const backBtn = document.getElementById('backBtn');
+      if (currentPageIndex > 0 && navigationHistory.length > 1) {
+        backBtn.style.display = 'inline-block';
+      } else {
+        backBtn.style.display = 'none';
+      }
+
+      // Update arrow button states
+      updateArrowButtons();
+
+      // Show loading spinner
+      const spinner = document.getElementById('loadingSpinner');
+      spinner.style.display = 'block';
+
+      // Log navigation for debugging
+      console.log(`Navigated to: ${page.name} (${currentPageIndex + 1}/19)`);
+    }
+
+    // Legacy function for compatibility - redirects to navigateToPage
+    function navigateToScreen(screenKey) {
+      navigateToPage(screenKey);
+    }
+
+    // Navigate to previous page
+    function navigatePrevious() {
+      if (currentPageIndex > 0) {
+        const previousPage = screenOrder[currentPageIndex - 1];
+        navigateToPage(previousPage);
+      }
+    }
+
+    // Navigate to next page
+    function navigateNext() {
+      if (currentPageIndex < screenOrder.length - 1) {
+        const nextPage = screenOrder[currentPageIndex + 1];
+        navigateToPage(nextPage);
+      }
+    }
+
+    // Update arrow button states
+    function updateArrowButtons() {
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
-      const dots = document.querySelectorAll('.carousel-dot');
 
-      let currentSlide = 0;
-      const totalSlides = 5;
-      let startX = 0;
-      let currentX = 0;
-      let isDragging = false;
-      let isTransitioning = false;
+      console.log(`Updating arrows: currentPageIndex = ${currentPageIndex}, total pages = ${screenOrder.length}`);
 
-      function updateCarousel() {
-        const translateX = -currentSlide * 100;
-        wrapper.style.transform = `translateX(${translateX}%)`;
+      // Disable previous button if on first page
+      if (currentPageIndex === 0) {
+        prevBtn.disabled = true;
+        prevBtn.style.opacity = '0.3';
+      } else {
+        prevBtn.disabled = false;
+        prevBtn.style.opacity = '1';
+      }
 
-        dots.forEach((dot, index) => {
-          if (index === currentSlide) {
-            dot.classList.remove('bg-white/50');
-            dot.classList.add('bg-white');
-          } else {
-            dot.classList.remove('bg-white');
-            dot.classList.add('bg-white/50');
-          }
+      // Disable next button if on last page
+      if (currentPageIndex === screenOrder.length - 1) {
+        nextBtn.disabled = true;
+        nextBtn.style.opacity = '0.3';
+      } else {
+        nextBtn.disabled = false;
+        nextBtn.style.opacity = '1';
+      }
+    }
+
+    // Go back to previous screen
+    function goBack() {
+      if (navigationHistory.length > 1) {
+        navigationHistory.pop(); // Remove current page
+        const previousPage = navigationHistory[navigationHistory.length - 1];
+        navigationHistory.pop(); // Remove it so navigateToPage can add it back
+        navigateToPage(previousPage);
+      }
+    }
+
+    // Reset prototype function
+    function resetPrototype() {
+      navigateToPage('page1');
+      navigationHistory = ['page1'];
+      currentPageIndex = 0;
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Page loaded, initializing...');
+      currentPageIndex = 0;
+      updateArrowButtons();
+      // Update counter immediately
+      document.getElementById('pageCounter').textContent = '1/19';
+    });
+
+    // Show prototype help
+    function showPrototypeHelp() {
+      alert(`🎯 Prototype Navigation Help:
+
+📱 Built-in Navigation:
+• Use the arrows (< >) inside the prototype to navigate between 19 screens
+• Click on buttons and interactive elements within the prototype
+• The prototype has its own built-in navigation system
+
+🖱️ Interaction Tips:
+• Click and tap buttons, icons, and interactive elements
+• Navigation happens by clicking through the prototype flows
+• All interactions are contained within the prototype frame
+
+🔍 Features to Explore (19 Screens):
+• Onboarding and welcome screens
+• Camera capture and photo upload
+• AI-powered species identification
+• Community features and sharing
+• User profile and achievements
+• Location mapping and tracking
+
+💡 Pro Tips:
+• Use Fullscreen mode for the best viewing experience
+• Click "Open in Figma" for full Figma functionality and better interaction
+• The prototype shows the complete user journey - click through to explore!`);
+    }
+
+    // Toggle fullscreen function
+    function toggleFullscreen() {
+      const container = document.getElementById('prototypeContainer');
+      
+      if (!document.fullscreenElement) {
+        container.requestFullscreen().catch(err => {
+          console.log('Error attempting to enable fullscreen:', err);
         });
+      } else {
+        document.exitFullscreen();
       }
+    }
 
-      function nextSlide() {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateCarousel();
-        setTimeout(() => { isTransitioning = false; }, 300);
+    // Handle fullscreen changes
+    document.addEventListener('fullscreenchange', function() {
+      const container = document.getElementById('prototypeContainer');
+      if (document.fullscreenElement) {
+        container.style.height = '100vh';
+        container.style.borderRadius = '0';
+      } else {
+        container.style.height = '80vh';
+        container.style.borderRadius = '1rem';
       }
+    });
 
-      function prevSlide() {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateCarousel();
-        setTimeout(() => { isTransitioning = false; }, 300);
-      }
-
-      function goToSlide(slideIndex) {
-        currentSlide = slideIndex;
-        updateCarousel();
-      }
-
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => goToSlide(index));
-      });
-
-      // Touch/Mouse events for swiping
-      function handleStart(e) {
-        isDragging = true;
-        startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
-        wrapper.style.transition = 'none';
-      }
-
-      function handleMove(e) {
-        if (!isDragging) return;
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
-        currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
-        const diffX = currentX - startX;
-        const translateX = -currentSlide * 100 + (diffX / carousel.offsetWidth) * 100;
-        wrapper.style.transform = `translateX(${translateX}%)`;
-      }
-
-      function handleEnd() {
-        if (!isDragging) return;
-        isDragging = false;
-        wrapper.style.transition = 'transform 0.3s ease-in-out';
-
-        const diffX = currentX - startX;
-        const threshold = carousel.offsetWidth * 0.2; // 20% of carousel width
-
-        if (Math.abs(diffX) > threshold) {
-          if (diffX > 0) {
-            prevSlide();
-          } else {
-            nextSlide();
-          }
-        } else {
-          updateCarousel(); // Snap back to current slide
-        }
-      }
-
-      carousel.addEventListener('mousedown', handleStart);
-      document.addEventListener('mousemove', handleMove);
-      document.addEventListener('mouseup', handleEnd);
-
-      carousel.addEventListener('touchstart', handleStart, { passive: false });
-      carousel.addEventListener('touchmove', handleMove, { passive: false });
-      carousel.addEventListener('touchend', handleEnd);
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-          prevSlide();
-        } else if (e.key === 'ArrowRight') {
-          nextSlide();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
       });
-
-      // Auto-play (optional - uncomment to enable)
-      // setInterval(nextSlide, 5000);
-
-      updateCarousel();
     });
   </script>
-
 </body>
 
 </html>
