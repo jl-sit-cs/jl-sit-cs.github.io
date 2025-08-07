@@ -751,6 +751,7 @@
           <div class="relative w-full mx-auto md:max-w-4xl">
             <!-- Video Carousel container -->
             <div id="videoCarousel" class="relative overflow-hidden rounded-lg bg-gray-900/50 backdrop-blur-sm">
+
               <!-- Carousel wrapper -->
               <div id="videoCarouselWrapper" class="flex transition-transform duration-300 ease-in-out">
                 <!-- Video 1 -->
@@ -758,95 +759,101 @@
                   <div class="relative bg-black/20 flex flex-col items-center justify-center p-4">
                     <h4
                       class="text-white text-lg font-semibold text-center mb-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                      User Interview 1 - RSPB Volunteer</h4>
-                    <video controls class="w-full max-h-[500px] rounded-lg shadow-lg">
-                      <source src="../media/UserVideo1_Sub.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
+                      User Interview 1 - RSPB Volunteer
+                    </h4>
+                    <iframe width="800" height="500" src="https://www.youtube.com/embed/VR7jTYv2Ims"
+                      title="YouTube video player" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
                   </div>
                 </div>
+
                 <!-- Video 2 -->
                 <div class="w-full flex-shrink-0">
                   <div class="relative bg-black/20 flex flex-col items-center justify-center p-4">
                     <h4
                       class="text-white text-lg font-semibold text-center mb-4 bg-black/70 px-4 py-2 rounded-lg backdrop-blur-sm">
-                      User Interview 2 - Casual Visitors</h4>
-                    <video controls class="w-full max-h-[500px] rounded-lg shadow-lg">
-                      <source src="../media/UserVideo2_Sub.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
+                      User Interview 2 - Casual Visitors
+                    </h4>
+                    <iframe width="800" height="500" src="https://www.youtube.com/embed/jiRLxIHPFBQ"
+                      title="YouTube video player" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
                   </div>
                 </div>
               </div>
 
-              <!-- Navigation buttons -->
+              <!-- Navigation buttons (moved inside the relative container) -->
               <button id="videoPrevBtn"
-                class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
+                class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm z-10">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
               </button>
               <button id="videoNextBtn"
-                class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm">
+                class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm z-10">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
               </button>
-            </div>
 
-            <!-- Dots indicator -->
-            <div class="flex justify-center mt-4 space-x-2">
-              <button
-                class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
-                data-slide="0"></button>
-              <button
-                class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
-                data-slide="1"></button>
             </div>
           </div>
 
 
-          <h3 class="mt-8 text-xl font-semibold">
-            Key Takeaways from User Interviews:
-          </h3>
-
-
-          <div class="mt-4 p-3 bg-green-900/30 rounded">
-            <p class="font-medium text-green-200">Key Takeaways (Video 1 - RSPB Volunteer):</p>
-            <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
-              <li>User is already engaged with nature (RSPB volunteer)</li>
-              <li>Existing user of species identification apps (iNaturalist, Merlin ID)</li>
-              <li>Positive attitude towards new app recommendations</li>
-              <li>Values learning about local species, especially as newcomer to Scotland</li>
-              <li>Finds current apps useful for educational purposes</li>
-              <li><strong>Feature Suggestion:</strong> "A journal section where you can record and remember the
-                things
-                you see. For example, if you spot a bird, you can look back two weeks later and add it to your
-                journal"</li>
-              <li><strong>User Experience:</strong> Already actively uses iNaturalist for species identification
-              </li>
-            </ul>
-          </div>
-          <div class="mt-4 p-3 bg-blue-900/30 rounded">
-            <p class="font-medium text-blue-200">Key Takeaways (Video 2 - Visitors):</p>
-            <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
-              <li>Casual visitor - came for leisure walk, not specifically for nature study</li>
-              <li>Values gardens as escape from urban environment</li>
-              <li>Strong interest in learning about plants from different parts of the world</li>
-              <li>Family-oriented - brings nieces/nephews for educational visits</li>
-              <li>Highly supportive of educational apps, especially for children</li>
-              <li>Deep philosophical connection to nature and environmental education</li>
-              <li>Emphasizes importance of free access to educational tools</li>
-              <li><strong>Tech Awareness:</strong> Don't know about iNaturalist specifically, but familiar with AI
-                identification models</li>
-              <li><strong>AI Understanding:</strong> Know about ChatGPT and understand AI capabilities for
-                identification tasks</li>
-            </ul>
+          <!-- Dots indicator -->
+          <div class="flex justify-center mt-4 space-x-2">
+            <button
+              class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
+              data-slide="0"></button>
+            <button
+              class="video-carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-200"
+              data-slide="1"></button>
           </div>
         </div>
 
-        <div class="bg-purple-800/20 p-4 rounded-lg">
-          <!-- <h4 class="text-lg font-medium mb-3">🔍 Comparative Analysis</h4>
+
+        <h3 class="mt-8 text-xl font-semibold">
+          Key Takeaways from User Interviews:
+        </h3>
+
+
+        <div class="mt-4 p-3 bg-green-900/30 rounded">
+          <p class="font-medium text-green-200">Key Takeaways (Video 1 - RSPB Volunteer):</p>
+          <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+            <li>User is already engaged with nature (RSPB volunteer)</li>
+            <li>Existing user of species identification apps (iNaturalist, Merlin ID)</li>
+            <li>Positive attitude towards new app recommendations</li>
+            <li>Values learning about local species, especially as newcomer to Scotland</li>
+            <li>Finds current apps useful for educational purposes</li>
+            <li><strong>Feature Suggestion:</strong> "A journal section where you can record and remember the
+              things
+              you see. For example, if you spot a bird, you can look back two weeks later and add it to your
+              journal"</li>
+            <li><strong>User Experience:</strong> Already actively uses iNaturalist for species identification
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4 p-3 bg-blue-900/30 rounded">
+          <p class="font-medium text-blue-200">Key Takeaways (Video 2 - Visitors):</p>
+          <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+            <li>Casual visitor - came for leisure walk, not specifically for nature study</li>
+            <li>Values gardens as escape from urban environment</li>
+            <li>Strong interest in learning about plants from different parts of the world</li>
+            <li>Family-oriented - brings nieces/nephews for educational visits</li>
+            <li>Highly supportive of educational apps, especially for children</li>
+            <li>Deep philosophical connection to nature and environmental education</li>
+            <li>Emphasizes importance of free access to educational tools</li>
+            <li><strong>Tech Awareness:</strong> Don't know about iNaturalist specifically, but familiar with AI
+              identification models</li>
+            <li><strong>AI Understanding:</strong> Know about ChatGPT and understand AI capabilities for
+              identification tasks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-purple-800/20 p-4 rounded-lg">
+        <!-- <h4 class="text-lg font-medium mb-3">🔍 Comparative Analysis</h4>
 
           <div class="grid md:grid-cols-2 gap-4">
             <div>
@@ -869,35 +876,35 @@
               </div>
             </div> -->
 
-          <div class="mt-4 p-3 bg-purple-900/30 rounded">
-            <p class="font-medium text-purple-200">Overall Insights & Feature Implications:</p>
-            <ul class="list-disc list-inside text-sm space-y-1">
-              <li><strong>Universal Appeal:</strong> Both user types showed strong interest in species
-                identification
-                apps</li>
-              <li><strong>Educational Value:</strong> Both emphasized learning benefits, with Video 2 particularly
-                focused on children</li>
-              <li><strong>Accessibility:</strong> Free access was highlighted as important factor</li>
-              <li><strong>Different Entry Points:</strong> Professional vs. casual users have different
-                motivations
-                but similar outcomes</li>
-              <li><strong>Feature Request:</strong> Journal/logging functionality for tracking observations over
-                time
-              </li>
-              <li><strong>Tech Readiness:</strong> Mixed familiarity - some know iNaturalist, others understand AI
-                but
-                not specific apps</li>
-              <li><strong>AI Awareness:</strong> General understanding of AI capabilities (ChatGPT) suggests
-                openness
-                to AI-powered identification</li>
-              <li><strong>Validation:</strong> Confirms broad market appeal across different user segments and
-                tech
-                literacy levels</li>
-            </ul>
-          </div>
+        <div class="mt-4 p-3 bg-purple-900/30 rounded">
+          <p class="font-medium text-purple-200">Overall Insights & Feature Implications:</p>
+          <ul class="list-disc list-inside text-sm space-y-1">
+            <li><strong>Universal Appeal:</strong> Both user types showed strong interest in species
+              identification
+              apps</li>
+            <li><strong>Educational Value:</strong> Both emphasized learning benefits, with Video 2 particularly
+              focused on children</li>
+            <li><strong>Accessibility:</strong> Free access was highlighted as important factor</li>
+            <li><strong>Different Entry Points:</strong> Professional vs. casual users have different
+              motivations
+              but similar outcomes</li>
+            <li><strong>Feature Request:</strong> Journal/logging functionality for tracking observations over
+              time
+            </li>
+            <li><strong>Tech Readiness:</strong> Mixed familiarity - some know iNaturalist, others understand AI
+              but
+              not specific apps</li>
+            <li><strong>AI Awareness:</strong> General understanding of AI capabilities (ChatGPT) suggests
+              openness
+              to AI-powered identification</li>
+            <li><strong>Validation:</strong> Confirms broad market appeal across different user segments and
+              tech
+              literacy levels</li>
+          </ul>
+        </div>
 
-          <!-- Research Impact Metrics -->
-          <!-- <div class="mt-6 bg-green-800/20 p-4 rounded-lg border border-green-500/30">
+        <!-- Research Impact Metrics -->
+        <!-- <div class="mt-6 bg-green-800/20 p-4 rounded-lg border border-green-500/30">
               <div class="flex justify-between items-center mb-3">
                 <h4 class="font-medium text-green-200">📊 Research Impact Metrics</h4>
                 <button onclick="toggleSection('metrics-detail')"
@@ -935,21 +942,21 @@
           </div> -->
 
 
-          <h3 class="mt-8 text-xl font-semibold">
-            Conclusions of the interview:
-          </h3>
-          Not everyone is aware of species identification tools such as iNaturalist, but many are open to trying them.
-          This indicates a potential market for educational resources and user-friendly applications that can bridge the
-          knowledge gap.
-          However, the interviews may have some bias, as they do not cover the full spectrum of potential users of such
-          tools.
+        <h3 class="mt-8 text-xl font-semibold">
+          Conclusions of the interview:
+        </h3>
+        Not everyone is aware of species identification tools such as iNaturalist, but many are open to trying them.
+        This indicates a potential market for educational resources and user-friendly applications that can bridge the
+        knowledge gap.
+        However, the interviews may have some bias, as they do not cover the full spectrum of potential users of such
+        tools.
 
-          The team also considered feedback indicating that many visitors go to the botanic gardens primarily to relax
-          or spend time with family and friends, rather than explicitly to identify species.
-          We used this insight to our advantage in the design process. By incorporating gamification and educational
-          resources, we aim to enhance user engagement and motivate broader use of the species identification tool.
+        The team also considered feedback indicating that many visitors go to the botanic gardens primarily to relax
+        or spend time with family and friends, rather than explicitly to identify species.
+        We used this insight to our advantage in the design process. By incorporating gamification and educational
+        resources, we aim to enhance user engagement and motivate broader use of the species identification tool.
 
-        </div>
+      </div>
       </div>
       </div>
 
@@ -1093,10 +1100,10 @@
         into the solution.
       </p>
 
-      <video controls class="w-full max-w-4xl mx-auto rounded-lg shadow-lg">
-        <source src="../media/Group09_week2_pitch2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <iframe width="1000" height="500" src="https://www.youtube.com/embed/OJpUsXT8LYY" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
 
       <p class="mt-4 text-sm text-gray-300">
         This video demonstrates the iterative improvements made to our species identification tool based on
