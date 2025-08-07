@@ -1673,13 +1673,13 @@
     const videoData = {
       week1: {
         title: 'Week 1 - First Pitch Video',
-        videoSrc: './media/group09_week1_pitch.mp4',
+        videoSrc: 'https://www.youtube.com/embed/M4wRaFTRvGM',
         weekLink: './gh-pages/week1.html',
         linkText: 'View Week 1 Documentation'
       },
       week2: {
         title: 'Week 2 - Second Pitch Video',
-        videoSrc: './media/Group09_week2_pitch2.mp4',
+        videoSrc: 'https://www.youtube.com/embed/OJpUsXT8LYY',
         weekLink: './gh-pages/week2.html',
         linkText: 'View Week 2 Documentation'
       }
@@ -1694,12 +1694,16 @@
       modalWeekLink.href = data.weekLink;
       modalLinkText.textContent = data.linkText;
 
-      // Create video element
+      // Create iframe for YouTube embed
       modalVideoContainer.innerHTML = `
-        <video controls class="w-full max-h-[60vh] rounded-lg shadow-lg" autoplay>
-          <source src="${data.videoSrc}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <iframe 
+          src="${data.videoSrc}" 
+          class="w-full max-h-[60vh] rounded-lg shadow-lg" 
+          style="aspect-ratio: 16/9; height: 60vh;"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
       `;
 
       // Show modal
@@ -1714,14 +1718,7 @@
       videoModal.classList.remove('flex');
       document.body.style.overflow = '';
 
-      // Stop video
-      const video = modalVideoContainer.querySelector('video');
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
-      }
-
-      // Clear content
+      // Stop YouTube video by clearing the iframe
       modalVideoContainer.innerHTML = '';
     }
 
