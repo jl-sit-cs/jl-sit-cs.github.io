@@ -1109,9 +1109,13 @@
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-content">
+        <div class="timeline-content cursor-pointer hover:bg-gray-50 transition-colors duration-300"
+          onclick="openPosterModal()">
           <div class="timeline-date" style="color:white !important;">1 August - 5 August 2025</div>
-          <h4 class="timeline-title"><i class="fa-solid fa-file-contract"></i> Poster Report</h4>
+          <h4 class="timeline-title">
+            <i class="fa-solid fa-file-contract"></i> Poster Report
+            <i class="fas fa-eye ml-2 text-blue-600 hover:text-blue-800 transition-colors"></i>
+          </h4>
           <p class="timeline-description">
             Crafting a summarized poster which encapsulates the project idea, problem statement and proposed solutions,
             which actively highlights the key findings from the research and design process. The poster serves as a
@@ -1119,6 +1123,10 @@
             representation of the project progress and is designed to effectively communicate the project's objectives,
             methodologies, and outcomes to a wider audience.
           </p>
+          <div class="mt-3 text-blue-600 text-sm font-medium flex items-center">
+            <i class="fas fa-mouse-pointer mr-1"></i>
+            Click to view poster
+          </div>
         </div>
       </div>
 
@@ -1720,6 +1728,28 @@
 
       // Stop YouTube video by clearing the iframe
       modalVideoContainer.innerHTML = '';
+    }
+
+    function openPosterModal() {
+      // Set modal content for poster
+      modalTitle.textContent = 'Project Poster - Group 9';
+      modalWeekLink.href = './media/Group09_Poster.png';
+      modalLinkText.textContent = 'Download Poster';
+
+      // Create image element for poster
+      modalVideoContainer.innerHTML = `
+        <img 
+          src="./media/Group09_Poster.png" 
+          alt="Group 9 Project Poster"
+          class="w-full max-h-[80vh] object-contain rounded-lg shadow-lg cursor-zoom-in"
+          onclick="window.open('./media/Group09_Poster.png', '_blank')"
+        />
+      `;
+
+      // Show modal
+      videoModal.classList.remove('hidden');
+      videoModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
     }
 
     // Close modal when clicking outside
